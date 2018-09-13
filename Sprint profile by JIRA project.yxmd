@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="810" y="150" />
+        <Position x="534" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -13,8 +13,8 @@
             <SummarizeField field="User Full Name" action="GroupBy" rename="User Full Name" />
             <SummarizeField field="Issue Summary" action="GroupBy" rename="Issue Summary" />
             <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="Project" action="First" rename="Project" />
             <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
-            <SummarizeField field="Issue Key1" action="GroupBy" rename="Project" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -29,8 +29,8 @@
             <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
             <Field name="Issue Summary" size="255" source="Summarize: GroupBy - Issue Summary" type="V_WString" />
             <Field name="Sprint" size="1073741823" source="Summarize: GroupBy - Sprint" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field name="Value Stream" size="255" source="Summarize: GroupBy - Value Stream" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="Summarize: GroupBy - Issue Key1" type="V_String" />
           </RecordInfo>
           <SortInfo>
             <Field field="Issue Key" order="Asc" />
@@ -38,7 +38,6 @@
             <Field field="Issue Summary" order="Asc" />
             <Field field="Sprint" order="Asc" />
             <Field field="Value Stream" order="Asc" />
-            <Field field="Issue Key1" order="Asc" />
           </SortInfo>
         </MetaInfo>
       </Properties>
@@ -46,11 +45,11 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="894" y="150" />
+        <Position x="618" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\extracts\time logged by issue.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\sprint profile by JIRA project.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -59,16 +58,19 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>time logged by issue.xlsx
+          <DefaultAnnotationText>sprint profile by JIRA project.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="234" y="78.00002" />
+        <Position x="234" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -97,16 +99,16 @@ Table=Sheet1</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="True">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
@@ -114,16 +116,16 @@ Table=Sheet1</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="False">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
@@ -134,7 +136,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="558" y="150" />
+        <Position x="354" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -149,14 +151,13 @@ Table=Sheet1</DefaultAnnotationText>
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="Left_Project key" selected="True" rename="Value Stream" />
+                <SelectField field="Left_Value Stream" selected="True" />
                 <SelectField field="Right_Work Date" selected="True" />
                 <SelectField field="Right_User Full Name" selected="True" />
                 <SelectField field="Right_Hours" selected="True" />
                 <SelectField field="Right_Issue Key" selected="True" />
                 <SelectField field="Right_Issue Summary" selected="True" />
-                <SelectField field="Left_User Full Name" selected="False" rename="Left_User Full Name" />
-                <SelectField field="Left_Issue Key1" selected="False" rename="Project" />
+                <SelectField field="Right_Issue Key1" selected="True" rename="Project" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -169,8 +170,8 @@ Table=Sheet1</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Left">
           <RecordInfo>
-            <Field name="User Name" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Project key" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="User Name" />
@@ -178,21 +179,23 @@ Table=Sheet1</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="Join">
           <RecordInfo>
-            <Field name="Value Stream" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Right">
           <RecordInfo>
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="User Full Name" />
@@ -203,7 +206,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="654" y="150" />
+        <Position x="450" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -212,7 +215,6 @@ Table=Sheet1</DefaultAnnotationText>
             <FormulaField expression="floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" field="Sprint (Team)" size="8" type="Double" />
             <FormulaField expression="[Sprint (Team)]-7" field="Sprint (FST)" size="1073741823" type="V_WString" />
             <FormulaField expression="[Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" field="Sprint" size="1073741823" type="V_WString" />
-            <FormulaField expression="[Issue Key]" field="Project" size="1073741823" type="V_WString" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -224,17 +226,17 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Value Stream" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field name="Week" size="1073741823" source="Formula: DateTimeFormat([Work Date], &quot;%U&quot;)" type="V_WString" />
             <Field name="Sprint (Team)" source="Formula: floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" type="Double" />
             <Field name="Sprint (FST)" size="1073741823" source="Formula: [Sprint (Team)]-7" type="V_WString" />
             <Field name="Sprint" size="1073741823" source="Formula: [Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" type="V_WString" />
-            <Field name="Project" size="1073741823" source="Formula: [Issue Key]" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -242,13 +244,13 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="738" y="54.00002" />
+        <Position x="534" y="54.00002" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
             <SummarizeField field="User Full Name" action="GroupBy" rename="User Full Name" />
-            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="Project" action="GroupBy" rename="Project" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -259,11 +261,11 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
-            <Field name="Value Stream" size="255" source="Summarize: GroupBy - Value Stream" type="V_String" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="Summarize: GroupBy - Project" type="V_String" />
           </RecordInfo>
           <SortInfo>
             <Field field="User Full Name" order="Asc" />
-            <Field field="Value Stream" order="Asc" />
+            <Field field="Project" order="Asc" />
           </SortInfo>
         </MetaInfo>
       </Properties>
@@ -271,29 +273,29 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="810" y="54" />
+        <Position x="606" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SortInfo locale="0">
-            <Field field="Value Stream" order="Ascending" />
+            <Field field="Project" order="Ascending" />
             <Field field="User Full Name" order="Ascending" />
           </SortInfo>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>Value Stream - Ascending
+          <DefaultAnnotationText>Project - Ascending
 User Full Name - Ascending</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
-            <Field name="Value Stream" size="255" source="Summarize: GroupBy - Value Stream" type="V_String" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="Summarize: GroupBy - Project" type="V_String" />
           </RecordInfo>
           <SortInfo locale="0">
-            <Field field="Value Stream" order="Ascending" />
+            <Field field="Project" order="Ascending" />
             <Field field="User Full Name" order="Ascending" />
           </SortInfo>
         </MetaInfo>
@@ -302,11 +304,11 @@ User Full Name - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="894" y="54" />
+        <Position x="690" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_20296_cbaad9b3b30846e6a5c92a008261beb9_\Engine_13632_ac3b1b25deb2401e9fface08ea6d17ae_.yxdb</TempFile>
+          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_12672_1dcd1e978b4c4983a1d7d49dd086b7ea_\Engine_15076_9b8ecff9fd9b482791a5c2932901efec_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -330,7 +332,7 @@ User Full Name - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="150" y="78.00002" />
+        <Position x="150" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -348,57 +350,19 @@ User Full Name - Ascending</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
             <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
-    </Node>
-    <Node ToolID="67">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="738" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Field>Issue Key</Field>
-          <NumFields value="2" />
-          <ErrorHandling>Last</ErrorHandling>
-          <RootName>Issue Key</RootName>
-          <Delimeters value="-" />
-          <Flags value="0" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Value Stream" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Week" size="1073741823" source="Formula: DateTimeFormat([Work Date], &quot;%U&quot;)" type="V_WString" />
-            <Field name="Sprint (Team)" source="Formula: floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" type="Double" />
-            <Field name="Sprint (FST)" size="1073741823" source="Formula: [Sprint (Team)]-7" type="V_WString" />
-            <Field name="Sprint" size="1073741823" source="Formula: [Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" type="V_WString" />
-            <Field name="Project" size="1073741823" source="Formula: [Issue Key]" type="V_WString" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -419,12 +383,12 @@ User Full Name - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="85">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="78" />
+        <Position x="54" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Tempo Worklog.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -441,16 +405,16 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -458,12 +422,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="86">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="426" y="78" />
+        <Position x="222" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Team Membership.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -480,217 +444,14 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Team" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Name" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Project key" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
-    <Node ToolID="83">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="234" width="258.2531" height="19" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>Roster method of team determination</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="16">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText>CD Roster</AnnotationText>
-              <DefaultAnnotationText>Team Roster.xlsx</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Role" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="First Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Organization" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Leader" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Last Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Work Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Desk Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-        </Node>
-        <Node ToolID="17">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="168" y="278.0001" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="[Last Name] +&quot;, &quot; + [First Name]" field="Full Name" size="1073741823" type="V_WString" />
-                <FormulaField expression="&quot;Client Dashboards&quot;" field="Valuestream" size="1073741823" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText />
-              <DefaultAnnotationText><![CDATA[Full Name = [Last Name] +", " + [First Name]
-Valuestream = "Client Dashboards"
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Role" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="First Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Organization" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Leader" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Last Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Work Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Desk Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Full Name" size="1073741823" source="Formula: [Last Name] +&quot;, &quot; + [First Name]" type="V_WString" />
-                <Field name="Valuestream" size="1073741823" source="Formula: &quot;Client Dashboards&quot;" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="18">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="257" y="278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Team" selected="True" />
-                <SelectField field="Work Location" selected="True" />
-                <SelectField field="Full Name" selected="True" />
-                <SelectField field="Valuestream" selected="True" />
-                <SelectField field="*Unknown" selected="False" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Work Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-                <Field name="Full Name" size="1073741823" source="Formula: [Last Name] +&quot;, &quot; + [First Name]" type="V_WString" />
-                <Field name="Valuestream" size="1073741823" source="Formula: &quot;Client Dashboards&quot;" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="61">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="347" y="330" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <ByName_ErrorMode>Warning</ByName_ErrorMode>
-              <ByName_OutputMode>All</ByName_OutputMode>
-              <Mode>ByName</Mode>
-              <SetOutputOrder value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Full Name" size="1073741823" source="(Multiple Sources)" type="V_WString" />
-                <Field name="Team" size="255" source="File: (Multiple Sources)" type="V_String" />
-                <Field name="Valuestream" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
-                <Field name="Work Location" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Team Roster.xlsx" type="V_String" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-        </Node>
-        <Node ToolID="63">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="82.99998" y="378" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\MO Team Members.xlsx|||`Sheet1$`</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>MO Team Members.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Full Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\MO Team Members.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\MO Team Members.xlsx|||`Sheet1$`" type="V_String" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-        </Node>
-        <Node ToolID="64">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="167" y="378" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="&quot;Money Out&quot;" field="Valuestream" size="1073741823" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[Valuestream = "Money Out"
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Full Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\MO Team Members.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\MO Team Members.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Valuestream" size="1073741823" source="Formula: &quot;Money Out&quot;" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
@@ -712,11 +473,11 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="67" Connection="Input" />
+      <Destination ToolID="32" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="32" Connection="Input" />
+      <Destination ToolID="3" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="32" Connection="Output" />
@@ -731,32 +492,8 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <Destination ToolID="15" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="67" Connection="Output" />
-      <Destination ToolID="3" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="85" Connection="Output" />
       <Destination ToolID="47" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="16" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="17" Connection="Output" />
-      <Destination ToolID="18" Connection="Input" />
-    </Connection>
-    <Connection name="#2">
-      <Origin ToolID="18" Connection="Output" />
-      <Destination ToolID="61" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="64" Connection="Output" />
-      <Destination ToolID="61" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="63" Connection="Output" />
-      <Destination ToolID="64" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

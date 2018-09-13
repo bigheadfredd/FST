@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="194" />
+        <Position x="18" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -43,7 +43,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-        <Position x="138" y="194" />
+        <Position x="102" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -54,7 +54,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>convert date field</AnnotationText>
+          <AnnotationText />
           <DefaultAnnotationText>Convert updated From:
 Custom</DefaultAnnotationText>
           <Left value="False" />
@@ -64,11 +64,11 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="666" y="182" />
+        <Position x="630" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\extracts\estimation accuracy by type.xlsx|||Sheet 1</File>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\estimation accuracy by type.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -78,15 +78,18 @@ Custom</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText>estimation accuracy by type.xlsx
-Table=Sheet 1</DefaultAnnotationText>
+Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="378" y="194" />
+        <Position x="342" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -120,7 +123,7 @@ Table=Sheet 1</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="450" y="194" />
+        <Position x="414" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -144,7 +147,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="558" y="194" />
+        <Position x="522" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -179,7 +182,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="246" y="198" />
+        <Position x="198" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -189,7 +192,7 @@ Estima...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Create work type field</AnnotationText>
+          <AnnotationText />
           <DefaultAnnotationText><![CDATA[Work Type = [Labels1]+ "," + [Labels2]+ "," +[Labels3]
 ]]></DefaultAnnotationText>
           <Left value="False" />
@@ -199,7 +202,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="306" y="194" />
+        <Position x="270" y="50" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -218,11 +221,11 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="52">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="666" y="314" />
+        <Position x="642" y="170" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\estimation accuracy by story.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\estimation accuracy by story.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -235,12 +238,15 @@ Estima...</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="53">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="390" y="326" />
+        <Position x="366" y="182" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -273,7 +279,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="54">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="462" y="326" />
+        <Position x="438" y="182" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -297,7 +303,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="55">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="570" y="326" />
+        <Position x="546" y="182" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -329,129 +335,6 @@ Estima...</DefaultAnnotationText>
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="60">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="425" y="54" width="136.4582" height="19" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>Container 60</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="56">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="558" y="110" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <SummarizeFields>
-                <SummarizeField field="Team" action="GroupBy" rename="Team" />
-                <SummarizeField field="Sprint Started" action="GroupBy" rename="Sprint Started" />
-                <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
-                <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
-              </SummarizeFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-        </Node>
-        <Node ToolID="57">
-          <GuiSettings>
-            <Position x="450" y="110" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Value name="List Box (11)">""</Value>
-              <Value name="Check Box (84)">False</Value>
-              <Value name="Check Box (117)">False</Value>
-              <Value name="Check Box (15)">True</Value>
-              <Value name="Check Box (109)">False</Value>
-              <Value name="Check Box (122)">False</Value>
-              <Value name="Check Box (53)">False</Value>
-              <Value name="Check Box (58)">False</Value>
-              <Value name="Check Box (70)">False</Value>
-              <Value name="Check Box (77)">True</Value>
-              <Value name="Drop Down (81)">title</Value>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings Macro="Cleanse.yxmc" />
-        </Node>
-        <Node ToolID="58">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="654" y="110" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Expression>!IsNull([Sprint Started]) and [Work Type] in ("Data", "Tableau", "React")</Expression>
-              <Mode>Custom</Mode>
-              <Simple>
-                <Operator>IsNotNull</Operator>
-                <Field>Sprint Started</Field>
-                <Operands>
-                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-                  <DateType>fixed</DateType>
-                  <PeriodDate>2018-08-15 13:49:57</PeriodDate>
-                  <PeriodType>
-                  </PeriodType>
-                  <PeriodCount>0</PeriodCount>
-                  <Operand>
-                  </Operand>
-                  <StartDate>2018-08-15 13:49:57</StartDate>
-                  <EndDate>2018-08-15 13:49:57</EndDate>
-                </Operands>
-              </Simple>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText />
-              <DefaultAnnotationText>!IsNull([Sprint Started]) and [Work Type] in ("Data", "Tableau", "React")</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-        </Node>
-        <Node ToolID="59">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="774" y="98" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\velocity by tech stack.xlsx|||Sheet1</File>
-              <Passwords />
-              <FormatSpecificOptions>
-                <OutputOption>Overwrite</OutputOption>
-              </FormatSpecificOptions>
-              <MultiFile value="False" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText>velocity by tech stack.xlsx
-Table=Sheet1</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-        </Node>
-      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
@@ -498,18 +381,6 @@ Table=Sheet1</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="55" Connection="True" />
       <Destination ToolID="52" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="56" Connection="Output" />
-      <Destination ToolID="58" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="57" Connection="Output26" />
-      <Destination ToolID="56" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="58" Connection="True" />
-      <Destination ToolID="59" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

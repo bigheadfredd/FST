@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="114" />
+        <Position x="54" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -20,9 +20,6 @@
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Issue key" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
@@ -46,7 +43,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="342" y="102" />
+        <Position x="342" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -67,7 +64,7 @@ Hours Logged = [Hours Log...</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="438" y="102" />
+        <Position x="438" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -86,11 +83,11 @@ Hours Logged = [Hours Log...</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="822" y="114" />
+        <Position x="822" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\extracts\velocity by tech stack.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\velocity by tech stack.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -103,12 +100,15 @@ Hours Logged = [Hours Log...</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="438" y="162" />
+        <Position x="438" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -144,7 +144,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="630" y="114" />
+        <Position x="630" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -184,7 +184,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="246" y="114" />
+        <Position x="246" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -217,7 +217,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="726" y="114" />
+        <Position x="726" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -239,7 +239,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="18">
       <GuiSettings>
-        <Position x="534" y="102" />
+        <Position x="534" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -265,7 +265,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings>
-        <Position x="534" y="162" />
+        <Position x="534" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -291,7 +291,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="150" y="114" />
+        <Position x="150" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>

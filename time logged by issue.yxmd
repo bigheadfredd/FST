@@ -14,6 +14,8 @@
             <SummarizeField field="Team" action="GroupBy" rename="Team" />
             <SummarizeField field="Value Stream" action="GroupBy" rename="Project" />
             <SummarizeField field="Issue Key" action="GroupBy" rename="Issue Key" />
+            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="Project" action="First" rename="Project" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -30,7 +32,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">z:\time logged by issue.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\time logged by issue.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -43,6 +45,9 @@
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -95,16 +100,14 @@ Table=Sheet1</DefaultAnnotationText>
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Left_User Name" selected="True" />
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Left_Value Stream" selected="True" />
                 <SelectField field="Right_Work Date" selected="True" />
                 <SelectField field="Right_Hours" selected="True" />
                 <SelectField field="Right_Issue Key" selected="True" />
                 <SelectField field="Right_Issue Summary" selected="True" />
-                <SelectField field="Right_Issue Key1" selected="True" rename="Value Stream" />
-                <SelectField field="Left_Sprint" selected="False" rename="Team Sprint" />
-                <SelectField field="Left_Project key" selected="False" rename="Value Stream" />
-                <SelectField field="Left_Issue Key1" selected="False" rename="Project" />
+                <SelectField field="Right_Issue Key1" selected="True" rename="Project" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -166,7 +169,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_9296_2ecfc2682d76451ca9a8bca2e0acead1_\Engine_4444_5da0b659b929405a82878ecd7acd808c_.yxdb</TempFile>
+          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_17104_f1173c73cf3f4ead8db21d2bafc21347_\Engine_15076_c3a33736382046bf8da21867055752e4_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -216,7 +219,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Tempo Worklog.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -228,18 +231,21 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -252,7 +258,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Team Membership.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -264,11 +270,15 @@ Table=`Sheet1$`</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Count" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="User Name" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Team" size="255" source="File: Z:\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>

@@ -8,7 +8,7 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`</File>
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -21,9 +21,6 @@
 Table=`Holocrons$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Sprint" size="255" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="V_String" />
@@ -61,9 +58,6 @@ Table=`Holocrons$`</DefaultAnnotationText>
 Table=`Jitterbugs$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="V_String" />
@@ -134,7 +128,7 @@ Table=`Jitterbugs$`</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\Delivery Performance.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -235,9 +229,6 @@ Value Stream = "PMOS"
 Table=`Cyber Knights$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
@@ -271,9 +262,6 @@ Table=`Cyber Knights$`</DefaultAnnotationText>
 Table=`Titans$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="V_String" />
@@ -563,7 +551,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="36">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="586" width="170.2423" height="19" />
+        <Position x="54.00001" y="586" width="170.2423" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -622,7 +610,7 @@ Value Stream = "PMOS"
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="79.00001" y="630" />
+            <Position x="79.00002" y="630" />
           </GuiSettings>
           <Properties>
             <Configuration>
