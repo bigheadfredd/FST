@@ -8,7 +8,7 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`</File>
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -21,17 +21,20 @@
 Table=`Holocrons$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Sprint" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="V_String" />
-            <Field name="Base Capacity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Planned Capacity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Committed Points" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Delivered Points" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Velocity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Scope Change" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="F8" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
-            <Field name="Delivered to Committed" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Sprint" size="255" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="V_String" />
+            <Field name="Base Capacity" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Planned Capacity" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Committed Points" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Delivered Points" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Velocity" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Scope Change" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="F8" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Delivered to Committed" source="File: Z:\Alteryx Input\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
             <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
@@ -45,7 +48,7 @@ Table=`Holocrons$`</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`</File>
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -58,17 +61,20 @@ Table=`Holocrons$`</DefaultAnnotationText>
 Table=`Jitterbugs$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="V_String" />
-            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Velocity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Scope Change" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="F8" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
-            <Field name="Delivered to Committed" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Velocity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Scope Change" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="F8" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Delivered to Committed" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
             <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
@@ -141,9 +147,6 @@ Table=`Jitterbugs$`</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -219,7 +222,7 @@ Value Stream = "PMOS"
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -232,14 +235,17 @@ Value Stream = "PMOS"
 Table=`Cyber Knights$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
-            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
-            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
-            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
-            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
-            <Field name="F6" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
+            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="F6" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -252,7 +258,7 @@ Table=`Cyber Knights$`</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -265,13 +271,16 @@ Table=`Cyber Knights$`</DefaultAnnotationText>
 Table=`Titans$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="V_String" />
-            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
-            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
-            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
-            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>

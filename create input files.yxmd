@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="954" y="690" width="692" height="226" />
+        <Position x="54" y="1002" width="702" height="226" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="979" y="770.0001" />
+            <Position x="79" y="1082" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -47,6 +47,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <Field name="Project key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="Status" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
+                <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="sprint_0" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="sprint_1" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
@@ -66,7 +67,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1172" y="782" />
+            <Position x="272" y="1094" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -86,7 +87,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1520" y="770" />
+            <Position x="630" y="1086" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -108,7 +109,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="48">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="1087" y="770" />
+            <Position x="187" y="1082" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -142,7 +143,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="1256" y="734" />
+            <Position x="356" y="1046" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -161,7 +162,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1424" y="770" />
+            <Position x="524" y="1082" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -186,7 +187,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="1340" y="770" />
+            <Position x="440" y="1082" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -220,7 +221,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="54" width="187.9294" height="19" />
+        <Position x="54" y="53.99996" width="187.9294" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -238,7 +239,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Directory.Directory">
-            <Position x="79.00001" y="97.99999" />
+            <Position x="79.00001" y="97.99996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -324,7 +325,7 @@ Table=Sheet1</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tempo Worklog.xlsx|||Sheet1</File>
+              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Tempo Worklog.xlsx|||Sheet1</File>
               <Passwords />
               <FormatSpecificOptions>
                 <OutputOption>Overwrite</OutputOption>
@@ -337,6 +338,9 @@ Table=Sheet1</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
@@ -344,7 +348,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="678" y="74.00021" width="237.338" height="19" />
+        <Position x="654" y="54.00002" width="237.338" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -362,7 +366,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings>
-            <Position x="703" y="118.0002" />
+            <Position x="679" y="98.00002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3778,7 +3782,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="22">
           <GuiSettings>
-            <Position x="714" y="206" />
+            <Position x="690" y="185.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6697,7 +6701,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="834" y="146" />
+            <Position x="810" y="125.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6716,11 +6720,11 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="930" y="138" />
+            <Position x="906" y="117.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\JIRA full extract.xlsx|||Sheet1</File>
+              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||Sheet1</File>
               <Passwords />
               <FormatSpecificOptions>
                 <OutputOption>Overwrite</OutputOption>
@@ -6733,6 +6737,9 @@ Table=Sheet1</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
@@ -6740,7 +6747,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="322" width="905" height="319" />
+        <Position x="53.99998" y="306" width="905" height="319" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -6758,7 +6765,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="173" y="374.0001" />
+            <Position x="173" y="358" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6773,6 +6780,7 @@ Table=Sheet1</DefaultAnnotationText>
                 <SelectField field="status_name" selected="True" />
                 <SelectField field="summary" selected="True" />
                 <SelectField field="updated" selected="True" />
+                <SelectField field="category_value" selected="True" />
                 <SelectField field="issue_type_name" selected="True" />
                 <SelectField field="sprint_0" selected="True" />
                 <SelectField field="sprint_1" selected="True" />
@@ -6796,7 +6804,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79.00001" y="374.0001" />
+            <Position x="78.99998" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11298,7 +11306,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="267" y="374.0002" />
+            <Position x="267" y="358.0003" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11319,7 +11327,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="366" y="378" />
+            <Position x="366" y="362" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11338,7 +11346,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="654" y="378" />
+            <Position x="654" y="362" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11352,6 +11360,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <SelectField field="project_key" selected="True" rename="Project key" />
                 <SelectField field="status_name" selected="True" rename="Status" />
                 <SelectField field="summary" selected="True" />
+                <SelectField field="category_value" selected="True" />
                 <SelectField field="issue_type_name" selected="True" />
                 <SelectField field="sprint_0" selected="True" />
                 <SelectField field="sprint_1" selected="True" />
@@ -11377,7 +11386,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="750" y="378" />
+            <Position x="750" y="362" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11409,7 +11418,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="846" y="366" />
+            <Position x="846" y="350" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11431,7 +11440,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="750" y="510" />
+            <Position x="750" y="494" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11453,7 +11462,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="54">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="462" y="378" />
+            <Position x="462" y="362" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11474,7 +11483,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-            <Position x="558" y="378" />
+            <Position x="558" y="362" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11496,7 +11505,7 @@ yyyy-MM-dd</DefaultAnnotationText>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="76.99992" y="678" width="825.0001" height="295" />
+        <Position x="53.99999" y="666" width="825" height="295" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -11514,7 +11523,7 @@ yyyy-MM-dd</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="27">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="198" y="781.9999" />
+            <Position x="175.0002" y="769.9999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11541,7 +11550,7 @@ yyyy-MM-dd</DefaultAnnotationText>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="294" y="782" />
+            <Position x="271.0001" y="770" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11572,7 +11581,7 @@ yyyy-MM-dd</DefaultAnnotationText>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="390" y="770" />
+            <Position x="367.0001" y="758" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11596,7 +11605,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="498" y="722" />
+            <Position x="475.0001" y="710" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11615,7 +11624,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-            <Position x="582" y="722" />
+            <Position x="559.0001" y="710" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11634,11 +11643,11 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="678" y="722" />
+            <Position x="655.0001" y="710" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_10616_f112334e1f9c4953a3bba65bba7d4204_\Engine_11484_5a75a2f183e3490caf4bdd0bac10504e_.yxdb</TempFile>
+              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_13984_15f9f22b1a8648bc817525bc2db231bb_\Engine_11484_f4df22a162924788b7a2a92140f8837f_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -11662,7 +11671,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="594" y="830" />
+            <Position x="571.0001" y="818" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11683,7 +11692,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="690" y="830" />
+            <Position x="667.0001" y="818" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11702,7 +11711,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="786" y="830" />
+            <Position x="763.0001" y="818" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11725,7 +11734,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="101.9999" y="781.9999" />
+            <Position x="78.99999" y="769.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11761,7 +11770,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="401.9999" y="842" />
+            <Position x="379" y="830" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11790,7 +11799,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="498" y="830" />
+            <Position x="475.0001" y="818" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -11974,7 +11983,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="True" />
-    <ZoomLevel value="0" />
+    <ZoomLevel value="-5" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
