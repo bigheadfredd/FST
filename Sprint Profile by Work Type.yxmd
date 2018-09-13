@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="249" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Labels1]+ &quot;,&quot; + [Labels2]+ &quot;,&quot; +[Labels3]" field="Work Type" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>create work type</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Work Type = [Labels1]+ "," + [Labels2]+ "," +[Labels3]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="346" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Work Type</Field>
+          <NumFields value="1" />
+          <Delimeters value="," />
+          <Flags value="16" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="834" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\sprint profile by work type.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>sprint profile by work type.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="152" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Team] = "Data Architecture" or isnull([Sprint]) or isnull([Points])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Custom field (Team)</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-08-02 14:57:00</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Data Architecture</Operand>
+              <StartDate>2018-08-02 14:57:00</StartDate>
+              <EndDate>2018-08-02 14:57:00</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>filter nulls and team</AnnotationText>
+          <DefaultAnnotationText>[Team] = "Data Architecture" or isnull([Sprint]) or isnull([Points])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="736" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="Points" action="Sum" rename="Points" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Project key" action="GroupBy" rename="Project key" />
+            <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
+            <SummarizeField field="Time Spent" action="Sum" rename="Sum_Time Spent" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="444" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issue key" selected="True" />
+            <SelectField field="Project key" selected="True" />
+            <SelectField field="Updated" selected="True" />
+            <SelectField field="Points" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Time Spent" selected="True" type="Double" size="8" />
+            <SelectField field="Sprint" selected="True" />
+            <SelectField field="Work Type" selected="True" type="V_String" size="1073741823" />
+            <SelectField field="Custom field (Team)" selected="False" rename="Team" />
+            <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="639" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Project key] =&quot;DEFC&quot; then &quot;Defect&quot; else [Work Type] endif&#xA;&#xA;" field="Work Type" size="2147483647" type="V_String" />
+            <FormulaField expression="if [Work Type] = &quot;SR&quot; or &quot;Prodsupport&quot; then &quot;SR&quot; elseif [Work Type]= &quot;Defect&quot; then &quot;Defect&quot; else &quot;Project&quot; endif" field="Work Type" size="2147483647" type="V_String" />
+            <FormulaField expression="[Time Spent]/3600" field="Time Spent" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>set work type</AnnotationText>
+          <DefaultAnnotationText>Work Type = if [Project key] ="DEFC" then "Defect" else [Work Type] endif
+
+
+Work...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings>
+        <Position x="542" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Work Type"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">title</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>JIRA Scrubbed Extract.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issue key" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels1" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels2" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Project key" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="summary" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="updated" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="issue_type_name" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Time Spent" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels3" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint" size="255" source="File: z:\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="False" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="26" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output26" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Sprint Profile by Work Type</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>JIRA Scrubbed Closed Stories.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issue key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels2" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Project key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_0" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_1" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Labels3" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_2" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_3" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_4" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="246" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if !isnull([sprint_4]) then 5 elseif !isnull([sprint_3]) then 4 elseif !isnull([sprint_2]) then 3 elseif !isnull([sprint_1]) then 2 else 1 endif&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;" field="Sprint Count" size="8" type="Double" />
+            <FormulaField expression="if [Team] in (&quot;Money Out Titans&quot;, &quot;Money Out Cyber Knights&quot;) then &quot;Money Out&quot; elseif [Team]in (&quot;Data Viz Jitterbugs&quot;, &quot;Data Viz Holocrons&quot;) then &quot;Client Dashboards&quot; else &quot;&quot; endif" field="Value Stream" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Sprint Count = if !isnull([sprint_4]) then 5 elseif !isnull([sprint_3]) then 4 e...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issue key" selected="True" />
+            <SelectField field="Updated" selected="False" type="DateTime" size="19" />
+            <SelectField field="Points" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Time Spent" selected="True" type="Double" size="8" />
+            <SelectField field="Sprint" selected="True" />
+            <SelectField field="Project1" selected="True" rename="Project" />
+            <SelectField field="Sprint Count" selected="True" />
+            <SelectField field="Value Stream" selected="True" />
+            <SelectField field="Custom field (Team)" selected="False" rename="Team" />
+            <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([Sprint]) and !isempty([Value Stream])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Sprint</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-08-14 10:06:51</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-08-14 10:06:51</StartDate>
+              <EndDate>2018-08-14 10:06:51</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>!IsNull([Sprint]) and !isempty([Value Stream])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="570" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\Carried Stories.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Carried Stories.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="582" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="Points" action="CountNull" rename="Unpointed Story Count" />
+            <SummarizeField field="Project" action="GroupBy" rename="Project" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="594" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="Issue key" action="Count" rename="Count" />
+            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="Project" action="GroupBy" rename="Project" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="738" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Team" />
+            <Field field="Sprint" />
+            <Field field="Project" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Team" />
+            <Field field="Sprint" />
+            <Field field="Project" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Left_Sprint" selected="True" />
+                <SelectField field="Left_Unpointed Story Count" selected="True" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" />
+                <SelectField field="Right_Sprint" selected="False" rename="Right_Sprint" />
+                <SelectField field="Right_Count" selected="True" rename="Story Count" />
+                <SelectField field="Right_Value Stream" selected="True" />
+                <SelectField field="Right_Project" selected="True" />
+                <SelectField field="Left_Project key" selected="False" rename="Project" />
+                <SelectField field="Right_Project key" selected="False" rename="Right_Project key" />
+                <SelectField field="Left_CountNull_Points" selected="False" rename="Unpointed Stories" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="858" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\unpointed stories.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>unpointed stories.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="150" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Issue key</Field>
+          <NumFields value="2" />
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Project</RootName>
+          <Delimeters value="-" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="True" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="15" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Join" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Unpointed and carryover stories</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

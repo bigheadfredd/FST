@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66.99998" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Holocrons from Confluence</AnnotationText>
+          <DefaultAnnotationText>CD Sprint Metrics.xlsx
+Table=`Holocrons$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sprint" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="V_String" />
+            <Field name="Base Capacity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Planned Capacity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Committed Points" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Delivered Points" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Velocity" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Scope Change" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="F8" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="Delivered to Committed" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\CD Sprint Metrics.xlsx|||`Holocrons$`" type="Double" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66.99998" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="FileName" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Jitterbugs from Confluence</AnnotationText>
+          <DefaultAnnotationText>CD Sprint Metrics.xlsx
+Table=`Jitterbugs$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Velocity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Scope Change" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="F8" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="Delivered to Committed" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Sprint Metrics.xlsx|||`Jitterbugs$`" type="Double" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="738" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="930" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sprint" selected="True" />
+            <SelectField field="Base Capacity" selected="True" />
+            <SelectField field="Planned Capacity" selected="True" />
+            <SelectField field="Committed Points" selected="True" />
+            <SelectField field="Delivered Points" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Value Stream" selected="True" />
+            <SelectField field="Effort Points" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1026" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\Delivery Performance.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Delivery Performance.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="199" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Data Viz Holocrons&quot;" field="Team" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;CD&quot;" field="Value Stream" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Team = "Data Viz Holocrons"
+Value Stream = "CD"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="199" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Data Viz Jitterbugs&quot;" field="Team" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;CD&quot;" field="Value Stream" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Team = "Data Viz Jitterbugs"
+Value Stream = "CD"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="187" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Money Out Cyber Knights&quot;" field="Team" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;PMOS&quot;" field="Value Stream" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Team = CyberKnights
+Value Stream = Money Out</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Team = "Money Out Cyber Knights"
+Value Stream = "PMOS"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66.99998" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Cyber Knights from Confluence</AnnotationText>
+          <DefaultAnnotationText>CD Demand - Capacity - Cyber Knights.xlsx
+Table=`Cyber Knights$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="Double" />
+            <Field name="F6" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity - Cyber Knights.xlsx|||`Cyber Knights$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66.99998" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Titans from Confluence</AnnotationText>
+          <DefaultAnnotationText>CD Demand - Capacity -- Titans.xlsx
+Table=`Titans$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="F1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\CD Demand - Capacity -- Titans.xlsx|||`Titans$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="187" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Money Out Titans&quot;" field="Team" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;PMOS&quot;" field="Value Stream" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Team = Titans
+Value Stream = Money Out</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Team = "Money Out Titans"
+Value Stream = "PMOS"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="354" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="642" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="F1" selected="True" rename="Sprint" />
+            <SelectField field="Base Capacity" selected="True" />
+            <SelectField field="Planned Capacity" selected="True" />
+            <SelectField field="Committed Points" selected="True" />
+            <SelectField field="Delivered Points" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Value Stream" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="546" y="378" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>F1</FieldFind>
+          <FieldSearch>Field1</FieldSearch>
+          <ReplaceFoundField>Field2</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="450" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="10" />
+          <Fields>
+            <Field name="Field1" />
+            <Field name="Field2" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Sprint 1 (S 8)</c>
+              <c>1-8</c>
+            </r>
+            <r>
+              <c>Sprint 2 (S 9)</c>
+              <c>2-9</c>
+            </r>
+            <r>
+              <c>Sprint 3 (S 10)</c>
+              <c>3-10</c>
+            </r>
+            <r>
+              <c>Sprint 4 (S 11)</c>
+              <c>4-11</c>
+            </r>
+            <r>
+              <c>Sprint 5 (S 12)</c>
+              <c>5-12</c>
+            </r>
+            <r>
+              <c>Sprint 6 (S 13)</c>
+              <c>6-13</c>
+            </r>
+            <r>
+              <c>Sprint 7 (S 14)</c>
+              <c>7-14</c>
+            </r>
+            <r>
+              <c>Sprint 8 (S 15)</c>
+              <c>8-15</c>
+            </r>
+            <r>
+              <c>Sprint 9 (S 16)</c>
+              <c>9-16</c>
+            </r>
+            <r>
+              <c>Sprint 10 (S 17)</c>
+              <c>10-17</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="834" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Delivered Points] = 0 then Null() else [Delivered Points] endif" field="Delivered Points" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Delivered Points = if [Delivered Points] = 0 then Null() else [Delivered Points]...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([F1])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>F1</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-09-11 11:16:22</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <StartDate>2018-09-11 11:16:22</StartDate>
+              <EndDate>2018-09-11 11:16:22</EndDate>
+              <Operand>
+              </Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsNull([F1])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="41">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="594" y="574" width="102.5075" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>CURL</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
+            <Position x="619" y="618" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OutputConfiguration>
+                <Configuration />
+              </OutputConfiguration>
+              <InputConfiguration>
+                <Configuration />
+              </InputConfiguration>
+              <ProgramName>C:\Users\dvbgns\Desktop\curl-7.61.1-win64-mingw\bin\curl.exe</ProgramName>
+              <Arguments>https://jira.retirementpartner.com/secure/RapidBoard.jspa?rapidView=825&amp;view=reporting&amp;chart=velocityChart  -o "%temp%\temp.csv</Arguments>
+              <WorkingDir />
+              <RunMinimized value="False" />
+              <RunSilent value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Run curl.exe</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="727" y="618" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_16508_8ed3f68cc41b4c839c1156e0ca2d8038_\Engine_13632_aa2faa418b034694802e1cef5b6bf86c_.yxdb</TempFile>
+              <Layout>
+                <View1>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="586" width="170.2423" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>JIRA screen scrape</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="211" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>URL</URLField>
+              <OutputMode>SpecificFile</OutputMode>
+              <OutputFileNameField>file</OutputFileNameField>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues />
+                <Fields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="file" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="file" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName>dvbgns</UserName>
+              <Password>43DD63B8DACE1890743CDD5E1B687640D2AE9190A9C04DD48</Password>
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="79.00001" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="URL" />
+                <Field name="file" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>https://jira.retirementpartner.com/secure/RapidBoard.jspa?rapidView=825&amp;view=reporting&amp;chart=velocityChart</c>
+                  <c>z:\\jira_scrape</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="331" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_20608_cda5f7e441a5477b9030079b8f52f4f4_\Engine_13632_5d76538f475b45c585af291b9607adda_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="28" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="False" />
+      <Destination ToolID="28" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Delivery Performance</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

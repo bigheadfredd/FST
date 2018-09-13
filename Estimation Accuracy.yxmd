@@ -1,0 +1,553 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>JIRA Scrubbed Extract.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issue key" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels1" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels2" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Project key" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="summary" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="updated" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="issue_type_name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Time Spent" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels3" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="138" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>updated</InputFieldName>
+          <Format>dd/Mon/yy hh:mm</Format>
+          <OutputFieldName>UpdatedParsed</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>convert date field</AnnotationText>
+          <DefaultAnnotationText>Convert updated From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="666" y="182" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\extracts\estimation accuracy by type.xlsx|||Sheet 1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>estimation accuracy by type.xlsx
+Table=Sheet 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="378" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issue key" selected="True" />
+            <SelectField field="Project key" selected="True" />
+            <SelectField field="Summary" selected="True" />
+            <SelectField field="Points" selected="True" type="Double" size="8" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Time Spent" selected="True" rename="Actual Hours" type="Double" size="8" />
+            <SelectField field="Sprint" selected="True" rename="Sprint Started" />
+            <SelectField field="UpdatedParsed" selected="True" />
+            <SelectField field="Work Type" selected="True" />
+            <SelectField field="Custom field (Team)" selected="False" rename="Team" />
+            <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
+            <SelectField field="Î£ Time Spent" selected="False" rename="Time" />
+            <SelectField field="Custom field (Conditions of Satisfaction)" selected="False" rename="Acceptance" />
+            <SelectField field="Updated-parsed" selected="False" rename="Last Updated" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="450" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Actual Hours]/3600" field="Actual Hours" size="8" type="Double" />
+            <FormulaField expression="[Actual Hours]-(6*[Points])" field="Variance" size="8" type="Double" />
+            <FormulaField expression="[Points]*6" field="Estimated Hours" size="8" type="Double" />
+            <FormulaField expression="&quot;https://jira.retirementpartner.com/browse/&quot; +[Issue key]" field="Link" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>populate computed value fields</AnnotationText>
+          <DefaultAnnotationText>Actual Hours = [Actual Hours]/3600
+Variance = [Actual Hours]-(6*[Points])
+Estima...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="558" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "Data Architecture"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-08-03 15:58:13</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-08-03 15:58:13</StartDate>
+              <EndDate>2018-08-03 15:58:13</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>remove dirty records</AnnotationText>
+          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "D...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="246" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Labels1]+ &quot;,&quot; + [Labels2]+ &quot;,&quot; +[Labels3]" field="Work Type" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create work type field</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Work Type = [Labels1]+ "," + [Labels2]+ "," +[Labels3]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="306" y="194" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Work Type</Field>
+          <NumFields value="1" />
+          <Delimeters value="," />
+          <Flags value="16" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="666" y="314" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\estimation accuracy by story.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>estimation accuracy by story.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="390" y="326" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issue key" selected="True" />
+            <SelectField field="Project key" selected="True" />
+            <SelectField field="Summary" selected="True" />
+            <SelectField field="Points" selected="True" type="Double" size="8" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Time Spent" selected="True" rename="Actual Hours" type="Double" size="8" />
+            <SelectField field="Sprint" selected="True" rename="Sprint Started" />
+            <SelectField field="UpdatedParsed" selected="True" />
+            <SelectField field="Custom field (Team)" selected="False" rename="Team" />
+            <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
+            <SelectField field="Î£ Time Spent" selected="False" rename="Time" />
+            <SelectField field="Custom field (Conditions of Satisfaction)" selected="False" rename="Acceptance" />
+            <SelectField field="Updated-parsed" selected="False" rename="Last Updated" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="462" y="326" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Actual Hours]/3600" field="Actual Hours" size="8" type="Double" />
+            <FormulaField expression="[Actual Hours]-(6*[Points])" field="Variance" size="8" type="Double" />
+            <FormulaField expression="[Points]*6" field="Estimated Hours" size="8" type="Double" />
+            <FormulaField expression="&quot;https://jira.retirementpartner.com/browse/&quot; +[Issue key]" field="Link" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>populate computed value fields</AnnotationText>
+          <DefaultAnnotationText>Actual Hours = [Actual Hours]/3600
+Variance = [Actual Hours]-(6*[Points])
+Estima...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="570" y="326" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "Data Architecture"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-08-03 15:58:13</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-08-03 15:58:13</StartDate>
+              <EndDate>2018-08-03 15:58:13</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>remove dirty records</AnnotationText>
+          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "D...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="425" y="54" width="136.4582" height="19" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 60</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="56">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="558" y="110" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="Team" action="GroupBy" rename="Team" />
+                <SummarizeField field="Sprint Started" action="GroupBy" rename="Sprint Started" />
+                <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
+                <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="57">
+          <GuiSettings>
+            <Position x="450" y="110" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="List Box (11)">""</Value>
+              <Value name="Check Box (84)">False</Value>
+              <Value name="Check Box (117)">False</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">True</Value>
+              <Value name="Drop Down (81)">title</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="654" y="110" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>!IsNull([Sprint Started]) and [Work Type] in ("Data", "Tableau", "React")</Expression>
+              <Mode>Custom</Mode>
+              <Simple>
+                <Operator>IsNotNull</Operator>
+                <Field>Sprint Started</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2018-08-15 13:49:57</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2018-08-15 13:49:57</StartDate>
+                  <EndDate>2018-08-15 13:49:57</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>!IsNull([Sprint Started]) and [Work Type] in ("Data", "Tableau", "React")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="59">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="774" y="98" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\velocity by tech stack.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>velocity by tech stack.xlsx
+Table=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="True" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="True" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output26" />
+      <Destination ToolID="56" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="True" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Estimation Accuracy</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

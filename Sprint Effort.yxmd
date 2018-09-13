@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>logged time by sprint.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sum_Hours" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Delivery Performance.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="174" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Sprint" />
+            <Field field="Team" />
+            <Field field="Value Stream" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Sprint" />
+            <Field field="Team" />
+            <Field field="Value Stream" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Points" selected="False" />
+                <SelectField field="Right_Sprint" selected="False" rename="Right_Sprint" />
+                <SelectField field="Right_Base Capacity" selected="False" />
+                <SelectField field="Right_Committed Points" selected="False" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" />
+                <SelectField field="Right_Value Stream" selected="False" rename="Right_Value Stream" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="282" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Sprint Effort.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Sprint Effort.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Sprint Effort</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
