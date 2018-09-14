@@ -1,48 +1,9 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2018.2">
   <Nodes>
-    <Node ToolID="6">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="249" y="66" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="[Labels1]+ &quot;,&quot; + [Labels2]+ &quot;,&quot; +[Labels3]" field="Work Type" size="1073741823" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>create work type</AnnotationText>
-          <DefaultAnnotationText><![CDATA[Work Type = [Labels1]+ "," + [Labels2]+ "," +[Labels3]
-]]></DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="346" y="66" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Field>Work Type</Field>
-          <NumFields value="1" />
-          <Delimeters value="," />
-          <Flags value="16" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
-    </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="834" y="66" />
+        <Position x="630" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -59,9 +20,6 @@
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -71,7 +29,7 @@ Table=Sheet1</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>isnull([Sprint]) or isnull([Points])</Expression>
+          <Expression>isnull([Sprint Name]) or isnull([Points])</Expression>
           <Mode>Custom</Mode>
           <Simple>
             <Operator>=</Operator>
@@ -92,7 +50,7 @@ Table=Sheet1</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>filter nulls and team</AnnotationText>
-          <DefaultAnnotationText>isnull([Sprint]) or isnull([Points])</DefaultAnnotationText>
+          <DefaultAnnotationText>isnull([Sprint Name]) or isnull([Points])</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -100,17 +58,17 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="736" y="66" />
+        <Position x="534" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
-            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
             <SummarizeField field="Points" action="Sum" rename="Points" />
             <SummarizeField field="Team" action="GroupBy" rename="Team" />
             <SummarizeField field="Project key" action="GroupBy" rename="Project key" />
-            <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
-            <SummarizeField field="Time Spent" action="Sum" rename="Sum_Time Spent" />
+            <SummarizeField field="Time Spent" action="Sum" rename="Time Spent" />
+            <SummarizeField field="category_value" action="GroupBy" rename="Work Type" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -123,7 +81,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="444" y="66" />
+        <Position x="246" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -136,9 +94,9 @@ Table=Sheet1</DefaultAnnotationText>
             <SelectField field="Points" selected="True" />
             <SelectField field="Team" selected="True" />
             <SelectField field="Time Spent" selected="True" />
-            <SelectField field="Sprint" selected="True" />
+            <SelectField field="Sprint Name" selected="True" />
             <SelectField field="Updated" selected="True" />
-            <SelectField field="Work Type" selected="True" type="V_String" size="1073741823" />
+            <SelectField field="Work Type" selected="False" type="V_String" size="1073741823" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -152,23 +110,20 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="639" y="66" />
+        <Position x="426" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="if [Project key] =&quot;DEFC&quot; then &quot;Defect&quot; else [Work Type] endif&#xA;&#xA;" field="Work Type" size="2147483647" type="V_String" />
-            <FormulaField expression="if [Work Type] = &quot;SR&quot; or &quot;Prodsupport&quot; then &quot;SR&quot; elseif !isnull([category_value]) then [category_value] elseif [Work Type] = &quot;Defect&quot; then &quot;Defect&quot; else &quot;Project&quot; endif" field="Work Type" size="2147483647" type="V_String" />
             <FormulaField expression="[Time Spent]/3600" field="Time Spent" size="8" type="Double" />
+            <FormulaField expression="if isnull([category_value]) then &quot;Unknown&quot; else [category_value] endif&#xA;&#xA;" field="category_value" size="255" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>set work type</AnnotationText>
-          <DefaultAnnotationText>Work Type = if [Project key] ="DEFC" then "Defect" else [Work Type] endif
-
-
-Work...</DefaultAnnotationText>
+          <AnnotationText />
+          <DefaultAnnotationText>Time Spent = [Time Spent]/3600
+category_value = if isnull([category_value]) then...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -176,11 +131,11 @@ Work...</DefaultAnnotationText>
     </Node>
     <Node ToolID="26">
       <GuiSettings>
-        <Position x="542" y="66" />
+        <Position x="330" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="List Box (11)">"Work Type"</Value>
+          <Value name="List Box (11)">""</Value>
           <Value name="Check Box (84)">True</Value>
           <Value name="Check Box (117)">True</Value>
           <Value name="Check Box (15)">True</Value>
@@ -219,9 +174,6 @@ Work...</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Issue key" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
@@ -233,16 +185,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
             <Field name="summary" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
             <Field name="category_value" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="issue_type_name" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_0" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_1" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Points" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Team" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Time Spent" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Labels3" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_2" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_3" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_4" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint End" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
             <Field name="Updated" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
           </RecordInfo>
         </MetaInfo>
@@ -252,16 +200,8 @@ Table=`Sheet1$`</DefaultAnnotationText>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="7" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="23" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="15" Connection="False" />
-      <Destination ToolID="6" Connection="Input" />
+      <Destination ToolID="23" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="17" Connection="Output" />

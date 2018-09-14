@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="1002" width="702" height="226" />
+        <Position x="53.99999" y="1002" width="702" height="225.9999" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="1082" />
+            <Position x="78.99999" y="1082" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -49,16 +49,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
                 <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="sprint_0" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="sprint_1" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Labels3" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="sprint_2" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="sprint_3" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="sprint_4" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint End" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
                 <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
               </RecordInfo>
             </MetaInfo>
@@ -114,7 +110,7 @@ Table=Sheet1</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Expression>IsNull([User Name]) or isnull ([Sprint]) or [updated]&lt;="2018-06-07"</Expression>
+              <Expression>IsNull([User Name]) or isnull ([Sprint Name]) or [updated]&lt;="2018-06-07"</Expression>
               <Mode>Custom</Mode>
               <Simple>
                 <Operator>IsNotNull</Operator>
@@ -136,7 +132,7 @@ Table=Sheet1</DefaultAnnotationText>
             <Annotation DisplayMode="0">
               <Name />
               <AnnotationText />
-              <DefaultAnnotationText>IsNull([User Name]) or isnull ([Sprint]) or [updated]&lt;="2018-06-07"</DefaultAnnotationText>
+              <DefaultAnnotationText>IsNull([User Name]) or isnull ([Sprint Name]) or [updated]&lt;="2018-06-07"</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
@@ -226,7 +222,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="53.99998" y="53.99992" width="840" height="220.0001" />
+        <Position x="53.99999" y="53.99998" width="840" height="220" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -244,7 +240,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="1">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Directory.Directory">
-            <Position x="78.99998" y="97.99992" />
+            <Position x="78.99999" y="97.99998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -262,7 +258,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="2">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-            <Position x="187" y="97.99992" />
+            <Position x="187" y="97.99998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -280,7 +276,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="3">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-            <Position x="294" y="97.99992" />
+            <Position x="294" y="98" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -298,7 +294,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="4">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicInput.DynamicInput">
-            <Position x="486" y="97.99992" />
+            <Position x="486" y="98" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -326,7 +322,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="16">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="786" y="97.99992" />
+            <Position x="786" y="98" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -348,7 +344,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="678" y="97.99992" />
+            <Position x="678" y="98" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -379,7 +375,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="57">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="390" y="97.99992" />
+            <Position x="390" y="97.99999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -399,7 +395,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="60">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-            <Position x="570" y="97.99992" />
+            <Position x="570" y="98" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -421,7 +417,7 @@ yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="966" y="54" width="360" height="215.9997" />
+        <Position x="966" y="54.00005" width="360" height="215.9997" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -439,7 +435,7 @@ yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings>
-            <Position x="991" y="98" />
+            <Position x="991" y="98.00006" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3855,7 +3851,7 @@ yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
         </Node>
         <Node ToolID="22">
           <GuiSettings>
-            <Position x="1002" y="185.9997" />
+            <Position x="1002" y="185.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6774,7 +6770,7 @@ yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="1122" y="125.9997" />
+            <Position x="1122" y="125.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6793,7 +6789,7 @@ yyyy-MM-dd hh:mm:ss</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1218" y="117.9997" />
+            <Position x="1218" y="117.9998" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6817,7 +6813,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="306" width="905" height="319" />
+        <Position x="54" y="314" width="1121" height="243" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -6835,7 +6831,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="173" y="358" />
+            <Position x="175" y="358" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6874,7 +6870,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="78.99998" y="358.0001" />
+            <Position x="79.00001" y="358" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -8198,7 +8194,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <Field name="linked_issues_22_inwardissue_fields_priority_id" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="linked_issues_22_inwardissue_fields_priority_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="linked_issues_22_inwardissue_fields_priority_self" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="linked_issues_22_inwardissue_fields_status_description" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="linked_issues_22_inwardissue_fields_status_description" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="linked_issues_22_inwardissue_fields_status_iconurl" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="linked_issues_22_inwardissue_fields_status_id" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="linked_issues_22_inwardissue_fields_status_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA full extract.xlsx|||`Sheet1$`" type="V_String" />
@@ -11376,14 +11372,14 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="267" y="358.0003" />
+            <Position x="271" y="358" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Field>sprint_0</Field>
-              <NumFields value="5" />
+              <NumFields value="7" />
               <ErrorHandling>Last</ErrorHandling>
-              <RootName>sprint_0</RootName>
+              <RootName>Sprint</RootName>
               <Delimeters value="," />
               <Flags value="0" />
             </Configuration>
@@ -11397,18 +11393,20 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="366" y="362" />
+            <Position x="559" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="TrimLeft(sprint_04,&quot;name=&quot;)" field="Sprint" size="1073741823" type="V_WString" />
+                <FormulaField expression="TrimLeft([Sprint4],&quot;name=&quot;)" field="Sprint Name" size="1073741823" type="V_WString" />
+                <FormulaField expression="TrimLeft([Sprint End1],&quot;endDate=&quot;)" field="Sprint End" size="1073741823" type="V_WString" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText><![CDATA[Sprint = TrimLeft(sprint_04,"name=")
-]]></DefaultAnnotationText>
+              <AnnotationText />
+              <DefaultAnnotationText>Sprint Name = TrimLeft([Sprint4],"name=")
+Sprint End = TrimLeft([Sprint End1],"e...</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
@@ -11416,7 +11414,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="654" y="362" />
+            <Position x="846" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11432,17 +11430,14 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <SelectField field="summary" selected="True" />
                 <SelectField field="category_value" selected="True" />
                 <SelectField field="issue_type_name" selected="True" />
-                <SelectField field="sprint_0" selected="True" />
-                <SelectField field="sprint_1" selected="True" />
                 <SelectField field="story_points" selected="True" rename="Points" type="Double" size="8" />
                 <SelectField field="team_value" selected="True" rename="Team" />
                 <SelectField field="time_spent" selected="True" rename="Time Spent" type="Double" size="8" />
                 <SelectField field="labels_2" selected="True" rename="Labels3" />
-                <SelectField field="sprint_2" selected="True" />
-                <SelectField field="sprint_3" selected="True" />
-                <SelectField field="sprint_4" selected="True" />
-                <SelectField field="Sprint" selected="True" />
-                <SelectField field="updated1" selected="True" rename="Updated" type="DateTime" size="19" />
+                <SelectField field="updated1" selected="False" rename="Updated" type="DateTime" size="19" />
+                <SelectField field="Sprint Name" selected="True" />
+                <SelectField field="Sprint End" selected="True" type="Date" size="10" />
+                <SelectField field="Updated3" selected="True" rename="Updated" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -11456,11 +11451,11 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="750" y="362" />
+            <Position x="966" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Expression>[issue_type_name] = "Project User Story" and [Status] = "Closed"</Expression>
+              <Expression>[issue_type_name] = "Project User Story" and [Status] = "Closed" and [Sprint End] &gt; "2018-05-10"</Expression>
               <Mode>Custom</Mode>
               <Simple>
                 <Operator>=</Operator>
@@ -11480,7 +11475,8 @@ Table=`Sheet1$`</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>[issue_type_name] = "Project User Story" and [Status] = "Closed"</DefaultAnnotationText>
+              <AnnotationText />
+              <DefaultAnnotationText>[issue_type_name] = "Project User Story" and [Status] = "Closed" and [Sprint End...</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
@@ -11488,7 +11484,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="846" y="350" />
+            <Position x="1062" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11510,11 +11506,11 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="750.0002" y="494" />
+            <Position x="966" y="426" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||Sheet1</File>
+              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Full Extract.xlsx|||Sheet1</File>
               <Passwords />
               <FormatSpecificOptions>
                 <OutputOption>Overwrite</OutputOption>
@@ -11523,23 +11519,68 @@ Table=Sheet1</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>JIRA Scrubbed full Extract.xlsx
+              <DefaultAnnotationText>JIRA Scrubbed Full Extract.xlsx
 Table=Sheet1</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
-        <Node ToolID="54">
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="654" y="358.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>Updated1</InputFieldName>
+              <Format>yyyy-MM-dd</Format>
+              <OutputFieldName>Updated</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Convert Updated1 From:
+yyyy-MM-dd</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+            <Position x="750" y="358.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <IsFrom value="False" />
+              <InputFieldName>Sprint End</InputFieldName>
+              <Format />
+              <OutputFieldName>Sprint End</OutputFieldName>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Convert Sprint End From:
+Custom</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+        </Node>
+        <Node ToolID="63">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="462.0001" y="362" />
+            <Position x="463" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Field>updated</Field>
               <NumFields value="2" />
               <ErrorHandling>Last</ErrorHandling>
-              <RootName>updated</RootName>
+              <RootName>Updated</RootName>
               <Delimeters value="T" />
               <Flags value="0" />
             </Configuration>
@@ -11551,31 +11592,32 @@ Table=Sheet1</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
         </Node>
-        <Node ToolID="55">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-            <Position x="558" y="362" />
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="367" y="358.0001" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <IsFrom value="False" />
-              <InputFieldName>updated1</InputFieldName>
-              <Format>yyyy-MM-dd</Format>
-              <OutputFieldName>DateTime_Out</OutputFieldName>
+              <Field>Sprint6</Field>
+              <NumFields value="2" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>Sprint End</RootName>
+              <Delimeters value="T" />
+              <Flags value="0" />
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText>Convert updated1 From:
-yyyy-MM-dd</DefaultAnnotationText>
+              <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
           </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
         </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="666.0001" width="825" height="294.9999" />
+        <Position x="54" y="666.0002" width="825" height="294.9998" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -11620,7 +11662,7 @@ yyyy-MM-dd</DefaultAnnotationText>
         </Node>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="271.0001" y="770.0001" />
+            <Position x="271.0001" y="770.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11651,7 +11693,7 @@ yyyy-MM-dd</DefaultAnnotationText>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="367.0001" y="758.0001" />
+            <Position x="367.0001" y="758.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11675,7 +11717,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="475.0001" y="710.0001" />
+            <Position x="475.0001" y="710.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11694,7 +11736,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-            <Position x="559.0001" y="710.0001" />
+            <Position x="559.0001" y="710.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11713,11 +11755,11 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="655.0001" y="710.0001" />
+            <Position x="655.0001" y="710.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_25908_2e54d0870b534578a0b62134e1db75f3_\Engine_14920_359e66b170bd4003bebb9a97bc7f885f_.yxdb</TempFile>
+              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_21176_b59ead3067fa4815b5e81db38f9422b9_\Engine_24720_ecd2ce84dc6747f7a7ee857c58c08fb8_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -11741,7 +11783,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="571.0001" y="818.0001" />
+            <Position x="571.0001" y="818.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11762,7 +11804,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="667.0001" y="818.0001" />
+            <Position x="667.0001" y="818.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11781,7 +11823,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="763.0001" y="818.0001" />
+            <Position x="763.0001" y="818.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11804,7 +11846,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="36">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="769.9998" />
+            <Position x="79.00004" y="769.9999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11842,7 +11884,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="37">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="379" y="830.0001" />
+            <Position x="379" y="830.0002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11872,7 +11914,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="38">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="475.0002" y="818.0001" />
+            <Position x="475.0003" y="818.0002" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -11983,31 +12025,39 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="12" Connection="Input" />
+      <Destination ToolID="66" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="54" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="14" Connection="Input" />
+      <Destination ToolID="55" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
       <Destination ToolID="41" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="14" Connection="True" />
       <Destination ToolID="17" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="54" Connection="Output" />
-      <Destination ToolID="55" Connection="Input" />
+      <Origin ToolID="55" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="55" Connection="Output" />
+      <Origin ToolID="61" Connection="Output" />
       <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="27" Connection="Output" />
@@ -12068,7 +12118,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="True" />
-    <ZoomLevel value="-2" />
+    <ZoomLevel value="-1" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
