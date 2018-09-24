@@ -15,7 +15,7 @@
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="1038" y="318" />
+        <Position x="1134" y="306" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -119,6 +119,38 @@ Table=Sheet1</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1038" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Start Date] &gt;= "2018-05-10"</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Start Date</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-09-24 12:06:28</PeriodDate>
+              <PeriodType>days</PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2018-05-10</Operand>
+              <StartDate>2018-09-24 12:06:28</StartDate>
+              <EndDate>2018-09-24 12:06:28</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>[Start Date] &gt;= "2018-05-10"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
         <Position x="5" y="382" width="853" height="160" />
@@ -164,12 +196,14 @@ Table=`Sheet1$`</DefaultAnnotationText>
               <RecordInfo>
                 <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint ID" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
                 <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
                 <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Start Date" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Date" />
+                <Field name="End Date" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Date" />
+                <Field name="Complete Date" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Date" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -289,28 +323,16 @@ Table=`Sheet1$`</DefaultAnnotationText>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" field="URL" size="1073741823" type="V_WString" />
+                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [Sprint ID]&#xA;" field="URL" size="1073741823" type="V_WString" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
               <AnnotationText />
-              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/agile/1.0/sprint/" + [JSON_Name2]...</DefaultAnnotationText>
+              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/agile/1.0/sprint/" + [Sprint ID]
+...</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="URL" size="1073741823" source="Formula: &quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" type="V_WString" />
-              </RecordInfo>
-            </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
@@ -1177,7 +1199,7 @@ Table=Sheet1</DefaultAnnotationText>
                   <SelectFields>
                     <SelectField field="Left_Board" selected="True" type="Double" size="8" />
                     <SelectField field="Left_Team" selected="True" />
-                    <SelectField field="Left_JSON_Name2" selected="True" rename="Sprint ID" type="Double" size="8" />
+                    <SelectField field="Left_JSON_Name2" selected="True" rename="Sprint ID" type="V_String" size="1073741823" />
                     <SelectField field="Left_completed_value" selected="True" rename="Delivered" type="Double" size="8" />
                     <SelectField field="Left_estimated_value" selected="True" rename="Committed" type="Double" size="8" />
                     <SelectField field="Right_Team" selected="False" rename="Right_Team" />
@@ -1219,7 +1241,7 @@ Table=Sheet1</DefaultAnnotationText>
               <RecordInfo>
                 <Field name="Board" source="CrossTab:Group:First:" type="Double" />
                 <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
-                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
                 <Field name="Delivered" source="JSONParse: " type="Double" />
                 <Field name="Committed" source="JSONParse: " type="Double" />
                 <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1292,7 +1314,7 @@ Committed = if [C...</DefaultAnnotationText>
               <RecordInfo>
                 <Field name="Board" source="CrossTab:Group:First:" type="Double" />
                 <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
-                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
                 <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
                 <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
                 <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1323,7 +1345,7 @@ Committed = if [C...</DefaultAnnotationText>
               <RecordInfo>
                 <Field name="Board" source="CrossTab:Group:First:" type="Double" />
                 <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
-                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
                 <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
                 <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
                 <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1338,7 +1360,7 @@ Committed = if [C...</DefaultAnnotationText>
               <RecordInfo>
                 <Field name="Board" source="CrossTab:Group:First:" type="Double" />
                 <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
-                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" size="2147483647" source="CrossTab:Group:First:" type="V_String" />
                 <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
                 <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
                 <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -1358,6 +1380,10 @@ Committed = if [C...</DefaultAnnotationText>
   <Connections>
     <Connection>
       <Origin ToolID="46" Connection="Join" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="True" />
       <Destination ToolID="27" Connection="Input" />
     </Connection>
     <Connection>
