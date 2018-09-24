@@ -1,64 +1,134 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2018.2">
   <Nodes>
-    <Node ToolID="1">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="126" />
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
-        <Configuration>
-          <NumRows value="1" />
-          <Fields>
-            <Field name="Field1" />
-            <Field name="Field2" />
-          </Fields>
-          <Data>
-            <r>
-              <c>https://jira.retirementpartner.com</c>
-              <c>/rest/greenhopper/1.0/rapid/charts/velocity?rapidViewId=854</c>
-            </r>
-          </Data>
-        </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="2">
-      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-        <Position x="174" y="126" />
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1038" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <URLField>Field1</URLField>
-          <OutputMode>String</OutputMode>
-          <CodePage>65001</CodePage>
-          <EncodeURLs value="True" />
-          <Headers>
-            <NameValues />
-            <Fields orderChanged="False">
-              <Field name="Field2" />
-              <Field name="Field1" selected="False" />
-              <Field name="*Unknown" selected="False" />
-            </Fields>
-          </Headers>
-          <Payload>
-            <HTTPAction>GET</HTTPAction>
-            <QueryStringBodyMode>Compose</QueryStringBodyMode>
-            <ComposeNameValues />
-            <ComposeFields orderChanged="False">
-              <Field name="Field1" selected="False" />
-              <Field name="Field2" selected="False" />
-              <Field name="*Unknown" selected="False" />
-            </ComposeFields>
-          </Payload>
-          <UserName>dvbgns</UserName>
-          <Password>43DD63B8DACE1890743CDD5E1B687640D2AE9190A9C04DD48</Password>
-          <numConnections>2</numConnections>
-          <Timeout>600</Timeout>
+          <File FileFormat="25" MaxRecords="">Z:\Alteryx Input\Sprint Metrics.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Sprint Metrics.xlsx</AnnotationText>
+          <DefaultAnnotationText>Sprint Metrics.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="942" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Sprint ID" />
+            <Field field="Team" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Sprint ID" />
+            <Field field="Team" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Board" selected="False" rename="Right_Board" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" />
+                <SelectField field="Right_Sprint Name" selected="False" rename="Right_Sprint Name" />
+                <SelectField field="Right_Sprint ID" selected="False" rename="Right_Sprint ID" />
+                <SelectField field="Right_state" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+            <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+            <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
+            <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
+            <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Sprint ID" />
+            <Field field="Team" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+            <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+            <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+            <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
+            <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
+            <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+            <Field description="TextToColumns: Parsed from startDate" name="Start Date" source="TextToColumns: Parsed from startDate" type="Date" />
+            <Field description="TextToColumns: Parsed from endDate" name="End Date" source="TextToColumns: Parsed from endDate" type="Date" />
+            <Field description="TextToColumns: Parsed from completeDate" name="Complete Date" source="TextToColumns: Parsed from completeDate" type="Date" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Sprint ID" order="" />
+            <Field field="Team" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+            <Field name="Sprint ID" source="JSONParse: " type="Double" />
+            <Field description="TextToColumns: Parsed from startDate" name="Start Date" source="TextToColumns: Parsed from startDate" type="Date" />
+            <Field description="TextToColumns: Parsed from endDate" name="End Date" source="TextToColumns: Parsed from endDate" type="Date" />
+            <Field description="TextToColumns: Parsed from completeDate" name="Complete Date" source="TextToColumns: Parsed from completeDate" type="Date" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Sprint ID" />
+            <Field field="Team" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="5" y="382" width="853" height="160" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Get sprint dates</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -66,13 +136,1337 @@
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+      <ChildNodes>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="30.00001" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Sprint Metrics.xlsx</AnnotationText>
+              <DefaultAnnotationText>Sprint Metrics.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+            <Position x="318" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON_Field>DownloadData</JSON_Field>
+              <IncludeInOutput value="False" />
+              <SingleField value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="1073741823" source="Formula: &quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" type="V_WString" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="222" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>URL</URLField>
+              <OutputMode>String</OutputMode>
+              <CodePage>65001</CodePage>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues>
+                  <Item name="Authorization" value="Basic ZHZiZ25zOkZyZWRlcmljazM=" />
+                  <Item name="Content-Type" value="application/json" />
+                </NameValues>
+                <Fields orderChanged="False">
+                  <Field name="Board" selected="False" />
+                  <Field name="Team" selected="False" />
+                  <Field name="JSON_Name2" selected="False" />
+                  <Field name="Delivered" selected="False" />
+                  <Field name="Committed" selected="False" />
+                  <Field name="Sprint Name" selected="False" />
+                  <Field name="Right_sequence" selected="False" />
+                  <Field name="Sprint State" selected="False" />
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="Board" selected="False" />
+                  <Field name="Team" selected="False" />
+                  <Field name="JSON_Name2" selected="False" />
+                  <Field name="Delivered" selected="False" />
+                  <Field name="Committed" selected="False" />
+                  <Field name="Sprint Name" selected="False" />
+                  <Field name="Right_sequence" selected="False" />
+                  <Field name="Sprint State" selected="False" />
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName>dvbgns</UserName>
+              <Password>43DD63B8DACE1890743CDD5E1B687640D2AE9190A9C04DD48</Password>
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="1073741823" source="Formula: &quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" type="V_WString" />
+                <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="126" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" field="URL" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/agile/1.0/sprint/" + [JSON_Name2]...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="JSON_Name2" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
+                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Right_sequence" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Sprint State" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="1073741823" source="Formula: &quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [JSON_Name2]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="390" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Board" />
+                <Field field="Team" />
+                <Field field="Sprint Name" />
+              </GroupFields>
+              <HeaderField field="JSON_Name" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="First" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint Name" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="completeDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="endDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="originBoardId" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="startDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="774" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Board" selected="True" />
+                <SelectField field="Team" selected="True" />
+                <SelectField field="Sprint Name" selected="True" />
+                <SelectField field="id" selected="True" rename="Sprint ID" type="Double" size="8" />
+                <SelectField field="state" selected="True" />
+                <SelectField field="startDate1" selected="True" rename="Start Date" type="Date" size="10" />
+                <SelectField field="endDate1" selected="True" rename="End Date" type="Date" size="10" />
+                <SelectField field="completeDate1" selected="True" rename="Complete Date" type="Date" size="10" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint Name" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint ID" source="JSONParse: " type="Double" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="Start Date" source="TextToColumns: Parsed from startDate" type="Date" />
+                <Field description="TextToColumns: Parsed from endDate" name="End Date" source="TextToColumns: Parsed from endDate" type="Date" />
+                <Field description="TextToColumns: Parsed from completeDate" name="Complete Date" source="TextToColumns: Parsed from completeDate" type="Date" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="486" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>startDate</Field>
+              <NumFields value="2" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>startDate</RootName>
+              <Delimeters value="T" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint Name" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="completeDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="endDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="originBoardId" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="startDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate1" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate2" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="582" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>endDate</Field>
+              <NumFields value="2" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>endDate</RootName>
+              <Delimeters value="T" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint Name" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="completeDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="endDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="originBoardId" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="startDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate1" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate2" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from endDate" name="endDate1" size="1073741823" source="TextToColumns: Parsed from endDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from endDate" name="endDate2" size="1073741823" source="TextToColumns: Parsed from endDate" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="678" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>completeDate</Field>
+              <NumFields value="2" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>completeDate</RootName>
+              <Delimeters value="T" />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Sprint Name" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="completeDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="endDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="originBoardId" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="startDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate1" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from startDate" name="startDate2" size="1073741823" source="TextToColumns: Parsed from startDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from endDate" name="endDate1" size="1073741823" source="TextToColumns: Parsed from endDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from endDate" name="endDate2" size="1073741823" source="TextToColumns: Parsed from endDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from completeDate" name="completeDate1" size="1073741823" source="TextToColumns: Parsed from completeDate" type="V_WString" />
+                <Field description="TextToColumns: Parsed from completeDate" name="completeDate2" size="1073741823" source="TextToColumns: Parsed from completeDate" type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="6.000011" y="5.999962" width="842" height="164" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Generate boards IDs</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="31.00001" y="50.00001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="9" />
+              <Fields>
+                <Field name="URL" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=0</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=50</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=100</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=150</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=200</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=250</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=300</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=350</c>
+                </r>
+                <r>
+                  <c>https://jira.retirementpartner.com/rest/agile/1.0/board/?startAt=400</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="68" source="TextInput:" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="115" y="50.00001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>URL</URLField>
+              <OutputMode>String</OutputMode>
+              <CodePage>65001</CodePage>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues>
+                  <Item name="Authorization" value="Basic ZHZiZ25zOkZyZWRlcmljazM=" />
+                  <Item name="Content-Type" value="application/json" />
+                </NameValues>
+                <Fields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName />
+              <Password />
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="68" source="TextInput:" type="String" />
+                <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+            <Position x="199" y="50.00002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON_Field>DownloadData</JSON_Field>
+              <IncludeInOutput value="False" />
+              <SingleField value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="68" source="TextInput:" type="String" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="283" y="49.99996" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>JSON_Name</Field>
+              <NumFields value="3" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>JSON_Name</RootName>
+              <Delimeters value="." />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="68" source="TextInput:" type="String" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="379" y="49.99998" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="URL" />
+                <Field field="JSON_Name2" />
+              </GroupFields>
+              <HeaderField field="JSON_Name3" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="First" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="URL" size="68" source="CrossTab:Group:First:" type="String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="type" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="_Null_" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="URL" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="726" y="54" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Boards &amp; Teams from JIRA</AnnotationText>
+              <DefaultAnnotationText>Boards &amp; Teams from JIRA.xlsx
+Table=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="463" y="50.00002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="id" selected="True" rename="Board" />
+                <SelectField field="name" selected="True" rename="Team" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Team" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="559" y="50.00002" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>IsNull([Board])</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNull</Operator>
+                <Field>Board</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2018-09-24 08:38:06</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2018-09-24 08:38:06</StartDate>
+                  <EndDate>2018-09-24 08:38:06</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>IsNull([Board])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="Board" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Team" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="Board" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Team" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="642.9999" y="62.00001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/greenhopper/1.0/rapid/charts/velocity?rapidViewId=&quot; + [Board]" field="URL" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/greenhopper/1.0/rapid/charts/velo...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Team" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="URL" size="1073741823" source="Formula: &quot;https://jira.retirementpartner.com/rest/greenhopper/1.0/rapid/charts/velocity?rapidViewId=&quot; + [Board]" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="5.999989" y="197.9999" width="828" height="160.0001" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Get sprint delivery stats</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+            <Position x="115.0001" y="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <URLField>URL</URLField>
+              <OutputMode>String</OutputMode>
+              <CodePage>65001</CodePage>
+              <EncodeURLs value="True" />
+              <Headers>
+                <NameValues>
+                  <Item name="Authorization" value="Basic ZHZiZ25zOkZyZWRlcmljazM=" />
+                  <Item name="Content-Type" value="application/json" />
+                </NameValues>
+                <Fields orderChanged="False">
+                  <Field name="Board" selected="False" />
+                  <Field name="Team" selected="False" />
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </Fields>
+              </Headers>
+              <Payload>
+                <HTTPAction>GET</HTTPAction>
+                <QueryStringBodyMode>Compose</QueryStringBodyMode>
+                <ComposeNameValues />
+                <ComposeFields orderChanged="False">
+                  <Field name="Board" selected="False" />
+                  <Field name="Team" selected="False" />
+                  <Field name="URL" selected="False" />
+                  <Field name="*Unknown" selected="False" />
+                </ComposeFields>
+              </Payload>
+              <UserName>dvbgns</UserName>
+              <Password>43DD63B8DACE1890743CDD5E1B687640D2AE9190A9C04DD48</Password>
+              <numConnections>2</numConnections>
+              <Timeout>600</Timeout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+            <Position x="199" y="241.9999" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <JSON_Field>DownloadData</JSON_Field>
+              <IncludeInOutput value="False" />
+              <SingleField value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="379.0001" y="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields>
+                <Field field="Board" />
+                <Field field="Team" />
+                <Field field="JSON_Name2" />
+              </GroupFields>
+              <HeaderField field="JSON_Name3" />
+              <DataField field="JSON_ValueString" />
+              <Methods>
+                <Method method="First" />
+                <Separator>,</Separator>
+                <FieldSize value="2048" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="completed_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="completed_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="linkedPagesCount" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="sequence" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="_Null_" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+            <Position x="283" y="242.0001" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Field>JSON_Name</Field>
+              <NumFields value="3" />
+              <ErrorHandling>Last</ErrorHandling>
+              <RootName>JSON_Name</RootName>
+              <Delimeters value="." />
+              <Flags value="0" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+                <Field name="JSON_Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="JSON_ValueString" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name1" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name3" size="1073741823" source="TextToColumns: Parsed from JSON_Name" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="463.0001" y="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>IsNull([id])</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>IsNull</Operator>
+                <Field>id</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2018-09-24 07:41:23</PeriodDate>
+                  <PeriodType>
+                  </PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>
+                  </Operand>
+                  <StartDate>2018-09-24 07:41:23</StartDate>
+                  <EndDate>2018-09-24 07:41:23</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>IsNull([id])</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="Board" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="completed_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="completed_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="linkedPagesCount" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="sequence" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="_Null_" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="Board" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="completed_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="completed_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_text" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="linkedPagesCount" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="sequence" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="_Null_" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Board" order="Asc" />
+                <Field field="Team" order="Asc" />
+                <Field field="JSON_Name2" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="558" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="JSON_Name2" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Board" selected="True" type="Double" size="8" />
+                    <SelectField field="Left_Team" selected="True" />
+                    <SelectField field="Left_JSON_Name2" selected="True" rename="Sprint ID" type="Double" size="8" />
+                    <SelectField field="Left_completed_value" selected="True" rename="Delivered" type="Double" size="8" />
+                    <SelectField field="Left_estimated_value" selected="True" rename="Committed" type="Double" size="8" />
+                    <SelectField field="Right_Team" selected="False" rename="Right_Team" />
+                    <SelectField field="Right_JSON_Name2" selected="False" rename="Right_JSON_Name2" />
+                    <SelectField field="Right_completed_text" selected="False" rename="Right_completed_text" />
+                    <SelectField field="Right_completed_value" selected="False" rename="Right_completed_value" />
+                    <SelectField field="Right_estimated_text" selected="False" rename="Right_estimated_text" />
+                    <SelectField field="Right_estimated_value" selected="False" rename="Right_estimated_value" />
+                    <SelectField field="Right_goal" selected="False" rename="Right_goal" />
+                    <SelectField field="Right_id" selected="False" rename="Right_id" />
+                    <SelectField field="Right_linkedPagesCount" selected="False" rename="Right_linkedPagesCount" />
+                    <SelectField field="Right_name" selected="True" rename="Sprint Name" />
+                    <SelectField field="Right_sequence" selected="False" rename="Right_sequence" />
+                    <SelectField field="Right_state" selected="True" rename="Sprint State" />
+                    <SelectField field="Right__Null_" selected="False" rename="Right__Null_" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="Board" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="completed_value" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="estimated_value" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="JSON_Name2" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Join">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Delivered" source="JSONParse: " type="Double" />
+                <Field name="Committed" source="JSONParse: " type="Double" />
+                <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo noProgress="True">
+                <Field field="id" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="30.99999" y="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText><![CDATA[Boards & Teams from JIRA
+]]></AnnotationText>
+              <DefaultAnnotationText>Boards &amp; Teams from JIRA.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+                <Field name="URL" size="255" source="File: Z:\Alteryx Input\Boards &amp; Teams from JIRA.xlsx|||`Sheet1$`" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="654" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if [Delivered] &gt; 500 then 0 else [delivered] endif" field="Delivered" size="8" type="Double" />
+                <FormulaField expression="if [Committed] &gt; 500 then 0 else [Committed] endif" field="Committed" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Delivered = if [Delivered] &gt; 500 then 0 else [delivered] endif
+Committed = if [C...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
+                <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
+                <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+            <Position x="750" y="246" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UniqueFields>
+                <Field field="Team" />
+                <Field field="Sprint Name" />
+              </UniqueFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Unique: Team, Sprint Name</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Unique">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
+                <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
+                <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+            <MetaInfo connection="Duplicates">
+              <RecordInfo>
+                <Field name="Board" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Team" size="255" source="CrossTab:Group:First:" type="V_String" />
+                <Field description="TextToColumns: Parsed from JSON_Name" name="Sprint ID" source="CrossTab:Group:First:" type="Double" />
+                <Field name="Delivered" source="Formula: if [Delivered] &gt; 500 then 0 else [delivered] endif" type="Double" />
+                <Field name="Committed" source="Formula: if [Committed] &gt; 500 then 0 else [Committed] endif" type="Double" />
+                <Field name="Sprint Name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="Sprint State" size="1073741823" source="JSONParse: " type="V_WString" />
+              </RecordInfo>
+              <SortInfo>
+                <Field field="Team" order="Asc" />
+                <Field field="Sprint Name" order="Asc" />
+              </SortInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+        </Node>
+      </ChildNodes>
     </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
+      <Origin ToolID="46" Connection="Join" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="46" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Unique" />
+      <Destination ToolID="46" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="False" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="True" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="False" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
       <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -112,5 +1506,33 @@
     <Events>
       <Enabled value="True" />
     </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (28)</Name>
+          <ToolId value="28" />
+          <Questions />
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="0" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="18" Selected="True" />
+        <Tool ToolId="27" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
   </Properties>
 </AlteryxDocument>
