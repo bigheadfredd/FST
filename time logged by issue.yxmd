@@ -3,19 +3,19 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="534" y="138" />
+        <Position x="366" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
-            <SummarizeField field="Hours" action="Sum" rename="Hours" />
-            <SummarizeField field="Issue Summary" action="GroupBy" rename="Issue Summary" />
-            <SummarizeField field="User Name" action="First" rename="User Name" />
-            <SummarizeField field="Team" action="GroupBy" rename="Team" />
-            <SummarizeField field="Value Stream" action="GroupBy" rename="Project" />
             <SummarizeField field="Issue Key" action="GroupBy" rename="Issue Key" />
-            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
+            <SummarizeField field="User Name" action="First" rename="User Name" />
+            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
             <SummarizeField field="Project" action="First" rename="Project" />
+            <SummarizeField field="Hours" action="Sum" rename="Hours" />
+            <SummarizeField field="summary" action="GroupBy" rename="Summary" />
+            <SummarizeField field="Work Date" action="First" rename="Work Date" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -28,7 +28,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="630" y="138" />
+        <Position x="450" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -41,19 +41,17 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>time logged by issue.xlsx</AnnotationText>
           <DefaultAnnotationText>time logged by issue.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="220" y="162" />
+        <Position x="210" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -85,7 +83,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="342" y="138" />
+        <Position x="290" y="102" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -103,10 +101,10 @@ Table=Sheet1</DefaultAnnotationText>
                 <SelectField field="Left_User Name" selected="True" />
                 <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Left_Value Stream" selected="True" />
-                <SelectField field="Right_Work Date" selected="True" />
-                <SelectField field="Right_Hours" selected="True" />
                 <SelectField field="Right_Issue Key" selected="True" />
-                <SelectField field="Right_Issue Summary" selected="True" />
+                <SelectField field="Right_Hours" selected="True" />
+                <SelectField field="Right_Work Date" selected="True" />
+                <SelectField field="Right_Summary" selected="True" />
                 <SelectField field="Right_Issue Key1" selected="True" rename="Project" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
@@ -121,32 +119,9 @@ Table=Sheet1</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
-    <Node ToolID="24">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="438" y="138" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="DateTimeFormat([Work Date], &quot;%U&quot;)" field="Week" size="1073741823" type="V_WString" />
-            <FormulaField expression="floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" field="Sprint (Team)" size="8" type="Double" />
-            <FormulaField expression="[Sprint (Team)]-7" field="Sprint (FST)" size="1073741823" type="V_WString" />
-            <FormulaField expression="[Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" field="Sprint" size="255" type="V_String" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>Week = DateTimeFormat([Work Date], "%U")
-Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="534" y="54" />
+        <Position x="366" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -165,11 +140,11 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="630" y="54" />
+        <Position x="450" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_17104_f1173c73cf3f4ead8db21d2bafc21347_\Engine_15076_c3a33736382046bf8da21867055752e4_.yxdb</TempFile>
+          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_21176_53f1a51d9082480abef6a89cfc7f4488_\Engine_11292_73f6064f07734164927cb1cc12fa4654_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -193,7 +168,7 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="137" y="162" />
+        <Position x="146" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -212,48 +187,9 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
     </Node>
-    <Node ToolID="73">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="162" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`</File>
-          <FormatSpecificOptions>
-            <FirstRowData>False</FirstRowData>
-            <ImportLine>1</ImportLine>
-          </FormatSpecificOptions>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Tempo Worklog.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
     <Node ToolID="75">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="222" y="54" />
+        <Position x="174" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -266,13 +202,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText><![CDATA[Team Membership.xlsx
+]]></AnnotationText>
           <DefaultAnnotationText>Team Membership.xlsx
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
@@ -283,6 +218,110 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="76">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="82" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="worklog_jira_key" selected="True" rename="Issue Key" />
+            <SelectField field="worklog_hours" selected="True" rename="Hours" type="Double" size="8" />
+            <SelectField field="worklog_team_member" selected="True" rename="User Full Name" />
+            <SelectField field="worklog_date_worked" selected="True" rename="Work Date" type="Date" size="10" />
+            <SelectField field="jira_key_summary" selected="True" rename="Summary" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="77">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="18" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select 
+	sandbox.sandbox_worklogs.worklog_jira_key,
+	sandbox.sandbox_worklogs.worklog_hours,
+	sandbox.sandbox_worklogs.worklog_team_member,
+	sandbox.sandbox_worklogs.worklog_date_worked,
+	sandbox.sandbox_jira_mast.jira_key_summary
+from 
+	sandbox.sandbox_worklogs 
+inner join sandbox.sandbox_jira_mast 
+	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key</File>
+          <FormatSpecificOptions>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sandbox</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select 
+	sandbox.sandbox_worklogs.worklog_jira_key,
+	sandbox.sandbox_worklogs.worklog_hours,
+	sandbox.sandbox_worklogs.worklog_team_member,
+	sandbox.sandbox_worklogs.worklog_date_worked,
+	sandbox.sandbox_jira_mast.jira_key_summary
+from 
+	sandbox.sandbox_worklogs 
+inner join sandbox.sandbox_jira_mast 
+	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="worklog_jira_key" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="DateTime" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="294" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeFormat([Work Date], &quot;%U&quot;)" field="Week" size="1073741823" type="V_WString" />
+            <FormulaField expression="floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" field="Sprint (Team)" size="8" type="Double" />
+            <FormulaField expression="[Sprint (Team)]-7" field="Sprint (FST)" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" field="Sprint" size="255" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Week = DateTimeFormat([Work Date], "%U")
+Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
   </Nodes>
   <Connections>
@@ -300,15 +339,11 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="19" Connection="Join" />
-      <Destination ToolID="24" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="24" Connection="Output" />
-      <Destination ToolID="32" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="24" Connection="Output" />
       <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Join" />
+      <Destination ToolID="32" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="32" Connection="Output" />
@@ -319,8 +354,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <Destination ToolID="15" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="73" Connection="Output" />
+      <Origin ToolID="76" Connection="Output" />
       <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

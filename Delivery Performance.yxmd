@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30.99997" y="30" />
+        <Position x="18.99997" y="6" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -16,7 +16,7 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Holocrons from Confluence</AnnotationText>
+          <AnnotationText>Holocrons</AnnotationText>
           <DefaultAnnotationText>CD Sprint Metrics.xlsx
 Table=`Holocrons$`</DefaultAnnotationText>
           <Left value="False" />
@@ -40,7 +40,7 @@ Table=`Holocrons$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30.99997" y="150" />
+        <Position x="18.99997" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -53,7 +53,7 @@ Table=`Holocrons$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Jitterbugs from Confluence</AnnotationText>
+          <AnnotationText>Jitterbugs</AnnotationText>
           <DefaultAnnotationText>CD Sprint Metrics.xlsx
 Table=`Jitterbugs$`</DefaultAnnotationText>
           <Left value="False" />
@@ -75,38 +75,9 @@ Table=`Jitterbugs$`</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
-    <Node ToolID="11">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="618" y="246" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="Team" selected="True" />
-            <SelectField field="Delivered" selected="True" />
-            <SelectField field="Committed" selected="True" />
-            <SelectField field="Sprint Name" selected="True" />
-            <SelectField field="Start Date" selected="True" />
-            <SelectField field="End Date" selected="True" />
-            <SelectField field="Base Capacity" selected="True" />
-            <SelectField field="Planned Capacity" selected="True" />
-            <SelectField field="Value Stream" selected="True" />
-            <SelectField field="*Unknown" selected="False" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="762" y="186" />
+        <Position x="894" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -128,7 +99,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="138" y="30" />
+        <Position x="126" y="6" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -150,7 +121,7 @@ Value Stream = "CD"
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="138" y="150" />
+        <Position x="126" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -172,7 +143,7 @@ Value Stream = "CD"
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="258" />
+        <Position x="18" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -185,7 +156,7 @@ Value Stream = "CD"
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Cyber Knights from Confluence</AnnotationText>
+          <AnnotationText>Cyber Knights</AnnotationText>
           <DefaultAnnotationText>CD Demand - Capacity - Cyber Knights.xlsx
 Table=`Cyber Knights$`</DefaultAnnotationText>
           <Left value="False" />
@@ -204,7 +175,7 @@ Table=`Cyber Knights$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="366" />
+        <Position x="18" y="246" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -217,7 +188,8 @@ Table=`Cyber Knights$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Titans from Confluence</AnnotationText>
+          <AnnotationText><![CDATA[Titans
+]]></AnnotationText>
           <DefaultAnnotationText>CD Demand - Capacity -- Titans.xlsx
 Table=`Titans$`</DefaultAnnotationText>
           <Left value="False" />
@@ -236,7 +208,7 @@ Table=`Titans$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="25">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="162" y="318" />
+        <Position x="126" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -255,7 +227,7 @@ Table=`Titans$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="43">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="390" y="102" />
+        <Position x="330" y="30" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -273,9 +245,6 @@ Table=`Titans$`</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
@@ -293,7 +262,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="44">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="234" y="318" />
+        <Position x="210" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -304,6 +273,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText />
           <DefaultAnnotationText><![CDATA[Team = "Participant Money Out"
 Value Stream = "PMOS"
 ]]></DefaultAnnotationText>
@@ -314,7 +284,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="234" y="102" />
+        <Position x="222" y="42" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -333,7 +303,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="306" y="174" />
+        <Position x="294" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -358,7 +328,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="48">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="318" y="318" />
+        <Position x="294" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -383,7 +353,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="402" y="246" />
+        <Position x="390" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -402,7 +372,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="53">
       <GuiSettings>
-        <Position x="450" y="186" />
+        <Position x="438" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -423,15 +393,12 @@ Value Stream = "PMOS"
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="Cleanse.yxmc" />
     </Node>
     <Node ToolID="54">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="678" y="186" />
+        <Position x="606" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -450,7 +417,7 @@ Value Stream = "PMOS"
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="522" y="246" />
+        <Position x="510" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -464,22 +431,22 @@ Value Stream = "PMOS"
           </JoinInfo>
           <SelectConfiguration>
             <Configuration outputConnection="Join">
-              <OrderChanged value="False" />
+              <OrderChanged value="True" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="Left_Board" selected="True" />
+                <SelectField field="Left_Sprint Name" selected="True" />
+                <SelectField field="Left_Board" selected="False" />
                 <SelectField field="Left_Team" selected="True" />
-                <SelectField field="Left_Sprint ID" selected="True" />
+                <SelectField field="Right_Value Stream" selected="True" />
+                <SelectField field="Left_Sprint ID" selected="False" />
                 <SelectField field="Left_Delivered" selected="True" />
                 <SelectField field="Left_Committed" selected="True" />
-                <SelectField field="Left_Sprint Name" selected="True" />
-                <SelectField field="Left_Start Date" selected="True" />
-                <SelectField field="Left_End Date" selected="True" />
-                <SelectField field="Right_Sprint Name" selected="True" rename="Right_Sprint Name" />
                 <SelectField field="Right_Base Capacity" selected="True" />
                 <SelectField field="Right_Planned Capacity" selected="True" />
-                <SelectField field="Right_Team" selected="True" rename="Right_Team" />
-                <SelectField field="Right_Value Stream" selected="True" />
+                <SelectField field="Left_Start Date" selected="True" />
+                <SelectField field="Left_End Date" selected="True" />
+                <SelectField field="Right_Sprint Name" selected="False" rename="Right_Sprint Name" />
+                <SelectField field="Right_Team" selected="False" rename="Right_Team" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -493,6 +460,71 @@ Value Stream = "PMOS"
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="798" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([Value Stream])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>Value Stream</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-09-24 18:49:58</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-09-24 18:49:58</StartDate>
+              <EndDate>2018-09-24 18:49:58</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>IsNull([Value Stream])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="702" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Board" selected="False" />
+            <SelectField field="Sprint Name" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Sprint ID" selected="False" />
+            <SelectField field="Value Stream" selected="True" />
+            <SelectField field="Delivered" selected="True" />
+            <SelectField field="Committed" selected="True" />
+            <SelectField field="Base Capacity" selected="True" />
+            <SelectField field="Planned Capacity" selected="True" />
+            <SelectField field="Start Date" selected="True" />
+            <SelectField field="End Date" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -502,14 +534,6 @@ Value Stream = "PMOS"
     <Connection>
       <Origin ToolID="3" Connection="Output" />
       <Destination ToolID="14" Connection="Input" />
-    </Connection>
-    <Connection name="#2">
-      <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="54" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="50" Connection="Left" />
-      <Destination ToolID="54" Connection="Input" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="13" Connection="Output" />
@@ -561,11 +585,23 @@ Value Stream = "PMOS"
     </Connection>
     <Connection>
       <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="50" Connection="Left" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="50" Connection="Join" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="False" />
       <Destination ToolID="12" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="50" Connection="Join" />
-      <Destination ToolID="11" Connection="Input" />
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -582,7 +618,7 @@ Value Stream = "PMOS"
     <ShowAllMacroMessages value="False" />
     <ShowConnectionStatusIsOn value="True" />
     <ShowConnectionStatusOnlyWhenRunning value="True" />
-    <ZoomLevel value="-2" />
+    <ZoomLevel value="-1" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />

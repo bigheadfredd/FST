@@ -20,9 +20,6 @@
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Sum_Hours" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="Double" />
@@ -54,18 +51,17 @@ Table=`Sheet1$`</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Committed Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Delivered Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Value Stream" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Delivered" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Committed" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Base Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Planned Capacity" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Start Date" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="End Date" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Delivery Performance.xlsx|||`Sheet1$`" type="Date" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -83,7 +79,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
             <Field field="Value Stream" />
           </JoinInfo>
           <JoinInfo connection="Right">
-            <Field field="Sprint" />
+            <Field field="Sprint Name" />
             <Field field="Team" />
             <Field field="Value Stream" />
           </JoinInfo>
@@ -92,13 +88,18 @@ Table=`Sheet1$`</DefaultAnnotationText>
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="Left_Points" selected="False" />
-                <SelectField field="Right_Sprint" selected="False" rename="Right_Sprint" />
-                <SelectField field="Right_Base Capacity" selected="False" />
-                <SelectField field="Right_Committed Points" selected="False" />
+                <SelectField field="Left_Sum_Hours" selected="True" />
+                <SelectField field="Left_Sprint" selected="True" />
+                <SelectField field="Left_Value Stream" selected="True" />
+                <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Right_Team" selected="False" rename="Right_Team" />
                 <SelectField field="Right_Value Stream" selected="False" rename="Right_Value Stream" />
-                <SelectField field="*Unknown" selected="True" />
+                <SelectField field="Right_Delivered" selected="True" />
+                <SelectField field="Right_Committed" selected="True" />
+                <SelectField field="Right_Planned Capacity" selected="True" />
+                <SelectField field="Right_Start Date" selected="True" />
+                <SelectField field="Right_End Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
           </SelectConfiguration>
@@ -130,9 +131,6 @@ Table=`Sheet1$`</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
