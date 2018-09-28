@@ -3,14 +3,14 @@
   <Nodes>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="786" width="702" height="226" />
+        <Position x="54" y="786" width="220.6608" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Create Team Membership file</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Disabled value="True" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79" y="866" />
+            <Position x="78.99998" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -184,7 +184,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="440.0002" y="866" />
+            <Position x="440.0003" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -222,7 +222,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="53.99998" y="42" width="360" height="215.9997" />
+        <Position x="53.99998" y="42.00002" width="444" height="215.9997" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -240,7 +240,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings>
-            <Position x="78.99998" y="86" />
+            <Position x="78.99998" y="86.00002" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -586,6 +586,8 @@ Table=Sheet1</DefaultAnnotationText>
                 <Field name="key_objectives_problems_to_solve" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="key_theme" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="labels_3" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="labels_4" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="labels_5" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="last_viewed" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="launch_date" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="lead_qa" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -603,9 +605,6 @@ Table=Sheet1</DefaultAnnotationText>
                 <Field name="lead_systems_analyst_timezone" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="legacy" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="level_of_effort" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_cost_per_license_usd" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_justification" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_type" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="license_status" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="lightweight_business_case" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="linked_issues_0_id" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -3328,8 +3327,6 @@ Table=Sheet1</DefaultAnnotationText>
                 <Field name="severity_value" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="sides_to_build" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="sme" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="software_name" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="software_vendor_name" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="source_database" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="source_path" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="special_instructions" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -3595,7 +3592,6 @@ Table=Sheet1</DefaultAnnotationText>
                 <Field name="technical_project_manager_name" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="technical_project_manager_self" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="technical_project_manager_timezone" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="tech_lead_owner_of_software" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="template" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="tempo_team" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="testing_considerations" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -4033,10 +4029,6 @@ Table=Sheet1</DefaultAnnotationText>
                 <Field name="lead_systems_analyst" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="legacy" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="level_of_effort" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_cost_per_license_usd" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_justification" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_1_type" size="1073741823" source="JSONParse: " type="V_WString" />
-                <Field name="license_2_type" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="license_status" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="lightweight_business_case" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="linked_issues_0_id" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -6837,7 +6829,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="210" y="113.9997" />
+            <Position x="210" y="114" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6856,7 +6848,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="306" y="105.9997" />
+            <Position x="402" y="114" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6869,12 +6861,53 @@ Table=Sheet1</DefaultAnnotationText>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
+              <AnnotationText>JIRA full extract.xlsx</AnnotationText>
               <DefaultAnnotationText>JIRA full extract.xlsx
 Table=Sheet1</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="134">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="306" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="key" selected="True" />
+                <SelectField field="assignee_displayname" selected="True" />
+                <SelectField field="labels_0" selected="True" />
+                <SelectField field="labels_1" selected="True" />
+                <SelectField field="labels_2" selected="True" />
+                <SelectField field="project_key" selected="True" />
+                <SelectField field="project_name" selected="True" />
+                <SelectField field="status_name" selected="True" />
+                <SelectField field="summary" selected="True" />
+                <SelectField field="updated" selected="True" />
+                <SelectField field="category_value" selected="True" />
+                <SelectField field="issue_type_name" selected="True" />
+                <SelectField field="sprint_0" selected="True" />
+                <SelectField field="sprint_1" selected="True" />
+                <SelectField field="story_points" selected="True" />
+                <SelectField field="team_value" selected="True" />
+                <SelectField field="time_spent" selected="True" />
+                <SelectField field="sprint_2" selected="True" />
+                <SelectField field="sprint_3" selected="True" />
+                <SelectField field="sprint_4" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
         </Node>
       </ChildNodes>
     </Node>
@@ -6937,7 +6970,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="78.99998" y="326" />
+            <Position x="78.99999" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11841,14 +11874,14 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="534" width="788" height="224" />
+        <Position x="54" y="534" width="179.6955" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Logged time by sprint</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Disabled value="True" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -12069,7 +12102,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="107">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="79.00002" y="641.9996" />
+            <Position x="79.00004" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12200,14 +12233,14 @@ where
     </Node>
     <Node ToolID="96">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="1038" width="1202" height="376.0001" />
+        <Position x="53.99998" y="1038" width="189.82" height="19" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Get sprint delivery stats</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="False" />
-          <Folded value="False" />
+          <Disabled value="True" />
+          <Folded value="True" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -12652,7 +12685,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="78.99998" y="1154" />
+            <Position x="79.00001" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -13133,7 +13166,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="133">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="102.0001" y="1330" />
+            <Position x="102.0002" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -13192,6 +13225,10 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="134" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="134" Connection="Output" />
       <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
