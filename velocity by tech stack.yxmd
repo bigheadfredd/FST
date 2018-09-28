@@ -8,7 +8,7 @@
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -25,26 +25,22 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Issue key" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Labels1" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Labels2" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Project key" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Status" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="summary" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="category_value" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="issue_type_name" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_0" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_1" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Points" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Team" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Time Spent" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Labels3" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_2" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_3" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_4" size="271" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint" size="255" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Updated" source="File: Z:\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Issue key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels2" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels3" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Project key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint End" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -96,7 +92,7 @@ Hours Logged = [Hours Log...</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\velocity by tech stack.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\velocity by tech stack.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -109,6 +105,9 @@ Hours Logged = [Hours Log...</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
@@ -167,11 +166,11 @@ Table=Sheet1</DefaultAnnotationText>
               <SelectFields>
                 <SelectField field="Left_Issue key" selected="True" />
                 <SelectField field="Left_Summary" selected="True" />
-                <SelectField field="Left_Updated" selected="True" />
                 <SelectField field="Left_Points" selected="True" />
                 <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Left_Hours Logged" selected="True" />
-                <SelectField field="Left_Sprint" selected="True" />
+                <SelectField field="Left_Updated" selected="True" />
+                <SelectField field="Left_Sprint Name" selected="True" />
                 <SelectField field="Left_Work Type" selected="True" type="V_String" size="1073741823" />
                 <SelectField field="Left_Custom field (Team)" selected="False" rename="Team" />
                 <SelectField field="Left_Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
@@ -194,7 +193,7 @@ Table=Sheet1</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint] != null()</Expression>
+          <Expression>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint Name] != null()</Expression>
           <Mode>Custom</Mode>
           <Simple>
             <Operator>=</Operator>
@@ -215,7 +214,7 @@ Table=Sheet1</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint] != null()</DefaultAnnotationText>
+          <DefaultAnnotationText>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint Name] != nul...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -229,10 +228,10 @@ Table=Sheet1</DefaultAnnotationText>
         <Configuration>
           <SummarizeFields>
             <SummarizeField field="Team" action="GroupBy" rename="Team" />
-            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
             <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
             <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
             <SummarizeField field="Hours Logged" action="Sum" rename="Sum_Hours Logged" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">

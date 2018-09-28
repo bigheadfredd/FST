@@ -3,18 +3,17 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="534" y="150" />
+        <Position x="486" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
             <SummarizeField field="Hours" action="Sum" rename="Hours" />
             <SummarizeField field="Issue Key" action="GroupBy" rename="Issue Key" />
-            <SummarizeField field="User Full Name" action="GroupBy" rename="User Full Name" />
-            <SummarizeField field="Issue Summary" action="GroupBy" rename="Issue Summary" />
-            <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
             <SummarizeField field="Project" action="First" rename="Project" />
-            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="User Name" action="GroupBy" rename="User Name" />
+            <SummarizeField field="Issue Summary" action="GroupBy" rename="Issue Summary" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -25,19 +24,17 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Hours" source="Summarize: Sum - Hours" type="Double" />
-            <Field name="Issue Key" size="255" source="Summarize: GroupBy - Issue Key" type="V_String" />
-            <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
-            <Field name="Issue Summary" size="255" source="Summarize: GroupBy - Issue Summary" type="V_WString" />
-            <Field name="Sprint" size="1073741823" source="Summarize: GroupBy - Sprint" type="V_WString" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field name="Value Stream" size="255" source="Summarize: GroupBy - Value Stream" type="V_String" />
+            <Field name="Issue Key" size="8190" source="Summarize: GroupBy - Issue Key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field name="User Name" size="255" source="Summarize: GroupBy - User Name" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="Summarize: GroupBy - Issue Summary" type="V_WString" />
+            <Field name="Sprint Name" size="8190" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
           </RecordInfo>
           <SortInfo>
             <Field field="Issue Key" order="Asc" />
-            <Field field="User Full Name" order="Asc" />
+            <Field field="User Name" order="Asc" />
             <Field field="Issue Summary" order="Asc" />
-            <Field field="Sprint" order="Asc" />
-            <Field field="Value Stream" order="Asc" />
+            <Field field="Sprint Name" order="Asc" />
           </SortInfo>
         </MetaInfo>
       </Properties>
@@ -45,11 +42,11 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="618" y="150" />
+        <Position x="678" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\sprint profile by JIRA project.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\sprint profile by JIRA project.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -58,6 +55,7 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>sprint profile by JIRA project.xlsx</AnnotationText>
           <DefaultAnnotationText>sprint profile by JIRA project.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
@@ -70,173 +68,94 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="234" y="174" />
+        <Position x="198" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[Work Date] &gt; "2018-05-10" and DateTimeDiff(DateTimeToday(),[Work Date],"days")&gt;=0</Expression>
+          <Expression><![CDATA[[worklog_date_worked] > "2018-05-10" ]]></Expression>
           <Mode>Custom</Mode>
           <Simple>
-            <Operator>&gt;</Operator>
-            <Field>Work Date</Field>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
             <Operands>
               <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
               <DateType>fixed</DateType>
-              <PeriodDate>2018-08-01 11:17:14</PeriodDate>
+              <PeriodDate>2018-09-28 07:28:32</PeriodDate>
               <PeriodType>days</PeriodType>
               <PeriodCount>0</PeriodCount>
-              <Operand>2018-07-01</Operand>
-              <StartDate>2018-08-01 11:17:14</StartDate>
-              <EndDate>2018-08-01 11:17:14</EndDate>
+              <Operand>
+              </Operand>
+              <StartDate>2018-09-28 07:28:32</StartDate>
+              <EndDate>2018-09-28 07:28:32</EndDate>
             </Operands>
           </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>[Work Date] &gt; "2018-05-10" and DateTimeDiff(DateTimeToday(),[Work Date],"days")&gt;...</DefaultAnnotationText>
+          <DefaultAnnotationText><![CDATA[[worklog_date_worked] > "2018-05-10" ]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="True">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="sprint" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key1" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key2" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key3" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="False">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="sprint" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key1" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key2" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key3" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="19">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="354" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration joinByRecordPos="False">
-          <JoinInfo connection="Left">
-            <Field field="User Name" />
-          </JoinInfo>
-          <JoinInfo connection="Right">
-            <Field field="User Full Name" />
-          </JoinInfo>
-          <SelectConfiguration>
-            <Configuration outputConnection="Join">
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Left_Value Stream" selected="True" />
-                <SelectField field="Right_Work Date" selected="True" />
-                <SelectField field="Right_User Full Name" selected="True" />
-                <SelectField field="Right_Hours" selected="True" />
-                <SelectField field="Right_Issue Key" selected="True" />
-                <SelectField field="Right_Issue Summary" selected="True" />
-                <SelectField field="Right_Issue Key1" selected="True" rename="Project" />
-                <SelectField field="*Unknown" selected="False" />
-              </SelectFields>
-            </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Left">
-          <RecordInfo>
-            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-          </RecordInfo>
-          <SortInfo noProgress="True">
-            <Field field="User Name" />
-          </SortInfo>
-        </MetaInfo>
-        <MetaInfo connection="Join">
-          <RecordInfo>
-            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Right">
-          <RecordInfo>
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-          </RecordInfo>
-          <SortInfo noProgress="True">
-            <Field field="User Full Name" />
-          </SortInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-    </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="450" y="150" />
+        <Position x="390" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
             <FormulaField expression="DateTimeFormat([Work Date], &quot;%U&quot;)" field="Week" size="1073741823" type="V_WString" />
-            <FormulaField expression="floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" field="Sprint (Team)" size="8" type="Double" />
-            <FormulaField expression="[Sprint (Team)]-7" field="Sprint (FST)" size="1073741823" type="V_WString" />
-            <FormulaField expression="[Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" field="Sprint" size="1073741823" type="V_WString" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>Week = DateTimeFormat([Work Date], "%U")
-Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
+          <DefaultAnnotationText><![CDATA[Week = DateTimeFormat([Work Date], "%U")
+]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
+            <Field name="Issue Key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Sprint Name" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Hours" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="Double" />
+            <Field name="Work Date" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="Date" />
+            <Field name="User Name" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
             <Field name="Week" size="1073741823" source="Formula: DateTimeFormat([Work Date], &quot;%U&quot;)" type="V_WString" />
-            <Field name="Sprint (Team)" source="Formula: floor(DateTimeDiff([Work Date],&quot;2018-05-10&quot;,&quot;days&quot;)/14)+7&#xA;&#xA;&#xA;" type="Double" />
-            <Field name="Sprint (FST)" size="1073741823" source="Formula: [Sprint (Team)]-7" type="V_WString" />
-            <Field name="Sprint" size="1073741823" source="Formula: [Sprint (FST)] + &quot;-&quot; + ToString([Sprint (Team)])" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -244,12 +163,12 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="534" y="54.00002" />
+        <Position x="486" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
-            <SummarizeField field="User Full Name" action="GroupBy" rename="User Full Name" />
+            <SummarizeField field="User Name" action="GroupBy" rename="User Name" />
             <SummarizeField field="Project" action="GroupBy" rename="Project" />
           </SummarizeFields>
         </Configuration>
@@ -260,11 +179,11 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="Summarize: GroupBy - Project" type="V_String" />
+            <Field name="User Name" size="255" source="Summarize: GroupBy - User Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="Summarize: GroupBy - Project" type="V_WString" />
           </RecordInfo>
           <SortInfo>
-            <Field field="User Full Name" order="Asc" />
+            <Field field="User Name" order="Asc" />
             <Field field="Project" order="Asc" />
           </SortInfo>
         </MetaInfo>
@@ -273,30 +192,30 @@ Sprint (Team) = floor(DateTimeDiff([Wor...</DefaultAnnotationText>
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="606" y="54" />
+        <Position x="582" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SortInfo locale="0">
+            <Field field="User Name" order="Ascending" />
             <Field field="Project" order="Ascending" />
-            <Field field="User Full Name" order="Ascending" />
           </SortInfo>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>Project - Ascending
-User Full Name - Ascending</DefaultAnnotationText>
+          <DefaultAnnotationText>User Name - Ascending
+Project - Ascending</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="User Full Name" size="255" source="Summarize: GroupBy - User Full Name" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Project" size="255" source="Summarize: GroupBy - Project" type="V_String" />
+            <Field name="User Name" size="255" source="Summarize: GroupBy - User Name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="Summarize: GroupBy - Project" type="V_WString" />
           </RecordInfo>
-          <SortInfo locale="0">
-            <Field field="Project" order="Ascending" />
-            <Field field="User Full Name" order="Ascending" />
+          <SortInfo>
+            <Field field="User Name" order="Asc" />
+            <Field field="Project" order="Asc" />
           </SortInfo>
         </MetaInfo>
       </Properties>
@@ -304,11 +223,11 @@ User Full Name - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="690" y="54" />
+        <Position x="678" y="18" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_12672_1dcd1e978b4c4983a1d7d49dd086b7ea_\Engine_15076_9b8ecff9fd9b482791a5c2932901efec_.yxdb</TempFile>
+          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_8356_699739d85b41495e835a4ce60fe64065_\Engine_2680_35403a046fa74ddfb2782915e647add8_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -332,14 +251,14 @@ User Full Name - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="150" y="174" />
+        <Position x="102" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>Issue Key</Field>
+          <Field>jira_key</Field>
           <NumFields value="3" />
           <ErrorHandling>Last</ErrorHandling>
-          <RootName>Issue Key</RootName>
+          <RootName>jira_key</RootName>
           <Delimeters value="-" />
           <Flags value="0" />
         </Configuration>
@@ -350,19 +269,16 @@ User Full Name - Ascending</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key1" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key2" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Issue Key3" size="255" source="TextToColumns: Parsed from Issue Key" type="V_String" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="sprint" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key1" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key2" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="jira_key3" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -381,95 +297,231 @@ User Full Name - Ascending</DefaultAnnotationText>
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="85">
+    <Node ToolID="88">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="174" />
+        <Position x="6" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`</File>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select 
+	sandbox_jira_mast.jira_key,
+	sandbox_jira_mast.jira_key_summary,
+	sprint.sprint,
+	teams.team,
+	sandbox_worklogs.worklog_hours,
+	sandbox_worklogs.worklog_date_worked,
+	sandbox_worklogs.worklog_team_member
+from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key
+join sandbox.sandbox_worklogs	-- bringing in each of the worklog records
+	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key
+left join	-- using a left join just in case the JIRA Key is missing sprint data
+	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates
+		select 
+			jira_key, 
+			string_agg(sprint_name, '; ') as sprint
+		from sandbox.sandbox_jira_custom_fields
+		left join sandbox.sandbox_jira_sprints
+			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text 
+		where custom_field_name = 'Sprint'
+		group by jira_key
+	) sprint
+	on sandbox_jira_mast.jira_key = sprint.jira_key
+left join -- using a left join just incase there is missing team data
+	(	-- pull the team detail, aggregated into a single record by team
+		select 
+			jira_key, 
+			string_agg(custom_field_value, '; ') as team
+		from sandbox.sandbox_jira_custom_fields
+		where custom_field_name = 'Team'
+		group by jira_key
+	) teams
+	on sandbox_jira_mast.jira_key = teams.jira_key
+where
+  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps
+;</File>
           <FormatSpecificOptions>
-            <FirstRowData>False</FirstRowData>
-            <ImportLine>1</ImportLine>
+            <PreSQL />
+            <ReadCentroids>False</ReadCentroids>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <NoProgress>True</NoProgress>
+            <CacheData>False</CacheData>
+            <TableStyle>Quoted</TableStyle>
+            <ReadUncommitted>False</ReadUncommitted>
+            <PostSQL />
           </FormatSpecificOptions>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Tempo Worklog.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
+          <AnnotationText>sandbox_worklog</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select 
+	sandbox_jira_mast.jira_key,
+	sandbox_jira_mast.jira_key_summary,
+	sprint.sprint,
+	teams.team,
+	sandbox_worklogs.worklog_hours,
+	sandbox_worklogs.worklog_date_worked,
+	sandbox_worklogs.worklog_team_member
+from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key
+join sandbox.sandbox_worklogs	-- bringing in each of the worklog records
+	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key
+left join	-- using a left join just in case the JIRA Key is missing sprint data
+	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates
+		select 
+			jira_key, 
+			string_agg(sprint_name, '; ') as sprint
+		from sandbox.sandbox_jira_custom_fields
+		left join sandbox.sandbox_jira_sprints
+			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text 
+		where custom_field_name = 'Sprint'
+		group by jira_key
+	) sprint
+	on sandbox_jira_mast.jira_key = sprint.jira_key
+left join -- using a left join just incase there is missing team data
+	(	-- pull the team detail, aggregated into a single record by team
+		select 
+			jira_key, 
+			string_agg(custom_field_value, '; ') as team
+		from sandbox.sandbox_jira_custom_fields
+		where custom_field_name = 'Team'
+		group by jira_key
+	) teams
+	on sandbox_jira_mast.jira_key = teams.jira_key
+where
+  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps
+;</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Worklog ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Work Date" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Full Name" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Employee Type" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Hours" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Issue Key" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Work ID" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="IDBP Project Links" size="32767" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Record Message" source="File: Z:\Alteryx Input\Tempo Worklog.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="sprint" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
-    <Node ToolID="86">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="222" y="54" />
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="294" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
-          <FormatSpecificOptions>
-            <FirstRowData>False</FirstRowData>
-            <ImportLine>1</ImportLine>
-          </FormatSpecificOptions>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="jira_key" selected="True" rename="Issue Key" />
+            <SelectField field="jira_key_summary" selected="True" rename="Issue Summary" />
+            <SelectField field="sprint" selected="True" rename="Sprint Name" />
+            <SelectField field="team" selected="True" rename="Team" />
+            <SelectField field="worklog_hours" selected="True" rename="Hours" type="Double" size="8" />
+            <SelectField field="worklog_date_worked" selected="True" rename="Work Date" type="Date" size="10" />
+            <SelectField field="worklog_team_member" selected="True" rename="User Name" />
+            <SelectField field="jira_key1" selected="True" rename="Project" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Team Membership.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
+          <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Team" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Sprint Name" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field name="Hours" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="Double" />
+            <Field name="Work Date" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="Date" />
+            <Field name="User Name" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA; sandbox_jira_mast.jira_key,&#xA; sandbox_jira_mast.jira_key_summary,&#xA; sprint.sprint,&#xA; teams.team,&#xA; sandbox_worklogs.worklog_hours,&#xA; sandbox_worklogs.worklog_date_worked,&#xA; sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs -- bringing in each of the worklog records&#xA; on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join -- using a left join just in case the JIRA Key is missing sprint data&#xA; ( -- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;  select &#xA;   jira_key, &#xA;   string_agg(sprint_name, '; ') as sprint&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  left join sandbox.sandbox_jira_sprints&#xA;   on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;  where custom_field_name = 'Sprint'&#xA;  group by jira_key&#xA; ) sprint&#xA; on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA; ( -- pull the team detail, aggregated into a single record by team&#xA;  select &#xA;   jira_key, &#xA;   string_agg(custom_field_value, '; ') as team&#xA;  from sandbox.sandbox_jira_custom_fields&#xA;  where custom_field_name = 'Team'&#xA;  group by jira_key&#xA; ) teams&#xA; on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;  sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'  -- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="582" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([Sprint Name])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>Sprint Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-09-28 11:14:33</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-09-28 11:14:33</StartDate>
+              <EndDate>2018-09-28 11:14:33</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>IsNull([Sprint Name])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Hours" source="Summarize: Sum - Hours" type="Double" />
+            <Field name="Issue Key" size="8190" source="Summarize: GroupBy - Issue Key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field name="User Name" size="255" source="Summarize: GroupBy - User Name" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="Summarize: GroupBy - Issue Summary" type="V_WString" />
+            <Field name="Sprint Name" size="8190" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Issue Key" order="Asc" />
+            <Field field="User Name" order="Asc" />
+            <Field field="Issue Summary" order="Asc" />
+            <Field field="Sprint Name" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Hours" source="Summarize: Sum - Hours" type="Double" />
+            <Field name="Issue Key" size="8190" source="Summarize: GroupBy - Issue Key" type="V_WString" />
+            <Field description="TextToColumns: Parsed from jira_key" name="Project" size="8190" source="TextToColumns: Parsed from jira_key" type="V_WString" />
+            <Field name="User Name" size="255" source="Summarize: GroupBy - User Name" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="Summarize: GroupBy - Issue Summary" type="V_WString" />
+            <Field name="Sprint Name" size="8190" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Issue Key" order="Asc" />
+            <Field field="User Name" order="Asc" />
+            <Field field="Issue Summary" order="Asc" />
+            <Field field="Sprint Name" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Destination ToolID="90" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="15" Connection="True" />
-      <Destination ToolID="19" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="86" Connection="Output" />
-      <Destination ToolID="19" Connection="Left" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="19" Connection="Join" />
-      <Destination ToolID="24" Connection="Input" />
+      <Destination ToolID="89" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="24" Connection="Output" />
@@ -492,8 +544,16 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <Destination ToolID="15" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="85" Connection="Output" />
+      <Origin ToolID="88" Connection="Output" />
       <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="False" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

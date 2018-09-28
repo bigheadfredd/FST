@@ -3,14 +3,14 @@
   <Nodes>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="91.00001" y="870" width="220.6608" height="19" />
+        <Position x="54" y="786" width="702" height="226" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Create Team Membership file</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -21,7 +21,7 @@
       <ChildNodes>
         <Node ToolID="18">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="116" y="950" />
+            <Position x="79" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -63,7 +63,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="19">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="309" y="962" />
+            <Position x="272" y="878" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -84,7 +84,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="20">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="667" y="954" />
+            <Position x="630" y="870" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -106,7 +106,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="48">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="224" y="950" />
+            <Position x="187" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -140,7 +140,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="51">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="393" y="914" />
+            <Position x="356" y="830" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -159,7 +159,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="52">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="561" y="950" />
+            <Position x="524" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -184,7 +184,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="53">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="477.0002" y="950" />
+            <Position x="440.0002" y="866" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -222,14 +222,14 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="91" y="54" width="237.338" height="19" />
+        <Position x="53.99998" y="42" width="360" height="215.9997" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Run JIRA connector to create file</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -240,7 +240,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="6">
           <GuiSettings>
-            <Position x="116" y="97.99999" />
+            <Position x="78.99998" y="86" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -3663,7 +3663,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="22">
           <GuiSettings>
-            <Position x="127" y="185.9997" />
+            <Position x="89.99998" y="173.9997" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6837,7 +6837,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="23">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="247" y="125.9997" />
+            <Position x="210" y="113.9997" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6856,7 +6856,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="7">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="343" y="117.9997" />
+            <Position x="306" y="105.9997" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6880,14 +6880,14 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="91" y="282" width="200.4601" height="19" />
+        <Position x="53.99998" y="282" width="1025" height="243" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Create scrubbed JIRA file</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -6898,7 +6898,7 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="9">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="215" y="326" />
+            <Position x="178" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6937,7 +6937,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="10">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="116" y="326" />
+            <Position x="78.99998" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11608,7 +11608,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="11">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="313" y="326" />
+            <Position x="276" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11629,7 +11629,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="12">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="609" y="326" />
+            <Position x="572" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11650,7 +11650,7 @@ Sprint End = TrimLeft([Sprint End...</DefaultAnnotationText>
         </Node>
         <Node ToolID="13">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="806" y="326" />
+            <Position x="769" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11686,7 +11686,7 @@ Sprint End = TrimLeft([Sprint End...</DefaultAnnotationText>
         </Node>
         <Node ToolID="14">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="904" y="326" />
+            <Position x="867" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11719,7 +11719,7 @@ Sprint End = TrimLeft([Sprint End...</DefaultAnnotationText>
         </Node>
         <Node ToolID="17">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="1003" y="326" />
+            <Position x="966" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11741,7 +11741,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="41">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="907.0001" y="394" />
+            <Position x="870.0002" y="394" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11763,7 +11763,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="63">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="510" y="326" />
+            <Position x="473" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11784,7 +11784,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="66">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="412" y="326" />
+            <Position x="375" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11805,7 +11805,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="67">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="707" y="326" />
+            <Position x="670" y="326" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11841,14 +11841,14 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="39">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="91.00001" y="533.9997" width="179.6955" height="19" />
+        <Position x="54" y="534" width="788" height="224" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>Logged time by sprint</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -11859,11 +11859,11 @@ Table=Sheet1</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="28">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="288.9999" y="578.0001" />
+            <Position x="264" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Expression>[Work Date] &gt;= "2018-05-10"</Expression>
+              <Expression>[Work Date] &gt;= "2018-05-10" and !isnull([Sprint Name])</Expression>
               <Mode>Custom</Mode>
               <Simple>
                 <Operator>&gt;=</Operator>
@@ -11883,7 +11883,7 @@ Table=Sheet1</DefaultAnnotationText>
             <Annotation DisplayMode="0">
               <Name />
               <AnnotationText />
-              <DefaultAnnotationText>[Work Date] &gt;= "2018-05-10"</DefaultAnnotationText>
+              <DefaultAnnotationText>[Work Date] &gt;= "2018-05-10" and !isnull([Sprint Name])</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
@@ -11891,7 +11891,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="29">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="376" y="578.0001" />
+            <Position x="356" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11912,7 +11912,7 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="30">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="462" y="578.0001" />
+            <Position x="461" y="578" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11931,7 +11931,7 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="31">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-            <Position x="535" y="582" />
+            <Position x="542" y="578" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -11950,11 +11950,11 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="32">
           <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="623" y="578.0001" />
+            <Position x="622" y="578" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_11636_b6b8915fa1534415b0bdddf30a5c2505_\Engine_11292_e74c73123cb64b6183133455e2744fdd_.yxdb</TempFile>
+              <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_12924_83e2e063ee4643418b529a667c4fd218_\Engine_2680_b28497392205496da219bb5a90cee0a9_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -11978,15 +11978,15 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="33">
           <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="727" y="642" />
+            <Position x="541" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <SummarizeFields>
                 <SummarizeField field="Hours" action="Sum" rename="Sum_Hours" />
-                <SummarizeField field="Sprint" action="GroupBy" rename="Sprint" />
                 <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
                 <SummarizeField field="Team" action="GroupBy" rename="Team" />
+                <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
               </SummarizeFields>
             </Configuration>
             <Annotation DisplayMode="0">
@@ -11999,17 +11999,18 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="34">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="823.0001" y="642" />
+            <Position x="634" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <FormulaFields>
-                <FormulaField expression="[Sum_Hours]/6" field="Points" size="8" type="Double" />
+                <FormulaField expression="round(([Sum_Hours]/6),1)" field="Points" size="8" type="Double" />
               </FormulaFields>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
-              <DefaultAnnotationText><![CDATA[Points = [Sum_Hours]/6
+              <AnnotationText />
+              <DefaultAnnotationText><![CDATA[Points = round(([Sum_Hours]/6),1)
 ]]></DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
@@ -12018,7 +12019,7 @@ Value Stream = if Substring([Issue Key]...</DefaultAnnotationText>
         </Node>
         <Node ToolID="35">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="919" y="642" />
+            <Position x="726" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12039,82 +12040,22 @@ Table=Sheet1</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
-        <Node ToolID="37">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="379" y="654" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText>Team Membership.xlsx</AnnotationText>
-              <DefaultAnnotationText>Team Membership.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-        </Node>
-        <Node ToolID="38">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="455" y="638.0001" />
-          </GuiSettings>
-          <Properties>
-            <Configuration joinByRecordPos="False">
-              <JoinInfo connection="Left">
-                <Field field="User Full Name" />
-              </JoinInfo>
-              <JoinInfo connection="Right">
-                <Field field="User Name" />
-              </JoinInfo>
-              <SelectConfiguration>
-                <Configuration outputConnection="Join">
-                  <OrderChanged value="False" />
-                  <CommaDecimal value="False" />
-                  <SelectFields>
-                    <SelectField field="Left_Work Date" selected="True" type="Date" size="10" />
-                    <SelectField field="Right_Value Stream" selected="True" rename="Right_Value Stream" />
-                    <SelectField field="*Unknown" selected="True" />
-                  </SelectFields>
-                </Configuration>
-              </SelectConfiguration>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-        </Node>
         <Node ToolID="97">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="202.0001" y="578" />
+            <Position x="171" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
-                <SelectField field="worklog_jira_key" selected="True" rename="Issue Key" />
+                <SelectField field="jira_key" selected="True" rename="Issue Key" />
+                <SelectField field="jira_key_summary" selected="True" rename="Summary" />
+                <SelectField field="sprint" selected="True" rename="Sprint Name" />
+                <SelectField field="team" selected="True" rename="Team" />
                 <SelectField field="worklog_hours" selected="True" rename="Hours" type="Double" size="8" />
+                <SelectField field="worklog_date_worked" selected="True" rename="Work Date" type="Date" size="10" />
                 <SelectField field="worklog_team_member" selected="True" rename="User Full Name" />
-                <SelectField field="worklog_date_worked" selected="True" rename="Work Date" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -12128,21 +12069,48 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="107">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="116" y="577.9997" />
+            <Position x="79.00002" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Passwords />
               <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select 
-	sandbox.sandbox_worklogs.worklog_jira_key,
-	sandbox.sandbox_worklogs.worklog_hours,
-	sandbox.sandbox_worklogs.worklog_team_member,
-	sandbox.sandbox_worklogs.worklog_date_worked,
-	sandbox.sandbox_jira_mast.jira_key_summary
-from 
-	sandbox.sandbox_worklogs 
-inner join sandbox.sandbox_jira_mast 
-	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key</File>
+	sandbox_jira_mast.jira_key,
+	sandbox_jira_mast.jira_key_summary,
+	sprint.sprint,
+	teams.team,
+	sandbox_worklogs.worklog_hours,
+	sandbox_worklogs.worklog_date_worked,
+	sandbox_worklogs.worklog_team_member
+from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key
+join sandbox.sandbox_worklogs	-- bringing in each of the worklog records
+	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key
+left join	-- using a left join just in case the JIRA Key is missing sprint data
+	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates
+		select 
+			jira_key, 
+			string_agg(sprint_name, '; ') as sprint
+		from sandbox.sandbox_jira_custom_fields
+		left join sandbox.sandbox_jira_sprints
+			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text 
+		where custom_field_name = 'Sprint'
+		group by jira_key
+	) sprint
+	on sandbox_jira_mast.jira_key = sprint.jira_key
+left join -- using a left join just incase there is missing team data
+	(	-- pull the team detail, aggregated into a single record by team
+		select 
+			jira_key, 
+			string_agg(custom_field_value, '; ') as team
+		from sandbox.sandbox_jira_custom_fields
+		where custom_field_name = 'Team'
+		group by jira_key
+	) teams
+	on sandbox_jira_mast.jira_key = teams.jira_key
+where
+	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key
+	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps
+;</File>
               <FormatSpecificOptions>
                 <PreSQL />
                 <ReadCentroids>False</ReadCentroids>
@@ -12159,118 +12127,61 @@ inner join sandbox.sandbox_jira_mast
               <AnnotationText>sandbox_worklog</AnnotationText>
               <DefaultAnnotationText>DSN=PostgreSQL30
 Table=select 
-	sandbox.sandbox_worklogs.worklog_jira_key,
-	sandbox.sandbox_worklogs.worklog_hours,
-	sandbox.sandbox_worklogs.worklog_team_member,
-	sandbox.sandbox_worklogs.worklog_date_worked,
-	sandbox.sandbox_jira_mast.jira_key_summary
-from 
-	sandbox.sandbox_worklogs 
-inner join sandbox.sandbox_jira_mast 
-	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key</DefaultAnnotationText>
+	sandbox_jira_mast.jira_key,
+	sandbox_jira_mast.jira_key_summary,
+	sprint.sprint,
+	teams.team,
+	sandbox_worklogs.worklog_hours,
+	sandbox_worklogs.worklog_date_worked,
+	sandbox_worklogs.worklog_team_member
+from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key
+join sandbox.sandbox_worklogs	-- bringing in each of the worklog records
+	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key
+left join	-- using a left join just in case the JIRA Key is missing sprint data
+	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates
+		select 
+			jira_key, 
+			string_agg(sprint_name, '; ') as sprint
+		from sandbox.sandbox_jira_custom_fields
+		left join sandbox.sandbox_jira_sprints
+			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text 
+		where custom_field_name = 'Sprint'
+		group by jira_key
+	) sprint
+	on sandbox_jira_mast.jira_key = sprint.jira_key
+left join -- using a left join just incase there is missing team data
+	(	-- pull the team detail, aggregated into a single record by team
+		select 
+			jira_key, 
+			string_agg(custom_field_value, '; ') as team
+		from sandbox.sandbox_jira_custom_fields
+		where custom_field_name = 'Team'
+		group by jira_key
+	) teams
+	on sandbox_jira_mast.jira_key = teams.jira_key
+where
+	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key
+	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps
+;</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="worklog_jira_key" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
-                <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
-                <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
-                <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="DateTime" />
-                <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox.sandbox_worklogs.worklog_jira_key,&#xA;	sandbox.sandbox_worklogs.worklog_hours,&#xA;	sandbox.sandbox_worklogs.worklog_team_member,&#xA;	sandbox.sandbox_worklogs.worklog_date_worked,&#xA;	sandbox.sandbox_jira_mast.jira_key_summary&#xA;from &#xA;	sandbox.sandbox_worklogs &#xA;inner join sandbox.sandbox_jira_mast &#xA;	on sandbox.sandbox_jira_mast.jira_key = sandbox.sandbox_worklogs.worklog_jira_key" type="V_WString" />
+                <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+                <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+                <Field name="sprint" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+                <Field name="team" size="8190" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+                <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
+                <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="DateTime" />
+                <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||select &#xA;	sandbox_jira_mast.jira_key,&#xA;	sandbox_jira_mast.jira_key_summary,&#xA;	sprint.sprint,&#xA;	teams.team,&#xA;	sandbox_worklogs.worklog_hours,&#xA;	sandbox_worklogs.worklog_date_worked,&#xA;	sandbox_worklogs.worklog_team_member&#xA;from sandbox.sandbox_jira_mast -- this is your master table, one record for each JIRA Key&#xA;join sandbox.sandbox_worklogs	-- bringing in each of the worklog records&#xA;	on sandbox_jira_mast.jira_key = sandbox_worklogs.worklog_jira_key&#xA;left join	-- using a left join just in case the JIRA Key is missing sprint data&#xA;	(	-- pull the sprint detail for each JIRA initiative, aggregated into one line per JIRA key so we do not introduce duplicates&#xA;		select &#xA;			jira_key, &#xA;			string_agg(sprint_name, '; ') as sprint&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		left join sandbox.sandbox_jira_sprints&#xA;			on sandbox_jira_custom_fields.custom_field_value = sandbox_jira_sprints.sprint_id::text &#xA;		where custom_field_name = 'Sprint'&#xA;		group by jira_key&#xA;	) sprint&#xA;	on sandbox_jira_mast.jira_key = sprint.jira_key&#xA;left join -- using a left join just incase there is missing team data&#xA;	(	-- pull the team detail, aggregated into a single record by team&#xA;		select &#xA;			jira_key, &#xA;			string_agg(custom_field_value, '; ') as team&#xA;		from sandbox.sandbox_jira_custom_fields&#xA;		where custom_field_name = 'Team'&#xA;		group by jira_key&#xA;	) teams&#xA;	on sandbox_jira_mast.jira_key = teams.jira_key&#xA;where&#xA;	jiraproject(sandbox_jira_mast.jira_key) in ('CD', 'PMOS')	-- use this to limit the JIRA Projects, it uses a custom function called JIRA Project that extracts the JIRA Project ID from a JIRA Key&#xA;	and sandbox_worklogs.worklog_date_worked::date &gt; current_date - interval '120 days'		-- converted the date_worked to a date to strip off any timestamps&#xA;;" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
         </Node>
-        <Node ToolID="108">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-            <Position x="379" y="738" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Passwords />
-              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`</File>
-              <FormatSpecificOptions>
-                <FirstRowData>False</FirstRowData>
-                <ImportLine>1</ImportLine>
-              </FormatSpecificOptions>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText>Sprint Metrics.xlsx</AnnotationText>
-              <DefaultAnnotationText>Sprint Metrics.xlsx
-Table=`Sheet1$`</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-            <MetaInfo connection="Output">
-              <RecordInfo>
-                <Field name="Board" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Team" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Sprint ID" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Delivered" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Committed" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Double" />
-                <Field name="Sprint Name" size="255" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="V_String" />
-                <Field name="Start Date" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Date" />
-                <Field name="End Date" source="File: Z:\Alteryx Input\Sprint Metrics.xlsx|||`Sheet1$`" type="Date" />
-              </RecordInfo>
-            </MetaInfo>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-        </Node>
-        <Node ToolID="109">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="475" y="738" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Team" selected="True" />
-                <SelectField field="Sprint Name" selected="True" />
-                <SelectField field="Start Date" selected="True" />
-                <SelectField field="End Date" selected="True" />
-                <SelectField field="*Unknown" selected="False" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="110">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="631" y="642" />
-          </GuiSettings>
-          <Properties>
-            <Configuration joinByRecordPos="False">
-              <JoinInfo connection="Left" />
-              <JoinInfo connection="Right" />
-              <SelectConfiguration>
-                <Configuration outputConnection="Join">
-                  <OrderChanged value="False" />
-                  <CommaDecimal value="False" />
-                  <SelectFields>
-                    <SelectField field="Right_Team" selected="True" rename="Right_Team" />
-                    <SelectField field="*Unknown" selected="True" />
-                  </SelectFields>
-                </Configuration>
-              </SelectConfiguration>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-        </Node>
-        <Node ToolID="111">
+        <Node ToolID="129">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="667" y="750" />
+            <Position x="449" y="641.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12289,7 +12200,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="96">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="1090" width="903" height="352" />
+        <Position x="54" y="1038" width="1202" height="376.0001" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -12307,7 +12218,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="77">
           <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-            <Position x="116" y="1262" />
+            <Position x="93.00014" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12323,6 +12234,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <Fields orderChanged="False">
                   <Field name="Board Number" selected="False" />
                   <Field name="Board Name" selected="False" />
+                  <Field name="type" selected="False" />
                   <Field name="URL" selected="False" />
                   <Field name="*Unknown" selected="False" />
                 </Fields>
@@ -12334,6 +12246,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <ComposeFields orderChanged="False">
                   <Field name="Board Number" selected="False" />
                   <Field name="Board Name" selected="False" />
+                  <Field name="type" selected="False" />
                   <Field name="URL" selected="False" />
                   <Field name="*Unknown" selected="False" />
                 </ComposeFields>
@@ -12353,7 +12266,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="78">
           <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-            <Position x="205" y="1262" />
+            <Position x="189.9999" y="1234" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12371,7 +12284,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="79">
           <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-            <Position x="382" y="1262" />
+            <Position x="384" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12418,7 +12331,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="80">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="293" y="1262" />
+            <Position x="287" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12439,7 +12352,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="85">
           <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-            <Position x="392.0001" y="1358" />
+            <Position x="271.9997" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12457,7 +12370,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="86">
           <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-            <Position x="308.0001" y="1358" />
+            <Position x="186.9999" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12471,10 +12384,9 @@ Table=`Sheet1$`</DefaultAnnotationText>
                   <Item name="Content-Type" value="application/json" />
                 </NameValues>
                 <Fields orderChanged="False">
-                  <Field name="Board Number" selected="False" />
-                  <Field name="Sprint ID" selected="False" />
-                  <Field name="Delivered" selected="False" />
                   <Field name="Committed" selected="False" />
+                  <Field name="Delivered" selected="False" />
+                  <Field name="Sprint ID" selected="False" />
                   <Field name="Sprint Name" selected="False" />
                   <Field name="URL" selected="False" />
                   <Field name="*Unknown" selected="False" />
@@ -12485,10 +12397,9 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <QueryStringBodyMode>Compose</QueryStringBodyMode>
                 <ComposeNameValues />
                 <ComposeFields orderChanged="False">
-                  <Field name="Board Number" selected="False" />
-                  <Field name="Sprint ID" selected="False" />
-                  <Field name="Delivered" selected="False" />
                   <Field name="Committed" selected="False" />
+                  <Field name="Delivered" selected="False" />
+                  <Field name="Sprint ID" selected="False" />
                   <Field name="Sprint Name" selected="False" />
                   <Field name="URL" selected="False" />
                   <Field name="*Unknown" selected="False" />
@@ -12507,28 +12418,9 @@ Table=`Sheet1$`</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
         </Node>
-        <Node ToolID="87">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="211.9999" y="1358" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [Sprint ID] &#xA;" field="URL" size="1073741823" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <AnnotationText />
-              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/agile/1.0/sprint/" + [Sprint ID] ...</DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
         <Node ToolID="88">
           <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-            <Position x="487.9999" y="1358" />
+            <Position x="356.0001" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12551,6 +12443,16 @@ Table=`Sheet1$`</DefaultAnnotationText>
             <MetaInfo connection="Output">
               <RecordInfo>
                 <Field name="Sprint Name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+                <Field name="completeDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="endDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="errorMessages_0" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="goal" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="originBoardId" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="self" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="startDate" size="1073741823" source="JSONParse: " type="V_WString" />
+                <Field name="state" size="1073741823" source="JSONParse: " type="V_WString" />
               </RecordInfo>
               <SortInfo>
                 <Field field="Sprint Name" order="Asc" />
@@ -12561,7 +12463,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="89">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="860" y="1358" />
+            <Position x="691" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12587,7 +12489,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="90">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="584" y="1358" />
+            <Position x="440.0001" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12608,7 +12510,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="91">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="680" y="1358" />
+            <Position x="525" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12629,7 +12531,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="92">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="764.0001" y="1358" />
+            <Position x="609" y="1330" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12650,7 +12552,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="93">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="763" y="1278" />
+            <Position x="870" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -12662,19 +12564,20 @@ Table=`Sheet1$`</DefaultAnnotationText>
               </JoinInfo>
               <SelectConfiguration>
                 <Configuration outputConnection="Join">
-                  <OrderChanged value="False" />
+                  <OrderChanged value="True" />
                   <CommaDecimal value="False" />
                   <SelectFields>
-                    <SelectField field="Left_Right_Sprint Name" selected="True" rename="Left_Right_Sprint Name" />
+                    <SelectField field="Left_Board Number" selected="True" />
+                    <SelectField field="Left_Sprint ID" selected="True" />
+                    <SelectField field="Left_Sprint Name" selected="True" />
+                    <SelectField field="Left_Committed" selected="True" />
+                    <SelectField field="Left_Delivered" selected="True" />
                     <SelectField field="Right_Sprint Name" selected="False" rename="Right_Sprint Name" />
                     <SelectField field="Right_Sprint ID" selected="False" rename="Right_Sprint ID" />
-                    <SelectField field="Left_Right_Sprint ID" selected="True" rename="Left_Right_Sprint ID" />
-                    <SelectField field="Right_Board" selected="False" rename="Right_Board" />
-                    <SelectField field="Right_Team" selected="False" rename="Right_Team" />
-                    <SelectField field="Left_Sprint State" selected="False" />
-                    <SelectField field="Right_Complete Date" selected="False" />
                     <SelectField field="Right_state" selected="False" />
-                    <SelectField field="*Unknown" selected="True" />
+                    <SelectField field="Right_Start Date" selected="True" />
+                    <SelectField field="Right_End Date" selected="True" />
+                    <SelectField field="*Unknown" selected="False" />
                   </SelectFields>
                 </Configuration>
               </SelectConfiguration>
@@ -12689,11 +12592,11 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Node>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-            <Position x="859" y="1254" />
+            <Position x="1158" y="1158" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <File FileFormat="25" MaxRecords="">Z:\Alteryx Input\Sprint Metrics.xlsx|||Sheet1</File>
+              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Sprint Metrics.xlsx|||Sheet1</File>
               <Passwords />
               <FormatSpecificOptions>
                 <OutputOption>Overwrite</OutputOption>
@@ -12707,17 +12610,20 @@ Table=`Sheet1$`</DefaultAnnotationText>
 Table=Sheet1</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="559" y="1266" />
+            <Position x="579" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration>
               <Expression>IsNull([Sprint ID])</Expression>
-              <Mode>Simple</Mode>
+              <Mode>Custom</Mode>
               <Simple>
                 <Operator>IsNull</Operator>
                 <Field>Sprint ID</Field>
@@ -12728,10 +12634,10 @@ Table=Sheet1</DefaultAnnotationText>
                   <PeriodType>
                   </PeriodType>
                   <PeriodCount>0</PeriodCount>
-                  <StartDate>2018-09-26 11:58:31</StartDate>
-                  <EndDate>2018-09-26 11:58:31</EndDate>
                   <Operand>
                   </Operand>
+                  <StartDate>2018-09-26 11:58:31</StartDate>
+                  <EndDate>2018-09-26 11:58:31</EndDate>
                 </Operands>
               </Simple>
             </Configuration>
@@ -12746,7 +12652,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="79" y="1158" />
+            <Position x="78.99998" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12794,7 +12700,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="100">
           <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-            <Position x="211" y="1166" />
+            <Position x="173" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12836,7 +12742,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="101">
           <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
-            <Position x="295" y="1166" />
+            <Position x="268" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12854,7 +12760,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="102">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="379" y="1166" />
+            <Position x="362" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12875,7 +12781,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="103">
           <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
-            <Position x="475" y="1166" />
+            <Position x="456" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12898,7 +12804,7 @@ Table=Sheet1</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="URL" size="66" source="CrossTab:Group:First:" type="String" />
+                <Field name="URL" size="68" source="CrossTab:Group:First:" type="String" />
                 <Field description="TextToColumns: Parsed from JSON_Name" name="JSON_Name2" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
                 <Field name="id" size="1073741823" source="JSONParse: " type="V_WString" />
                 <Field name="name" size="1073741823" source="JSONParse: " type="V_WString" />
@@ -12916,7 +12822,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="104">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="559" y="1166" />
+            <Position x="550" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12925,6 +12831,7 @@ Table=Sheet1</DefaultAnnotationText>
               <SelectFields>
                 <SelectField field="id" selected="True" rename="Board Number" />
                 <SelectField field="name" selected="True" rename="Board Name" />
+                <SelectField field="type" selected="True" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -12938,33 +12845,32 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="105">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-            <Position x="655" y="1166" />
+            <Position x="645.0001" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <Expression>IsNull([Board Number])</Expression>
+              <Expression>[type] = "scrum"</Expression>
               <Mode>Simple</Mode>
               <Simple>
-                <Operator>IsNull</Operator>
-                <Field>Board Number</Field>
+                <Operator>=</Operator>
+                <Field>type</Field>
                 <Operands>
                   <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
                   <DateType>fixed</DateType>
-                  <PeriodDate>2018-09-26 09:01:30</PeriodDate>
+                  <PeriodDate>2018-09-26 15:13:19</PeriodDate>
                   <PeriodType>
                   </PeriodType>
                   <PeriodCount>0</PeriodCount>
-                  <StartDate>2018-09-26 09:01:30</StartDate>
-                  <EndDate>2018-09-26 09:01:30</EndDate>
-                  <Operand>
-                  </Operand>
+                  <Operand>scrum</Operand>
+                  <StartDate>2018-09-26 15:13:19</StartDate>
+                  <EndDate>2018-09-26 15:13:19</EndDate>
                 </Operands>
               </Simple>
             </Configuration>
             <Annotation DisplayMode="0">
               <Name />
               <AnnotationText />
-              <DefaultAnnotationText>IsNull([Board Number])</DefaultAnnotationText>
+              <DefaultAnnotationText>[type] = "scrum"</DefaultAnnotationText>
               <Left value="False" />
             </Annotation>
           </Properties>
@@ -12972,7 +12878,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="106">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="739.0002" y="1166" />
+            <Position x="739" y="1154" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -12991,19 +12897,26 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="112">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="470" y="1262" />
+            <Position x="482" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <OrderChanged value="False" />
+              <OrderChanged value="True" />
               <CommaDecimal value="False" />
               <SelectFields>
                 <SelectField field="Board Number" selected="True" />
                 <SelectField field="JSON_Name2" selected="True" rename="ID" />
-                <SelectField field="completed_value" selected="True" rename="Delivered" type="Double" size="8" />
+                <SelectField field="completed_text" selected="False" />
                 <SelectField field="estimated_value" selected="True" rename="Committed" type="Double" size="8" />
+                <SelectField field="completed_value" selected="True" rename="Delivered" type="Double" size="8" />
+                <SelectField field="estimated_text" selected="False" />
+                <SelectField field="goal" selected="False" />
                 <SelectField field="id" selected="True" rename="Sprint ID" />
+                <SelectField field="linkedPagesCount" selected="False" />
                 <SelectField field="name" selected="True" rename="Sprint Name" />
+                <SelectField field="sequence" selected="False" />
+                <SelectField field="state" selected="True" />
+                <SelectField field="_Null_" selected="False" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -13017,7 +12930,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="114">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-            <Position x="655" y="1266" />
+            <Position x="773" y="1233.999" />
           </GuiSettings>
           <Properties>
             <Configuration joinByRecordPos="False">
@@ -13034,13 +12947,13 @@ Table=Sheet1</DefaultAnnotationText>
                   <OrderChanged value="False" />
                   <CommaDecimal value="False" />
                   <SelectFields>
-                    <SelectField field="Left_Delivered" selected="True" />
+                    <SelectField field="Left_Board Number" selected="True" />
                     <SelectField field="Left_Committed" selected="True" />
-                    <SelectField field="Left_Sprint ID" selected="True" />
+                    <SelectField field="Left_Delivered" selected="True" />
                     <SelectField field="Right_Board Number" selected="False" rename="Right_Board Number" />
-                    <SelectField field="Right_Delivered" selected="False" rename="Right_Delivered" />
                     <SelectField field="Right_Committed" selected="False" rename="Right_Committed" />
-                    <SelectField field="Right_Sprint ID" selected="False" rename="Right_Sprint ID" />
+                    <SelectField field="Right_Delivered" selected="False" rename="Right_Delivered" />
+                    <SelectField field="Right_Sprint ID" selected="True" />
                     <SelectField field="Right_Sprint Name" selected="True" />
                     <SelectField field="*Unknown" selected="False" />
                   </SelectFields>
@@ -13057,7 +12970,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Node>
         <Node ToolID="115">
           <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-            <Position x="139" y="1134" />
+            <Position x="78.99998" y="1094" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -13078,6 +12991,164 @@ Table=Sheet1</DefaultAnnotationText>
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="122">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="775" y="1330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Start Date] &gt;= "2018-05-10"</Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Operator>&gt;=</Operator>
+                <Field>Start Date</Field>
+                <Operands>
+                  <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+                  <DateType>fixed</DateType>
+                  <PeriodDate>2018-09-26 12:48:22</PeriodDate>
+                  <PeriodType>days</PeriodType>
+                  <PeriodCount>0</PeriodCount>
+                  <Operand>2018-05-10</Operand>
+                  <StartDate>2018-09-26 12:48:22</StartDate>
+                  <EndDate>2018-09-26 12:48:22</EndDate>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>[Start Date] &gt;= "2018-05-10"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="127">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="859.0001" y="1082" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Boards.xlsx|||Sheet1</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>Boards.xlsx</AnnotationText>
+              <DefaultAnnotationText>Boards.xlsx
+Table=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="130">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="966" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="Board Number" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="Board Number" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="True" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Left_Board Number" selected="False" />
+                    <SelectField field="Left_Board Name" selected="True" />
+                    <SelectField field="Left_type" selected="False" />
+                    <SelectField field="Left_URL" selected="False" />
+                    <SelectField field="Right_Board Number" selected="True" rename="Board ID" />
+                    <SelectField field="Right_Sprint Name" selected="True" />
+                    <SelectField field="Right_Sprint ID" selected="True" />
+                    <SelectField field="Right_Committed" selected="True" />
+                    <SelectField field="Right_Delivered" selected="True" />
+                    <SelectField field="Right_Start Date" selected="True" />
+                    <SelectField field="Right_End Date" selected="True" />
+                    <SelectField field="*Unknown" selected="False" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="131">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1062" y="1158" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Sprint Name" order="Ascending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Sprint Name - Ascending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="132">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="678" y="1218" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if [Committed] &gt; 3600 then [Committed]/21600 else [Committed] endif" field="Committed" size="8" type="Double" />
+                <FormulaField expression="if [Delivered] &gt; 3600 then [Delivered]/21600 else [Delivered] endif" field="Delivered" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>Committed = if [Committed] &gt; 3600 then [Committed]/21600 else [Committed] endif
+...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="133">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="102.0001" y="1330" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;https://jira.retirementpartner.com/rest/agile/1.0/sprint/&quot; + [Sprint ID] &#xA;" field="URL" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText />
+              <DefaultAnnotationText>URL = "https://jira.retirementpartner.com/rest/agile/1.0/sprint/" + [Sprint ID] ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
         </Node>
       </ChildNodes>
     </Node>
@@ -13173,11 +13244,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="29" Connection="Output" />
-      <Destination ToolID="38" Connection="Left" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="37" Connection="Output" />
-      <Destination ToolID="38" Connection="Right" />
+      <Destination ToolID="129" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="30" Connection="Output" />
@@ -13204,11 +13271,7 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="97" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="108" Connection="Output" />
-      <Destination ToolID="109" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="110" Connection="Join" />
+      <Origin ToolID="129" Connection="Output" />
       <Destination ToolID="33" Connection="Input" />
     </Connection>
     <Connection>
@@ -13236,20 +13299,12 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="85" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="87" Connection="Output" />
-      <Destination ToolID="86" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="88" Connection="Output" />
       <Destination ToolID="90" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="89" Connection="Output" />
-      <Destination ToolID="93" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="114" Connection="Join" />
-      <Destination ToolID="93" Connection="Left" />
+      <Destination ToolID="122" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="90" Connection="Output" />
@@ -13265,15 +13320,27 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="93" Connection="Join" />
-      <Destination ToolID="94" Connection="Input" />
+      <Destination ToolID="130" Connection="Right" />
     </Connection>
     <Connection>
-      <Origin ToolID="95" Connection="True" />
-      <Destination ToolID="114" Connection="Left" />
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="130" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="95" Connection="False" />
       <Destination ToolID="114" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="132" Connection="Output" />
+      <Destination ToolID="114" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="True" />
+      <Destination ToolID="132" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="100" Connection="Output" />
@@ -13296,7 +13363,7 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="105" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="105" Connection="False" />
+      <Origin ToolID="105" Connection="True" />
       <Destination ToolID="106" Connection="Input" />
     </Connection>
     <Connection>
@@ -13304,16 +13371,36 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="77" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="127" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="112" Connection="Output" />
       <Destination ToolID="95" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="114" Connection="Join" />
-      <Destination ToolID="87" Connection="Input" />
+      <Destination ToolID="93" Connection="Left" />
     </Connection>
     <Connection>
-      <Origin ToolID="115" Connection="Output" />
-      <Destination ToolID="100" Connection="Input" />
+      <Origin ToolID="122" Connection="True" />
+      <Destination ToolID="93" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="114" Connection="Join" />
+      <Destination ToolID="133" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Join" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="133" Connection="Output" />
+      <Destination ToolID="86" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

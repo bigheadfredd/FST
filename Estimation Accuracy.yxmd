@@ -3,12 +3,12 @@
   <Nodes>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="18" y="50" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -16,26 +16,32 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>JIRA Scrubbed Extract.xlsx
+          <AnnotationText>JIRA Scrubbed Closed Stories.xlsx</AnnotationText>
+          <DefaultAnnotationText>JIRA Scrubbed Closed Stories.xlsx
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Issue key" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="User Name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Labels1" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Labels2" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Project key" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Status" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="summary" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="updated" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="issue_type_name" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Points" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Time Spent" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Labels3" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint" size="255" source="File: C:\Users\dvbgns\Desktop\FST\Metrics Dev\Extracts\JIRA Scrubbed Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="User Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels1" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels2" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Labels3" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Project key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Status" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint End" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -43,19 +49,19 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
-        <Position x="102" y="50" />
+        <Position x="141" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <IsFrom value="False" />
-          <InputFieldName>updated</InputFieldName>
+          <InputFieldName>Issue key</InputFieldName>
           <Format>dd/Mon/yy hh:mm</Format>
           <OutputFieldName>UpdatedParsed</OutputFieldName>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>Convert updated From:
+          <DefaultAnnotationText>Convert Issue key From:
 Custom</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
@@ -64,11 +70,11 @@ Custom</DefaultAnnotationText>
     </Node>
     <Node ToolID="24">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="630" y="50" />
+        <Position x="666" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\estimation accuracy by type.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\estimation accuracy by type.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -77,6 +83,7 @@ Custom</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>estimation accuracy by type.xlsx</AnnotationText>
           <DefaultAnnotationText>estimation accuracy by type.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
@@ -89,7 +96,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="27">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="342" y="50" />
+        <Position x="404" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -99,12 +106,12 @@ Table=Sheet1</DefaultAnnotationText>
             <SelectField field="Issue key" selected="True" />
             <SelectField field="Project key" selected="True" />
             <SelectField field="Summary" selected="True" />
-            <SelectField field="Points" selected="True" type="Double" size="8" />
+            <SelectField field="Points" selected="True" />
             <SelectField field="Team" selected="True" />
-            <SelectField field="Time Spent" selected="True" rename="Actual Hours" type="Double" size="8" />
-            <SelectField field="Sprint" selected="True" rename="Sprint Started" />
-            <SelectField field="UpdatedParsed" selected="True" />
+            <SelectField field="Time Spent" selected="True" rename="Actual Hours" />
+            <SelectField field="Sprint Name" selected="True" />
             <SelectField field="Work Type" selected="True" />
+            <SelectField field="Sprint" selected="False" rename="Sprint Started" />
             <SelectField field="Custom field (Team)" selected="False" rename="Team" />
             <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
             <SelectField field="Î£ Time Spent" selected="False" rename="Time" />
@@ -123,7 +130,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="29">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="414" y="50" />
+        <Position x="491" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -136,7 +143,7 @@ Table=Sheet1</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>populate computed value fields</AnnotationText>
+          <AnnotationText />
           <DefaultAnnotationText>Actual Hours = [Actual Hours]/3600
 Variance = [Actual Hours]-(6*[Points])
 Estima...</DefaultAnnotationText>
@@ -147,11 +154,11 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="522" y="50" />
+        <Position x="579" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "Data Architecture"</Expression>
+          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0</Expression>
           <Mode>Custom</Mode>
           <Simple>
             <Operator>=</Operator>
@@ -173,8 +180,8 @@ Estima...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>remove dirty records</AnnotationText>
-          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "D...</DefaultAnnotationText>
+          <AnnotationText />
+          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -182,7 +189,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="50">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="198" y="50" />
+        <Position x="229" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -202,7 +209,7 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="270" y="50" />
+        <Position x="316" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -221,11 +228,11 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="52">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="642" y="170" />
+        <Position x="510" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\estimation accuracy by story.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\estimation accuracy by story.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -234,6 +241,7 @@ Estima...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>estimation accuracy by story.xlsx</AnnotationText>
           <DefaultAnnotationText>estimation accuracy by story.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
@@ -246,7 +254,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="53">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="366" y="182" />
+        <Position x="234" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -256,11 +264,11 @@ Table=Sheet1</DefaultAnnotationText>
             <SelectField field="Issue key" selected="True" />
             <SelectField field="Project key" selected="True" />
             <SelectField field="Summary" selected="True" />
-            <SelectField field="Points" selected="True" type="Double" size="8" />
+            <SelectField field="Points" selected="True" />
             <SelectField field="Team" selected="True" />
-            <SelectField field="Time Spent" selected="True" rename="Actual Hours" type="Double" size="8" />
-            <SelectField field="Sprint" selected="True" rename="Sprint Started" />
-            <SelectField field="UpdatedParsed" selected="True" />
+            <SelectField field="Time Spent" selected="True" rename="Actual Hours" />
+            <SelectField field="Sprint Name" selected="True" />
+            <SelectField field="Sprint" selected="False" rename="Sprint Started" />
             <SelectField field="Custom field (Team)" selected="False" rename="Team" />
             <SelectField field="Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
             <SelectField field="Î£ Time Spent" selected="False" rename="Time" />
@@ -279,7 +287,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="54">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="438" y="182" />
+        <Position x="326" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -303,11 +311,11 @@ Estima...</DefaultAnnotationText>
     </Node>
     <Node ToolID="55">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="546" y="182" />
+        <Position x="418" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "Data Architecture"</Expression>
+          <Expression>[points] &gt; 0 and [Actual Hours]&gt;0</Expression>
           <Mode>Custom</Mode>
           <Simple>
             <Operator>=</Operator>
@@ -329,8 +337,8 @@ Estima...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>remove dirty records</AnnotationText>
-          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0 and [Sprint Started] !=Null() and [Team] != "D...</DefaultAnnotationText>
+          <AnnotationText />
+          <DefaultAnnotationText>[points] &gt; 0 and [Actual Hours]&gt;0</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>

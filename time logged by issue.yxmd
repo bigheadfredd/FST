@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="366" y="102" />
+        <Position x="414" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -28,11 +28,11 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="450" y="102" />
+        <Position x="486" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\Tableau Input\time logged by issue.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\time logged by issue.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -46,12 +46,15 @@
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="210" y="126" />
+        <Position x="246" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -83,7 +86,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="290" y="102" />
+        <Position x="342" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -121,7 +124,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="32">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="366" y="18" />
+        <Position x="414" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -140,7 +143,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="450" y="18" />
+        <Position x="486" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -168,7 +171,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="146" y="126" />
+        <Position x="174" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -189,12 +192,12 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="75">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="174" y="18" />
+        <Position x="210" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Team Membership.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -208,12 +211,15 @@ Table=Sheet1</DefaultAnnotationText>
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Count" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="User Name" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Team" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Value Stream" size="255" source="File: Z:\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Count" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="User Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\Team Membership.xlsx|||`Sheet1$`" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -221,7 +227,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="76">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="82" y="126" />
+        <Position x="102" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -246,7 +252,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="77">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="18" y="126" />
+        <Position x="30" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -302,7 +308,7 @@ inner join sandbox.sandbox_jira_mast
     </Node>
     <Node ToolID="80">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="294" y="246" />
+        <Position x="330" y="282" />
       </GuiSettings>
       <Properties>
         <Configuration>
