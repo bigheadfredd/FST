@@ -23,9 +23,9 @@ Table=`Sheet1$`</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Sum_Hours" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Sprint" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Value Stream" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\logged time by sprint.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
@@ -74,7 +74,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
       <Properties>
         <Configuration joinByRecordPos="False">
           <JoinInfo connection="Left">
-            <Field field="Sprint" />
+            <Field field="Sprint Name" />
             <Field field="Team" />
             <Field field="Value Stream" />
           </JoinInfo>
@@ -89,7 +89,6 @@ Table=`Sheet1$`</DefaultAnnotationText>
               <CommaDecimal value="False" />
               <SelectFields>
                 <SelectField field="Left_Sum_Hours" selected="True" />
-                <SelectField field="Left_Sprint" selected="True" />
                 <SelectField field="Left_Value Stream" selected="True" />
                 <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Right_Team" selected="False" rename="Right_Team" />
@@ -99,6 +98,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
                 <SelectField field="Right_Planned Capacity" selected="True" />
                 <SelectField field="Right_Start Date" selected="True" />
                 <SelectField field="Right_End Date" selected="True" />
+                <SelectField field="Left_Sprint" selected="True" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
