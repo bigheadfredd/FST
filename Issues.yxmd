@@ -1,0 +1,835 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>relationships</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="parentkey" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships" type="V_WString" />
+            <Field name="childkey" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships" type="V_WString" />
+            <Field name="linkname" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships" type="V_WString" />
+            <Field name="info_as_of" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_relationships" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select jira_key, custom_field_value as "Sprint ID"
+from sandbox.sandbox_jira_custom_fields 
+where custom_field_name = 'Sprint'</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sprint ID</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select jira_key, custom_field_value as "Sprint ID"
+from sandbox.sandbox_jira_custom_fields 
+where custom_field_name = 'Sprint'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||select jira_key, custom_field_value as &quot;Sprint ID&quot;&#xA;from sandbox.sandbox_jira_custom_fields &#xA;where custom_field_name = 'Sprint'" type="V_WString" />
+            <Field name="Sprint ID" size="8190" source="File: odbc:DSN=PostgreSQL30|||select jira_key, custom_field_value as &quot;Sprint ID&quot;&#xA;from sandbox.sandbox_jira_custom_fields &#xA;where custom_field_name = 'Sprint'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as "Category" 
+From sandbox.sandbox_jira_custom_fields 
+Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Category'</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>category</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as "Category" 
+From sandbox.sandbox_jira_custom_fields 
+Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Category'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as &quot;Category&quot; &#xA;From sandbox.sandbox_jira_custom_fields &#xA;Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Category'" type="V_WString" />
+            <Field name="Category" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as &quot;Category&quot; &#xA;From sandbox.sandbox_jira_custom_fields &#xA;Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Category'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As "Points" From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>points</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As "Points" From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Points&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'" type="V_WString" />
+            <Field name="Points" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Points&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
+        <Position x="246" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JoinByRecPos value="False" />
+          <JoinFields>
+            <JoinInfo connection="#5">
+              <Field field="jira_key" />
+            </JoinInfo>
+            <JoinInfo connection="#6">
+              <Field field="jira_key" />
+            </JoinInfo>
+            <JoinInfo connection="#4">
+              <Field field="jira_key" />
+            </JoinInfo>
+            <JoinInfo connection="#2">
+              <Field field="jira_key" />
+            </JoinInfo>
+            <JoinInfo connection="#3">
+              <Field field="jira_key" />
+            </JoinInfo>
+          </JoinFields>
+          <CartesianMode>Warn</CartesianMode>
+          <OutputJoinOnly value="False" />
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Input_#3_jira_key" selected="True" rename="Issue Key" />
+                <SelectField field="Input_#3_jira_key_type" selected="True" rename="Issue Type" />
+                <SelectField field="Input_#1_linkname" selected="False" rename="Relationship Type" />
+                <SelectField field="Input_#1_childkey" selected="False" rename="Child Key" />
+                <SelectField field="Input_#1_parentkey" selected="False" rename="Parent Key" />
+                <SelectField field="Input_#2_Team" selected="True" />
+                <SelectField field="Input_#4_jira_key" selected="False" />
+                <SelectField field="Input_#3_jira_key_summary" selected="True" rename="Issue Summary" />
+                <SelectField field="Input_#4_Points" selected="True" type="Double" size="8" />
+                <SelectField field="Input_#2_jira_key" selected="False" />
+                <SelectField field="Input_#1_info_as_of" selected="False" />
+                <SelectField field="Input_#3_jira_key_time_logged" selected="True" rename="Hours Logged" type="Double" size="8" />
+                <SelectField field="Input_#3_jira_key_status" selected="True" rename="Issue Status" />
+                <SelectField field="Input_#5_Sprint ID" selected="True" type="Int16" size="2" />
+                <SelectField field="Input_#5_jira_key" selected="False" />
+                <SelectField field="Input_#6_jira_key" selected="False" />
+                <SelectField field="Input_#6_Category" selected="True" />
+                <SelectField field="Input_#7_jira_key_fix_version" selected="False" rename="Fix Version" />
+                <SelectField field="Input_#7_jira_key" selected="False" />
+                <SelectField field="Input_#3_jira_key_assignee" selected="True" rename="Assignee" />
+                <SelectField field="Input_#3_jira_key_create_timestamp" selected="True" rename="Created Date" />
+                <SelectField field="Input_#3_resolutiondate" selected="True" rename="Resolution Date" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoinMultiple" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as "Team" From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>False</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>team</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as "Team" From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as &quot;Team&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value as &quot;Team&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>jira master</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="jira_key_type" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="jira_key_summary" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="jira_key_time_logged" scale="6" size="30" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="FixedDecimal" />
+            <Field name="jira_key_status" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="jira_key_assignee" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="jira_key_create_timestamp" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="DateTime" />
+            <Field name="resolutiondate" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate From sandbox.sandbox_jira_mast" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="138" y="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[jira_key_type] in ("Task", "Sub-task", "Project Task")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>jira_key_type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-10-09 09:37:58</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-10-09 09:37:58</StartDate>
+              <EndDate>2018-10-09 09:37:58</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>[jira_key_type] in ("Task", "Sub-task", "Project Task")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="330" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([Issue Key]) or IsNull([Sprint ID])</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>Issue Key</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-10-09 10:10:35</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-10-09 10:10:35</StartDate>
+              <EndDate>2018-10-09 10:10:35</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>IsNull([Issue Key]) or IsNull([Sprint ID])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="126" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[linkname] in ("jira_subtask_link", "Relates", "Blocks", "Clones")</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>linkname</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-10-09 09:21:39</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>jira_subtask_link</Operand>
+              <StartDate>2018-10-09 09:21:39</StartDate>
+              <EndDate>2018-10-09 09:21:39</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>[linkname] in ("jira_subtask_link", "Relates", "Blocks", "Clones")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.sandbox_jira_fix_versions.jira_key From sandbox.sandbox_jira_fix_versions</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>key_fix_version</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.sandbox_jira_fix_versions.jira_key From sandbox.sandbox_jira_fix_versions</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="jira_key_fix_version" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.sandbox_jira_fix_versions.jira_key From sandbox.sandbox_jira_fix_versions" type="V_WString" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.sandbox_jira_fix_versions.jira_key From sandbox.sandbox_jira_fix_versions" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="330" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sprints</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select * from fst_analytics.sprints</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Int16" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_started" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_ended" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_start_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="sprint_end_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="sprint_complete_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="Global Sprint ID" size="8190" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="522" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Sprint ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="sprint_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Issue Key" selected="True" />
+                <SelectField field="Left_Issue Type" selected="True" />
+                <SelectField field="Left_Relationship Type" selected="False" />
+                <SelectField field="Left_Child Key" selected="False" />
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Left_Issue Summary" selected="True" />
+                <SelectField field="Left_Points" selected="True" />
+                <SelectField field="Left_Hours Logged" selected="True" />
+                <SelectField field="Left_Issue Status" selected="True" />
+                <SelectField field="Right_sprint_name" selected="True" rename="Sprint Name" />
+                <SelectField field="Left_Category" selected="True" />
+                <SelectField field="Left_Fix Version" selected="False" />
+                <SelectField field="Right_sprint_id" selected="False" />
+                <SelectField field="Right_sprint_started" selected="True" rename="Sprint Started?" type="Bool" size="1" />
+                <SelectField field="Right_sprint_ended" selected="True" rename="Sprint Ended?" type="Bool" size="1" />
+                <SelectField field="Right_sprint_start_date" selected="True" rename="Sprint Start Date" />
+                <SelectField field="Right_sprint_end_date" selected="True" rename="Sprint End Date" />
+                <SelectField field="Right_sprint_complete_date" selected="True" />
+                <SelectField field="Left_Assignee" selected="True" />
+                <SelectField field="Left_Sprint ID" selected="True" />
+                <SelectField field="Right_Global Sprint ID" selected="True" />
+                <SelectField field="Left_Created Date" selected="True" />
+                <SelectField field="Left_Resolution Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="618" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Issue Key</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Value Stream</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Issue Key" selected="True" />
+            <SelectField field="Issue Type" selected="True" />
+            <SelectField field="Value Stream1" selected="True" rename="Value Stream" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Category" selected="True" />
+            <SelectField field="Issue Summary" selected="True" />
+            <SelectField field="Issue Status" selected="True" />
+            <SelectField field="Points" selected="True" />
+            <SelectField field="Hours Logged" selected="True" />
+            <SelectField field="Fix Version" selected="False" />
+            <SelectField field="Assignee" selected="True" />
+            <SelectField field="Created Date" selected="True" />
+            <SelectField field="Resolution Date" selected="True" />
+            <SelectField field="Relationship Type" selected="False" />
+            <SelectField field="Child Key" selected="False" />
+            <SelectField field="Sprint Name" selected="True" />
+            <SelectField field="Sprint ID" selected="True" />
+            <SelectField field="Global Sprint ID" selected="True" />
+            <SelectField field="Sprint Start Date" selected="True" />
+            <SelectField field="Sprint End Date" selected="True" />
+            <SelectField field="sprint_complete_date" selected="True" rename="Sprint Complete Date" />
+            <SelectField field="Sprint Started?" selected="True" />
+            <SelectField field="Sprint Ended?" selected="True" />
+            <SelectField field="Value Stream2" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="1110" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">Z:\New Data Model\Issues.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Issues.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="sprint_id" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[
+]]></AnnotationText>
+          <DefaultAnnotationText>sprint_id - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="438" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Issue Key" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Issue Key - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="822" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Issue Key" order="Ascending" />
+            <Field field="Sprint Start Date" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Issue Key - Ascending
+Sprint Start Date - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="918" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Issue Key</UpdateField_Name>
+          <CreateField_Name>CarryOut</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if [Sprint Start Date] &lt; [Row+1:Sprint Start Date] then 1 else 0 endif</Expression>
+          <GroupByFields>
+            <Field field="Issue Key" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Carry-Out?</AnnotationText>
+          <DefaultAnnotationText>if [Sprint Start Date] &lt; [Row+1:Sprint Start Date] then 1 els...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1014" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Issue Key</UpdateField_Name>
+          <CreateField_Name>CarryIn</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if [Sprint Start Date] &gt; [Row-1:Sprint Start Date] then 1 else 0 endif</Expression>
+          <GroupByFields>
+            <Field field="Issue Key" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Carry-In?</AnnotationText>
+          <DefaultAnnotationText>if [Sprint Start Date] &gt; [Row-1:Sprint Start Date] then 1 els...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="21" Connection="False" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="False" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Join" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="35" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="35" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Issues</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

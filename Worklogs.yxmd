@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="234" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="tonumber(DateTimeFormat([worklog_date_worked], &quot;%U&quot;))/2" field="week parse" size="4" type="Int32" />
+            <FormulaField expression="left([worklog_date_worked],4) + &quot;.&quot; + tostring([week parse])" field="Global_Sprint_ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="if [Global_Sprint_ID] = &quot;.0&quot; then null() else [Global_Sprint_ID] endif" field="Global_Sprint_ID" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>week parse = tonumber(DateTimeFormat([worklog_date_worked], "%U"))/2
+Global_Spri...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="worklog_date_worked" selected="True" />
+            <SelectField field="worklog_team_member" selected="True" />
+            <SelectField field="worklog_hours" selected="True" />
+            <SelectField field="worklog_jira_key" selected="True" />
+            <SelectField field="worklog_id" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="worklog_id" selected="True" rename="Worklog ID" />
+            <SelectField field="worklog_jira_key" selected="True" rename="Issue Key" />
+            <SelectField field="Global_Sprint_ID" selected="True" rename="Global Sprint ID" />
+            <SelectField field="Value Stream1" selected="True" rename="Value Stream" />
+            <SelectField field="worklog_team_member" selected="True" rename="Team Member" />
+            <SelectField field="worklog_date_worked" selected="True" rename="Date Worked" type="Date" size="10" />
+            <SelectField field="worklog_hours" selected="True" rename="Hours" type="Double" size="8" />
+            <SelectField field="week parse" selected="False" />
+            <SelectField field="Value Stream2" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>worklog</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_jira_key" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_id" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="330" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>worklog_jira_key</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Value Stream</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="534" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.worklogs</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>worklogs</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=fst_analytics.worklogs</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Worklogs</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

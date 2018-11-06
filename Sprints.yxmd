@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>key_type, key_summary, time_logged, status</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="Int32" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_WString" />
+            <Field name="sprint_ended" size="5" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_String" />
+            <Field name="sprint_started" size="5" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_String" />
+            <Field name="sprint_start_date" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_WString" />
+            <Field name="sprint_end_date" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_WString" />
+            <Field name="sprint_complete_date" size="8190" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_jira_sprints.sprint_id, sandbox.sandbox_jira_sprints.sprint_name, sandbox.sandbox_jira_sprints.sprint_ended, sandbox.sandbox_jira_sprints.sprint_started, sandbox.sandbox_jira_sprints.sprint_start_date, sandbox.sandbox_jira_sprints.sprint_end_date, sandbox.sandbox_jira_sprints.sprint_complete_date From sandbox.sandbox_jira_sprints" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="234" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="tonumber(DateTimeFormat([sprint_start_date], &quot;%U&quot;))/2" field="Sprint Ordinal" size="4" type="Int32" />
+            <FormulaField expression="left([sprint_start_date],4) + &quot;.&quot; + tostring([Sprint Ordinal])" field="Global Sprint ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="if [Global Sprint ID] = &quot;.0&quot; then null() else [Global Sprint ID] endif" field="Global Sprint ID" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Sprint Ordinal = tonumber(DateTimeFormat([sprint_start_date], "%U"))/2
+Global Sp...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="144" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="sprint_id" selected="True" />
+            <SelectField field="sprint_name" selected="True" />
+            <SelectField field="sprint_started" selected="True" type="Bool" size="1" />
+            <SelectField field="sprint_ended" selected="True" type="Bool" size="1" />
+            <SelectField field="sprint_start_date" selected="True" type="Date" size="10" />
+            <SelectField field="sprint_end_date" selected="True" type="Date" size="10" />
+            <SelectField field="sprint_complete_date" selected="True" type="Date" size="10" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="324" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="sprint_id" selected="True" type="Int16" size="2" />
+            <SelectField field="sprint_name" selected="True" />
+            <SelectField field="sprint_started" selected="True" />
+            <SelectField field="sprint_ended" selected="True" />
+            <SelectField field="sprint_start_date" selected="True" />
+            <SelectField field="sprint_end_date" selected="True" />
+            <SelectField field="sprint_complete_date" selected="True" />
+            <SelectField field="Global Sprint ID" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="426" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.sprints</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sprints</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=fst_analytics.sprints</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Sprints</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

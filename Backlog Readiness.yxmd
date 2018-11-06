@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2018.2">
+<AlteryxDocument yxmdVer="2018.3">
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
@@ -32,9 +32,13 @@ Table=`Sheet1$`</DefaultAnnotationText>
             <Field name="summary" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_WString" />
             <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_1" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="sprint_2" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_3" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_4" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="Date" />
             <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Sprint End" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed full Extract.xlsx|||`Sheet1$`" type="Date" />
@@ -49,28 +53,27 @@ Table=`Sheet1$`</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[Updated] &lt; "2018-06-01" or [issue_type_name] != "project user story"</Expression>
-          <Mode>Custom</Mode>
+          <Expression>[issue_type_name] = "project user story"</Expression>
+          <Mode>Simple</Mode>
           <Simple>
             <Operator>=</Operator>
-            <Field>Updated</Field>
+            <Field>issue_type_name</Field>
             <Operands>
               <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
               <DateType>fixed</DateType>
-              <PeriodDate>2018-09-12 16:18:16</PeriodDate>
-              <PeriodType>
-              </PeriodType>
+              <PeriodDate>2018-10-05 11:06:59</PeriodDate>
+              <PeriodType>days</PeriodType>
               <PeriodCount>0</PeriodCount>
-              <Operand>2018-09-12</Operand>
-              <StartDate>2018-09-12 16:18:16</StartDate>
-              <EndDate>2018-09-12 16:18:16</EndDate>
+              <Operand>project user story</Operand>
+              <StartDate>2018-10-05 11:06:59</StartDate>
+              <EndDate>2018-10-05 11:06:59</EndDate>
             </Operands>
           </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>[Updated] &lt; "2018-06-01" or [issue_type_name] != "project user story"</DefaultAnnotationText>
+          <DefaultAnnotationText>[issue_type_name] = "project user story"</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -118,28 +121,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
           <SummarizeFields>
             <SummarizeField field="Team" action="GroupBy" rename="Team" />
             <SummarizeField field="Project key" action="GroupBy" rename="Project key" />
-            <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
-            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
-          </SummarizeFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-    </Node>
-    <Node ToolID="5">
-      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="354" y="126" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SummarizeFields>
-            <SummarizeField field="Project key" action="GroupBy" rename="Project key" />
-            <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
-            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Points" action="Sum" rename="Points" />
             <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
           </SummarizeFields>
         </Configuration>
@@ -153,32 +135,34 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="426" y="126" />
+        <Position x="366" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[Sum_Points] &gt; 0 and isnull([Sprint Name])</Expression>
+          <Expression>[Points] &gt; 0 and isnull([Sprint Name]) and [Status] = "Open"</Expression>
           <Mode>Custom</Mode>
           <Simple>
-            <Operator>&gt;</Operator>
-            <Field>Sum_Points</Field>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
             <Operands>
               <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
               <DateType>fixed</DateType>
-              <PeriodDate>2018-09-12 15:27:05</PeriodDate>
+              <PeriodDate>2018-10-05 11:02:15</PeriodDate>
               <PeriodType>
               </PeriodType>
               <PeriodCount>0</PeriodCount>
-              <Operand>0</Operand>
-              <StartDate>2018-09-12 15:27:05</StartDate>
-              <EndDate>2018-09-12 15:27:05</EndDate>
+              <Operand>
+              </Operand>
+              <StartDate>2018-10-05 11:02:15</StartDate>
+              <EndDate>2018-10-05 11:02:15</EndDate>
             </Operands>
           </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>[Sum_Points] &gt; 0 and isnull([Sprint Name])</DefaultAnnotationText>
+          <DefaultAnnotationText>[Points] &gt; 0 and isnull([Sprint Name]) and [Status] = "Open"</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -190,7 +174,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>IsNull([Sprint Name]) or isnull([Sum_Points])</Expression>
+          <Expression>IsNull([Sprint Name]) or isnull([Points])</Expression>
           <Mode>Custom</Mode>
           <Simple>
             <Operator>IsNull</Operator>
@@ -212,7 +196,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>IsNull([Sprint Name]) or isnull([Sum_Points])</DefaultAnnotationText>
+          <DefaultAnnotationText>IsNull([Sprint Name]) or isnull([Points])</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -220,18 +204,18 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="522" y="114" />
+        <Position x="558" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="&quot;Pointed&quot;" field="Sprint" size="255" type="V_String" />
+            <FormulaField expression="&quot;Pointed&quot;" field="Sprint Name" size="255" type="V_String" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText><![CDATA[Sprint = "Pointed"
+          <DefaultAnnotationText><![CDATA[Sprint Name = "Pointed"
 ]]></DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
@@ -240,7 +224,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="618" y="78" />
+        <Position x="654" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -259,7 +243,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="714" y="78" />
+        <Position x="750" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -281,11 +265,11 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="354" y="174" />
+        <Position x="354" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_11760_dc68eb7a84254d3a84e10451f35ca612_\Engine_2680_c991ce1427cf4ef2aa02c09c08a99755_.yxdb</TempFile>
+          <TempFile>C:\Users\dvbgns\AppData\Local\Temp\Engine_7132_e9046b97685042808882e0e5b8367538_\Engine_15972_7185c85bd4d14fd8b7acc6883aac640c_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -309,7 +293,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="270" y="174" />
+        <Position x="270" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -325,6 +309,27 @@ Table=Sheet1</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
     </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="462" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Project key" action="GroupBy" rename="Project key" />
+            <SummarizeField field="Points" action="Sum" rename="Points" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -332,11 +337,11 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="2" Connection="False" />
+      <Origin ToolID="2" Connection="True" />
       <Destination ToolID="3" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="2" Connection="False" />
+      <Origin ToolID="2" Connection="True" />
       <Destination ToolID="13" Connection="Input" />
     </Connection>
     <Connection>
@@ -345,19 +350,15 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="False" />
-      <Destination ToolID="5" Connection="Input" />
+      <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="4" Connection="Output" />
       <Destination ToolID="8" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="7" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="7" Connection="True" />
-      <Destination ToolID="9" Connection="Input" />
+      <Destination ToolID="14" Connection="Input" />
     </Connection>
     <Connection name="#2">
       <Origin ToolID="8" Connection="False" />
@@ -374,6 +375,10 @@ Table=Sheet1</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="13" Connection="Output" />
       <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

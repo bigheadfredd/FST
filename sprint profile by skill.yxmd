@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="2018.3">
+<AlteryxDocument yxmdVer="2018.2">
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
@@ -20,6 +20,9 @@
 Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Issue key" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
@@ -33,12 +36,12 @@ Table=`Sheet1$`</DefaultAnnotationText>
             <Field name="category_value" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="issue_type_name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="sprint_1" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_2" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_3" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="sprint_4" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Points" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
             <Field name="Team" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Time Spent" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="sprint_2" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_3" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="sprint_4" size="271" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Updated" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
             <Field name="Sprint Name" size="255" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="V_String" />
             <Field name="Sprint End" source="File: \\its\fss\GrpShare\GrpShare16\FST_Analytics\Alteryx Input\JIRA Scrubbed Closed Stories.xlsx|||`Sheet1$`" type="Date" />
@@ -47,46 +50,37 @@ Table=`Sheet1$`</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
-    <Node ToolID="4">
+    <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="246" y="66" />
+        <Position x="342" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="if !isnull([sprint_4]) then 5 elseif !isnull([sprint_3]) then 4 elseif !isnull([sprint_2]) then 3 elseif !isnull([sprint_1]) then 2 else 1 endif&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;" field="Sprint Count" size="8" type="Double" />
-            <FormulaField expression="if [Team] in (&quot;Money Out Titans&quot;, &quot;Money Out Cyber Knights&quot;) then &quot;Money Out&quot; elseif [Team]in (&quot;Data Viz Jitterbugs&quot;, &quot;Data Viz Holocrons&quot;) then &quot;Client Dashboards&quot; else &quot;&quot; endif" field="Value Stream" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Labels1]+ &quot;,&quot; + [Labels2]+ &quot;,&quot; +[Labels3]" field="Work Type" size="1073741823" type="V_WString" />
+            <FormulaField expression="[Hours Logged]/3600" field="Hours Logged" size="8" type="Double" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText>Sprint Count = if !isnull([sprint_4]) then 5 elseif !isnull([sprint_3]) then 4 e...</DefaultAnnotationText>
+          <DefaultAnnotationText>Work Type = [Labels1]+ "," + [Labels2]+ "," +[Labels3]
+Hours Logged = [Hours Log...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
     <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="330" y="66" />
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="438" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <OrderChanged value="False" />
-          <CommaDecimal value="False" />
-          <SelectFields>
-            <SelectField field="Issue key" selected="True" />
-            <SelectField field="Points" selected="True" />
-            <SelectField field="Team" selected="True" />
-            <SelectField field="Time Spent" selected="True" />
-            <SelectField field="Updated" selected="False" type="DateTime" size="19" />
-            <SelectField field="Sprint Name" selected="True" />
-            <SelectField field="Project1" selected="True" rename="Project" />
-            <SelectField field="Sprint Count" selected="True" />
-            <SelectField field="Value Stream" selected="True" />
-            <SelectField field="*Unknown" selected="False" />
-          </SelectFields>
+          <Field>Work Type</Field>
+          <NumFields value="1" />
+          <Delimeters value="," />
+          <Flags value="16" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -94,49 +88,15 @@ Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="8">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="450" y="66" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>!IsNull([Sprint name]) and !isempty([Value Stream])</Expression>
-          <Mode>Custom</Mode>
-          <Simple>
-            <Operator>IsNotNull</Operator>
-            <Field>Sprint</Field>
-            <Operands>
-              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
-              <DateType>fixed</DateType>
-              <PeriodDate>2018-08-14 10:06:51</PeriodDate>
-              <PeriodType>
-              </PeriodType>
-              <PeriodCount>0</PeriodCount>
-              <Operand>
-              </Operand>
-              <StartDate>2018-08-14 10:06:51</StartDate>
-              <EndDate>2018-08-14 10:06:51</EndDate>
-            </Operands>
-          </Simple>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>!IsNull([Sprint name]) and !isempty([Value Stream])</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="594" y="18" />
+        <Position x="822" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\Carried Stories.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\sprint profile by skill.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>
@@ -145,25 +105,43 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Carried Stories.xlsx
+          <DefaultAnnotationText>sprint profile by skill.xlsx
 Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="11">
-      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="582" y="174" />
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="438" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <SummarizeFields>
-            <SummarizeField field="Team" action="GroupBy" rename="Team" />
-            <SummarizeField field="Points" action="CountNull" rename="Unpointed Story Count" />
-            <SummarizeField field="Project" action="GroupBy" rename="Project" />
-            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
-          </SummarizeFields>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="Field1" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Data</c>
+            </r>
+            <r>
+              <c>Tableau</c>
+            </r>
+            <r>
+              <c>React</c>
+            </r>
+            <r>
+              <c>SR</c>
+            </r>
+            <r>
+              <c>Defect</c>
+            </r>
+          </Data>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -171,58 +149,35 @@ Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
     <Node ToolID="13">
-      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="594" y="258" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <SummarizeFields>
-            <SummarizeField field="Team" action="GroupBy" rename="Team" />
-            <SummarizeField field="Issue key" action="Count" rename="Count" />
-            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
-            <SummarizeField field="Project" action="GroupBy" rename="Project" />
-            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
-          </SummarizeFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-    </Node>
-    <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="738" y="222" />
+        <Position x="630" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
           <JoinInfo connection="Left">
-            <Field field="Team" />
-            <Field field="Sprint Name" />
-            <Field field="Project" />
+            <Field field="Work Type" />
           </JoinInfo>
           <JoinInfo connection="Right">
-            <Field field="Team" />
-            <Field field="Sprint Name" />
-            <Field field="Project" />
+            <Field field="Field1" />
           </JoinInfo>
           <SelectConfiguration>
             <Configuration outputConnection="Join">
               <OrderChanged value="False" />
               <CommaDecimal value="False" />
               <SelectFields>
+                <SelectField field="Left_Issue key" selected="True" />
+                <SelectField field="Left_Summary" selected="True" />
+                <SelectField field="Left_Points" selected="True" />
                 <SelectField field="Left_Team" selected="True" />
-                <SelectField field="Left_Unpointed Story Count" selected="True" />
-                <SelectField field="Right_Team" selected="False" rename="Right_Team" />
-                <SelectField field="Right_Count" selected="True" rename="Story Count" />
-                <SelectField field="Right_Value Stream" selected="True" />
-                <SelectField field="Right_Project" selected="True" />
-                <SelectField field="Right_Sprint Name" selected="True" />
+                <SelectField field="Left_Hours Logged" selected="True" />
+                <SelectField field="Left_Updated" selected="True" />
+                <SelectField field="Left_Sprint Name" selected="True" />
+                <SelectField field="Left_Work Type" selected="True" type="V_String" size="1073741823" />
+                <SelectField field="Left_Custom field (Team)" selected="False" rename="Team" />
+                <SelectField field="Left_Custom field (Story Points)" selected="False" rename="Points" type="Double" size="8" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -236,40 +191,52 @@ Table=Sheet1</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
-    <Node ToolID="17">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="858" y="222" />
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="246" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">\\its\fss\GrpShare\GrpShare16\FST_Analytics\Tableau Input\unpointed stories.xlsx|||Sheet1</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <OutputOption>Overwrite</OutputOption>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
+          <Expression>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint Name] != null()</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Custom field (Team)</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-08-02 14:57:00</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Data Architecture</Operand>
+              <StartDate>2018-08-02 14:57:00</StartDate>
+              <EndDate>2018-08-02 14:57:00</EndDate>
+            </Operands>
+          </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>unpointed stories.xlsx
-Table=Sheet1</DefaultAnnotationText>
+          <AnnotationText />
+          <DefaultAnnotationText>[Team] in ("Data Viz Holocrons", "Data Viz Jitterbugs") and [Sprint Name] != nul...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="20">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="150" y="66" />
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="726" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>Issue key</Field>
-          <ErrorHandling>Last</ErrorHandling>
-          <RootName>Project</RootName>
-          <Delimeters value="-" />
-          <NumFields value="2" />
-          <Flags value="0" />
+          <SummarizeFields>
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Points" action="Sum" rename="Sum_Points" />
+            <SummarizeField field="Work Type" action="GroupBy" rename="Work Type" />
+            <SummarizeField field="Hours Logged" action="Sum" rename="Sum_Hours Logged" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
+          </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -277,7 +244,80 @@ Table=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings>
+        <Position x="534" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Work Type"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings>
+        <Position x="534" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"Field1"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">True</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="150" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Time Spent" selected="True" rename="Hours Logged" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
   </Nodes>
   <Connections>
@@ -286,40 +326,40 @@ Table=Sheet1</DefaultAnnotationText>
       <Destination ToolID="20" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="4" Connection="Output" />
+      <Origin ToolID="6" Connection="Output" />
       <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="8" Connection="True" />
-      <Destination ToolID="13" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="8" Connection="True" />
-      <Destination ToolID="11" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="8" Connection="True" />
-      <Destination ToolID="10" Connection="Input" />
+      <Destination ToolID="18" Connection="Input2" />
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="15" Connection="Left" />
+      <Destination ToolID="19" Connection="Input2" />
     </Connection>
     <Connection>
-      <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="15" Connection="Right" />
+      <Origin ToolID="13" Connection="Join" />
+      <Destination ToolID="16" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="15" Connection="Join" />
-      <Destination ToolID="17" Connection="Input" />
+      <Origin ToolID="15" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output26" />
+      <Destination ToolID="13" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output26" />
+      <Destination ToolID="13" Connection="Right" />
     </Connection>
     <Connection>
       <Origin ToolID="20" Connection="Output" />
-      <Destination ToolID="4" Connection="Input" />
+      <Destination ToolID="15" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -340,7 +380,7 @@ Table=Sheet1</DefaultAnnotationText>
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Unpointed and carryover stories</Name>
+      <Name>velocity by tech stack</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

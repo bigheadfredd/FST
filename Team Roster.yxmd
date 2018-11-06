@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="258" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Sprint ID" action="GroupBy" rename="Sprint ID" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Assignee" action="GroupBy" rename="Assignee" />
+            <SummarizeField field="Hours Logged" action="Sum" rename="Hours Logged" />
+            <SummarizeField field="Issue Key" action="Count" rename="Count of Stories" />
+            <SummarizeField field="Points" action="Sum" rename="Points" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="174" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Sprint Start Date]&gt;="2018-06-07" and !IsNull([Team]) and [Assignee]!="None"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>User Name</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-09-07 13:51:39</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-09-07 13:51:39</StartDate>
+              <EndDate>2018-09-07 13:51:39</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>[Sprint Start Date]&gt;="2018-06-07" and !IsNull([Team]) and [Assignee]!="None"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>issues</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select * from fst_analytics.issues</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issue Key" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
+            <Field name="Issue Type" size="32" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Relationship Type" size="15" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
+            <Field name="Child Key" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
+            <Field name="Team" size="40" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Summary" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Points" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Double" />
+            <Field name="Hours Logged" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Double" />
+            <Field name="Issue Status" size="37" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Value Stream" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
+            <Field name="Sprint Name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Category" size="37" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version" size="49" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_String" />
+            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_String" />
+            <Field name="Sprint Start Date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Date" />
+            <Field name="Sprint End Date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Date" />
+            <Field name="Assignee" size="33" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint ID" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="270" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sprints</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=select * from fst_analytics.sprints</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Int16" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_started" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_ended" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_start_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="sprint_end_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="sprint_complete_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
+            <Field name="Week" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Int32" />
+            <Field name="Global Sprint ID" size="8190" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="366" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Sprint ID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="sprint_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Left_Sprint Name" selected="True" />
+                <SelectField field="Left_Sprint ID" selected="True" />
+                <SelectField field="Right_Global Sprint ID" selected="True" />
+                <SelectField field="Left_Assignee" selected="True" />
+                <SelectField field="Left_Hours Logged" selected="True" />
+                <SelectField field="Left_Points" selected="True" />
+                <SelectField field="Left_Count of Stories" selected="True" />
+                <SelectField field="Right_sprint_id" selected="False" />
+                <SelectField field="Right_sprint_name" selected="False" />
+                <SelectField field="Right_sprint_started" selected="False" />
+                <SelectField field="Right_sprint_ended" selected="False" />
+                <SelectField field="Right_sprint_start_date" selected="False" />
+                <SelectField field="Right_sprint_end_date" selected="False" />
+                <SelectField field="Right_sprint_complete_date" selected="False" />
+                <SelectField field="Right_Week" selected="False" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="462" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.roster</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <Projection />
+            <SpatialObjSize>8000</SpatialObjSize>
+            <TransactionSize>10000</TransactionSize>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <PostSQL />
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <TransactionMessages>False</TransactionMessages>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>roster</AnnotationText>
+          <DefaultAnnotationText>DSN=PostgreSQL30
+Table=fst_analytics.roster</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="11" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Team Roster</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
