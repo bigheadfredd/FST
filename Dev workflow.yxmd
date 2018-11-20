@@ -1,9 +1,21 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2018.3">
   <Nodes>
-    <Node ToolID="1">
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="54" />
+        <Position x="30" y="30" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -40,9 +52,9 @@ Table=Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints</D
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
-    <Node ToolID="4">
+    <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="150" y="54" />
+        <Position x="126" y="30" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -64,12 +76,23 @@ Table=Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints</D
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Int32" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_WString" />
+            <Field name="sprint_started" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
+            <Field name="sprint_ended" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
+            <Field name="sprint_start_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+            <Field name="sprint_end_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+            <Field name="sprint_complete_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
-    <Node ToolID="5">
+    <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="318" y="54" />
+        <Position x="306" y="30" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -84,102 +107,8 @@ Table=Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints</D
             <SelectField field="sprint_end_date" selected="True" />
             <SelectField field="sprint_complete_date" selected="True" />
             <SelectField field="Sprint Group" selected="True" />
-            <SelectField field="Global Sprint ID" selected="False" rename="Sprint Group" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="510" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||fst_analytics.sprints</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <Projection />
-            <SpatialObjSize>8000</SpatialObjSize>
-            <TransactionSize>10000</TransactionSize>
-            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
-            <PostSQL />
-            <TableStyle>Quoted</TableStyle>
-            <PreSQL />
-            <TransactionMessages>False</TransactionMessages>
-            <OutputOption>Overwrite</OutputOption>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>sprints</AnnotationText>
-          <DefaultAnnotationText>DSN=fst_user
-Table=fst_analytics.sprints</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-    </Node>
-    <Node ToolID="8">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="510" y="138" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\New Data Model\Sprints.xlsx|||Sheet1</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <OutputOption>Overwrite</OutputOption>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Sprints.xlsx
-Table=Sheet1</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-    </Node>
-    <Node ToolID="9">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="234" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Assign Sprint Group</AnnotationText>
-          <DefaultAnnotationText>Sprint Group = if [sprint_start_date]&gt;="2018-05-10" then
-tostring(DateTimeYear([...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="10">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="414" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Fields>
-            <Field field="sprint_name" selected="True" />
-            <Field field="Sprint Group" selected="True" />
-            <Field field="*Unknown" selected="True" />
-          </Fields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -189,43 +118,63 @@ tostring(DateTimeYear([...</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Int16" />
-            <Field name="sprint_name" size="30" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_String" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_WString" />
             <Field name="sprint_started" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
             <Field name="sprint_ended" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
             <Field name="sprint_start_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
             <Field name="sprint_end_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
             <Field name="sprint_complete_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
-            <Field name="Sprint Group" source="Formula: if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" type="Double" />
+            <Field name="Sprint Group" size="1073741823" source="Formula: if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="210" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Sprint Group = if [sprint_start_date]&gt;="2018-05-10" then
+tostring(DateTimeYear([...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Int32" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_WString" />
+            <Field name="sprint_started" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
+            <Field name="sprint_ended" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
+            <Field name="sprint_start_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+            <Field name="sprint_end_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+            <Field name="sprint_complete_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
+            <Field name="Sprint Group" size="1073741823" source="Formula: if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="4" Connection="Input" />
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="4" Connection="Output" />
-      <Destination ToolID="9" Connection="Input" />
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="10" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="9" Connection="Output" />
-      <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="10" Connection="Output" />
-      <Destination ToolID="7" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="10" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -246,7 +195,7 @@ tostring(DateTimeYear([...</DefaultAnnotationText>
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>Sprints</Name>
+      <Name>Dev workflow</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
@@ -265,5 +214,30 @@ tostring(DateTimeYear([...</DefaultAnnotationText>
     <Events>
       <Enabled value="True" />
     </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (16)</Name>
+          <ToolId value="16" />
+          <Questions />
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="0" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools />
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
   </Properties>
 </AlteryxDocument>

@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.3">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>preDefects.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Issue Key" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Type" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Category" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Priority" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Issue Status" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Hours Logged" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Assignee" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Created Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Resolution Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Sprint Name" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint ID" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint Group" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint Start Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint End Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Complete Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Started?" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Bool" />
+            <Field name="Sprint Ended?" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Bool" />
+            <Field name="Fix Version1" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version2" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version3" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version4" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version5" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryOut" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryIn" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="174" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Fix Version1" action="GroupBy" rename="Fix Version1" />
+            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Hours Logged" action="Sum" rename="Release Hours Logged" />
+            <SummarizeField field="Issue Key" action="Count" rename="Release Count of Issues" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="270" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>IsNull([Fix Version1]) or [Fix Version1] = "Backlog"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>IsNull</Operator>
+            <Field>Fix Version1</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-11-16 11:55:52</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2018-11-16 11:55:52</StartDate>
+              <EndDate>2018-11-16 11:55:52</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IsNull([Fix Version1]) or [Fix Version1] = "Backlog"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="162" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Issue Type] = "Bug" or [Issue Type] = "Defect" or [Value Stream] = "DEFC"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Issue Type</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-11-16 12:01:42</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Bug</Operand>
+              <StartDate>2018-11-16 12:01:42</StartDate>
+              <EndDate>2018-11-16 12:01:42</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Issue Type] = "Bug" or [Issue Type] = "Defect" or [Value Stream] = "DEFC"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="318" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Fix Version1" action="GroupBy" rename="Fix Version1" />
+            <SummarizeField field="Value Stream" action="GroupBy" rename="Value Stream" />
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Hours Logged" action="Sum" rename="Hours Logged" />
+            <SummarizeField field="Issue Key" action="Count" rename="Count of Issues" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="450" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Team" />
+            <Field field="Fix Version1" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Team" />
+            <Field field="Fix Version1" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Fix Version1" selected="True" />
+                <SelectField field="Left_Value Stream" selected="True" />
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Right_Hours Logged" selected="True" rename="Defect Hours Logged" />
+                <SelectField field="Right_Count of Issues" selected="True" rename="Defect Count of Issues" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="534" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\defect density.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>defect density.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="False" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>defect density</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

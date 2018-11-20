@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="258" y="138" />
+        <Position x="222" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -12,9 +12,6 @@
             <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
             <SummarizeField field="Team" action="GroupBy" rename="Team" />
             <SummarizeField field="Assignee" action="GroupBy" rename="Assignee" />
-            <SummarizeField field="Hours Logged" action="Sum" rename="Hours Logged" />
-            <SummarizeField field="Issue Key" action="Count" rename="Count of Stories" />
-            <SummarizeField field="Points" action="Sum" rename="Points" />
           </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -22,12 +19,26 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Sprint ID" order="Asc" />
+            <Field field="Sprint Name" order="Asc" />
+            <Field field="Team" order="Asc" />
+            <Field field="Assignee" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="174" y="150" />
+        <Position x="138" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -56,17 +67,85 @@
           <DefaultAnnotationText>[Sprint Start Date]&gt;="2018-06-07" and !IsNull([Team]) and [Assignee]!="None"</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="54" y="150" />
+        <Position x="54" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues</File>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select * From fst_analytics.issues</File>
           <FormatSpecificOptions>
             <PreSQLOnConfig>True</PreSQLOnConfig>
             <ReadCentroids>False</ReadCentroids>
@@ -80,31 +159,42 @@
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>issues</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
-Table=select * from fst_analytics.issues</DefaultAnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=Select * From fst_analytics.issues</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Issue Key" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
-            <Field name="Issue Type" size="32" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Relationship Type" size="15" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
-            <Field name="Child Key" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
-            <Field name="Team" size="40" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Summary" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Points" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Double" />
-            <Field name="Hours Logged" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Double" />
-            <Field name="Issue Status" size="37" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Value Stream" size="13" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="WString" />
-            <Field name="Sprint Name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Category" size="37" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version" size="49" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_String" />
-            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_String" />
-            <Field name="Sprint Start Date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Date" />
-            <Field name="Sprint End Date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Date" />
-            <Field name="Assignee" size="33" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="V_WString" />
-            <Field name="Sprint ID" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.issues" type="Int16" />
+            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
+            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -112,12 +202,12 @@ Table=select * from fst_analytics.issues</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="270" y="210" />
+        <Position x="222" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints</File>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select * From fst_analytics.sprints</File>
           <FormatSpecificOptions>
             <PreSQLOnConfig>True</PreSQLOnConfig>
             <ReadCentroids>False</ReadCentroids>
@@ -131,21 +221,20 @@ Table=select * from fst_analytics.issues</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>sprints</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
-Table=select * from fst_analytics.sprints</DefaultAnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="sprint_id" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Int16" />
-            <Field name="sprint_name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
-            <Field name="sprint_started" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
-            <Field name="sprint_ended" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
-            <Field name="sprint_start_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="sprint_end_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="sprint_complete_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="Week" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Int32" />
-            <Field name="Global Sprint ID" size="8190" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int16" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_started" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_ended" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
+            <Field name="sprint_start_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
+            <Field name="sprint_end_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
+            <Field name="sprint_complete_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -153,7 +242,7 @@ Table=select * from fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="366" y="150" />
+        <Position x="306" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -171,11 +260,7 @@ Table=select * from fst_analytics.sprints</DefaultAnnotationText>
                 <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Left_Sprint Name" selected="True" />
                 <SelectField field="Left_Sprint ID" selected="True" />
-                <SelectField field="Right_Global Sprint ID" selected="True" />
                 <SelectField field="Left_Assignee" selected="True" />
-                <SelectField field="Left_Hours Logged" selected="True" />
-                <SelectField field="Left_Points" selected="True" />
-                <SelectField field="Left_Count of Stories" selected="True" />
                 <SelectField field="Right_sprint_id" selected="False" />
                 <SelectField field="Right_sprint_name" selected="False" />
                 <SelectField field="Right_sprint_started" selected="False" />
@@ -183,7 +268,7 @@ Table=select * from fst_analytics.sprints</DefaultAnnotationText>
                 <SelectField field="Right_sprint_start_date" selected="False" />
                 <SelectField field="Right_sprint_end_date" selected="False" />
                 <SelectField field="Right_sprint_complete_date" selected="False" />
-                <SelectField field="Right_Week" selected="False" />
+                <SelectField field="Right_Sprint Group" selected="True" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -194,16 +279,48 @@ Table=select * from fst_analytics.sprints</DefaultAnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Sprint ID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Sprint ID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int16" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="sprint_id" />
+          </SortInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="462" y="150" />
+        <Position x="726" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.roster</File>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||roster</File>
           <Passwords />
           <FormatSpecificOptions>
             <Projection />
@@ -221,12 +338,290 @@ Table=select * from fst_analytics.sprints</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>roster</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
-Table=fst_analytics.roster</DefaultAnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=roster</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="306" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>sandbox_tempo_teams</AnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="team_id" scale="0" size="17" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="FixedDecimal" />
+            <Field name="team_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="user_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="team_member" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="role_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="availability" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Int32" />
+            <Field name="role_from_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="role_to_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="info_as_of" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="DateTime" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="534" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Team" />
+            <Field field="Assignee" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="team_name2" />
+            <Field field="team_member" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Team" selected="True" />
+                <SelectField field="Left_Sprint Name" selected="True" />
+                <SelectField field="Left_Sprint ID" selected="True" />
+                <SelectField field="Left_Assignee" selected="True" />
+                <SelectField field="Left_Sprint Group" selected="True" />
+                <SelectField field="Right_team_id" selected="True" />
+                <SelectField field="Right_role_name" selected="True" rename="Role Name" />
+                <SelectField field="Right_availability" selected="True" rename="Availability" />
+                <SelectField field="Right_role_from_date" selected="True" rename="Role from Date" />
+                <SelectField field="Right_role_to_date" selected="True" rename="Role to Date" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Team" />
+            <Field field="Assignee" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
+            <Field name="Role Name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Availability" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="Role from Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="Role to Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Team" order="" />
+            <Field field="Assignee" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
+            <Field name="team_member" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="role_name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="availability" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="role_from_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="role_to_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field description="TextToColumns: Parsed from team_name" name="team_name2" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="team_name2" />
+            <Field field="team_member" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="378" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>team_name</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>team_name</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="team_id" scale="0" size="17" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="FixedDecimal" />
+            <Field name="team_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="user_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="team_member" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="role_name" size="255" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="V_WString" />
+            <Field name="availability" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Int32" />
+            <Field name="role_from_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="role_to_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="info_as_of" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="DateTime" />
+            <Field description="TextToColumns: Parsed from team_name" name="team_name1" size="255" source="TextToColumns: Parsed from team_name" type="V_WString" />
+            <Field description="TextToColumns: Parsed from team_name" name="team_name2" size="255" source="TextToColumns: Parsed from team_name" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="450" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"team_name2"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output26">
+          <RecordInfo>
+            <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
+            <Field name="team_name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="user_name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="team_member" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="role_name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="availability" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="role_from_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="role_to_date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="info_as_of" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="DateTime" />
+            <Field description="TextToColumns: Parsed from team_name" name="team_name1" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field description="TextToColumns: Parsed from team_name" name="team_name2" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="726" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File FileFormat="25" MaxRecords="">Z:\New Data Model\Roster.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Roster.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="630" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="Team" selected="True" />
+            <Field field="Sprint Name" selected="True" />
+            <Field field="Assignee" selected="True" />
+            <Field field="Sprint Group" selected="True" />
+            <Field field="Role Name" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
+            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
+            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
+            <Field name="Role Name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Availability" source="Formula: [_CurrentField_]" type="Int32" />
+            <Field name="Role from Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+            <Field name="Role to Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
     </Node>
   </Nodes>
   <Connections>
@@ -248,7 +643,31 @@ Table=fst_analytics.roster</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="11" Connection="Join" />
+      <Destination ToolID="15" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output26" />
+      <Destination ToolID="15" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Join" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
       <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
@@ -288,5 +707,34 @@ Table=fst_analytics.roster</DefaultAnnotationText>
     <Events>
       <Enabled value="True" />
     </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (19)</Name>
+          <ToolId value="19" />
+          <Questions />
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="17" Selected="True" />
+        <Tool ToolId="18" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
   </Properties>
 </AlteryxDocument>

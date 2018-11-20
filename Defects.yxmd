@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2018.3">
   <Nodes>
-    <Node ToolID="1">
+    <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="42" y="42" />
+        <Position x="54" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\Alteryx Input\JIRA Defects.xlsx</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\New Data Model\preDefects.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -16,104 +16,102 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>JIRA Defects.xlsx</DefaultAnnotationText>
+          <AnnotationText />
+          <DefaultAnnotationText>preDefects.xlsx
+Table=`Sheet1$`</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Custom field (Team)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Sprint" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Sprint2" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Sprint3" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Custom field (Story Points)" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="Double" />
-            <Field name="Updated" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="DateTime" />
-            <Field name="Time Spent" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="Double" />
-            <Field name="Issue key" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Issue id" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="Double" />
-            <Field name="Parent id" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="Double" />
-            <Field name="Status" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Issue Type" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Blocks)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Blocks)2" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Blocks)3" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Cloners)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Duplicate)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Parent - Child)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Relates)" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Relates)2" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Outward issue link (Relates)3" size="255" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="V_String" />
-            <Field name="Created" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="DateTime" />
-            <Field name="Resolved" source="File: Z:\Alteryx Input\JIRA Defects.xlsx" type="DateTime" />
+            <Field name="Issue Key" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Type" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Category" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Priority" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Issue Status" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Hours Logged" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Assignee" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Created Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Resolution Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Sprint Name" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint ID" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint Group" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint Start Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint End Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Complete Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Sprint Started?" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Bool" />
+            <Field name="Sprint Ended?" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Bool" />
+            <Field name="Fix Version1" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version2" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version3" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version4" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version5" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryOut" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryIn" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
     </Node>
-    <Node ToolID="3">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="258" y="90" />
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="138" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <FormulaFields>
-            <FormulaField expression="[Time Spent]/3600" field="Time Spent" size="8" type="Double" />
-          </FormulaFields>
+          <Expression>[Value Stream] = "DEFC" and [Resolution Date] &gt; "2018-05-10"</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Value Stream</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2018-11-15 10:13:53</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>DEFC</Operand>
+              <StartDate>2018-11-15 10:13:53</StartDate>
+              <EndDate>2018-11-15 10:13:53</EndDate>
+            </Operands>
+          </Simple>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText />
-          <DefaultAnnotationText><![CDATA[Time Spent = [Time Spent]/3600
-]]></DefaultAnnotationText>
+          <DefaultAnnotationText>[Value Stream] = "DEFC" and [Resolution Date] &gt; "2018-05-10"</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="4">
+    <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="450" y="90" />
+        <Position x="246" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <OrderChanged value="True" />
+          <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
-            <SelectField field="Value Stream1" selected="True" rename="Value Stream" />
-            <SelectField field="Custom field (Team)" selected="True" rename="Team" />
-            <SelectField field="Sprint" selected="True" />
-            <SelectField field="Sprint2" selected="True" />
-            <SelectField field="Sprint3" selected="True" />
-            <SelectField field="Custom field (Story Points)" selected="True" rename="Story Points" />
-            <SelectField field="Updated" selected="True" type="Date" size="10" />
-            <SelectField field="Time Spent" selected="True" rename="Hours Spent" />
-            <SelectField field="Issue key" selected="True" />
-            <SelectField field="Issue id" selected="True" />
-            <SelectField field="Parent id" selected="True" />
-            <SelectField field="Status" selected="True" />
-            <SelectField field="Issue Type" selected="True" />
-            <SelectField field="Outward issue link (Blocks)" selected="False" />
-            <SelectField field="Outward issue link (Blocks)2" selected="False" />
-            <SelectField field="Outward issue link (Blocks)3" selected="False" />
-            <SelectField field="Outward issue link (Cloners)" selected="False" />
-            <SelectField field="Outward issue link (Duplicate)" selected="False" />
-            <SelectField field="Outward issue link (Parent - Child)" selected="False" />
-            <SelectField field="Outward issue link (Relates)" selected="False" />
-            <SelectField field="Outward issue link (Relates)2" selected="False" />
-            <SelectField field="Outward issue link (Relates)3" selected="False" />
-            <SelectField field="Created" selected="True" type="Date" size="10" />
-            <SelectField field="Resolved" selected="True" type="Date" size="10" />
-            <SelectField field="Value Stream2" selected="False" />
-            <SelectField field="sprint_id" selected="False" />
-            <SelectField field="sprint_name" selected="False" />
-            <SelectField field="sprint_started" selected="False" />
-            <SelectField field="sprint_ended" selected="False" />
-            <SelectField field="sprint_start_date" selected="False" />
-            <SelectField field="sprint_end_date" selected="False" />
-            <SelectField field="sprint_complete_date" selected="False" />
-            <SelectField field="Global_Sprint_ID" selected="True" />
+            <SelectField field="Issue Key" selected="True" />
+            <SelectField field="Team" selected="True" />
+            <SelectField field="Category" selected="True" />
+            <SelectField field="Priority" selected="True" />
+            <SelectField field="Issue Summary" selected="True" />
+            <SelectField field="Issue Status" selected="True" />
+            <SelectField field="Hours Logged" selected="True" />
+            <SelectField field="Created Date" selected="True" type="Date" size="10" />
+            <SelectField field="Resolution Date" selected="True" type="Date" size="10" />
+            <SelectField field="Sprint Name" selected="True" />
+            <SelectField field="Sprint ID" selected="True" />
+            <SelectField field="Sprint Group" selected="True" />
+            <SelectField field="Fix Version1" selected="True" />
+            <SelectField field="Fix Version2" selected="True" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -125,18 +123,41 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
-    <Node ToolID="5">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="354" y="90" />
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="342" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Field>Issue key</Field>
-          <ErrorHandling>Last</ErrorHandling>
-          <RootName>Value Stream</RootName>
-          <Delimeters value="-" />
-          <NumFields value="2" />
-          <Flags value="0" />
+          <FormulaFields>
+            <FormulaField expression="datetimediff([Resolution Date],[Created Date],&quot;Days&quot;)&#xA;" field="Days to Resolve" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText><![CDATA[Days to Resolve = datetimediff([Resolution Date],[Created Date],"Days")
+
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="450" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Team" action="GroupBy" rename="Team" />
+            <SummarizeField field="Priority" action="GroupBy" rename="Priority" />
+            <SummarizeField field="Sprint Name" action="GroupBy" rename="Sprint Name" />
+            <SummarizeField field="Sprint Group" action="GroupBy" rename="Sprint Group" />
+            <SummarizeField field="Days to Resolve" action="Median" rename="Median Days to Resolve" />
+            <SummarizeField field="Issue Key" action="Count" rename="Count" />
+          </SummarizeFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -144,15 +165,38 @@
           <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
     </Node>
-    <Node ToolID="6">
+    <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="558" y="90" />
+        <Position x="546" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.defects</File>
+          <File FileFormat="25" MaxRecords="">Z:\New Data Model\defects.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>defects.xlsx</AnnotationText>
+          <DefaultAnnotationText>defects.xlsx
+Table=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="546" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||fst_analytics.defects</File>
           <Passwords />
           <FormatSpecificOptions>
             <Projection />
@@ -169,109 +213,39 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>DSN=PostgreSQL30
+          <AnnotationText>fst_analytics.defects</AnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
 Table=fst_analytics.defects</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
-    <Node ToolID="7">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="42" y="150" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Passwords />
-          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints</File>
-          <FormatSpecificOptions>
-            <PreSQLOnConfig>True</PreSQLOnConfig>
-            <ReadCentroids>False</ReadCentroids>
-            <NoProgress>True</NoProgress>
-            <ReadUncommitted>False</ReadUncommitted>
-            <TableStyle>Quoted</TableStyle>
-            <PreSQL />
-            <PostSQL />
-          </FormatSpecificOptions>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>select * from fst_analytics.sprints</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
-Table=select * from fst_analytics.sprints</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="sprint_id" size="11" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
-            <Field name="sprint_name" size="255" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
-            <Field name="sprint_started" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
-            <Field name="sprint_ended" size="5" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_String" />
-            <Field name="sprint_start_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="sprint_end_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="sprint_complete_date" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="Date" />
-            <Field name="Global_Sprint_ID" size="8190" source="File: odbc:DSN=PostgreSQL30|||select * from fst_analytics.sprints" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
-    </Node>
-    <Node ToolID="8">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="186" y="90" />
-      </GuiSettings>
-      <Properties>
-        <Configuration joinByRecordPos="False">
-          <JoinInfo connection="Left">
-            <Field field="Sprint" />
-          </JoinInfo>
-          <JoinInfo connection="Right">
-            <Field field="sprint_name" />
-          </JoinInfo>
-          <SelectConfiguration>
-            <Configuration outputConnection="Join">
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
-    </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="8" Connection="Left" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="7" Connection="Output" />
-      <Destination ToolID="8" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="4" Connection="Output" />
+      <Origin ToolID="5" Connection="Output" />
       <Destination ToolID="6" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="4" Connection="Input" />
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="8" Connection="Join" />
-      <Destination ToolID="3" Connection="Input" />
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

@@ -1,28 +1,6 @@
 <?xml version="1.0"?>
 <AlteryxDocument yxmdVer="2018.3">
   <Nodes>
-    <Node ToolID="1">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="234" y="54" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField expression="tonumber(DateTimeFormat([worklog_date_worked], &quot;%U&quot;))/2" field="week parse" size="4" type="Int32" />
-            <FormulaField expression="left([worklog_date_worked],4) + &quot;.&quot; + tostring([week parse])" field="Global_Sprint_ID" size="1073741823" type="V_WString" />
-            <FormulaField expression="if [Global_Sprint_ID] = &quot;.0&quot; then null() else [Global_Sprint_ID] endif" field="Global_Sprint_ID" size="1073741823" type="V_WString" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>week parse = tonumber(DateTimeFormat([worklog_date_worked], "%U"))/2
-Global_Spri...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
         <Position x="138" y="54" />
@@ -66,6 +44,7 @@ Global_Spri...</DefaultAnnotationText>
             <SelectField field="worklog_hours" selected="True" rename="Hours" type="Double" size="8" />
             <SelectField field="week parse" selected="False" />
             <SelectField field="Value Stream2" selected="False" />
+            <SelectField field="Sprint Group" selected="True" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -84,7 +63,7 @@ Global_Spri...</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <Passwords />
-          <File RecordLimit="" FileFormat="23">odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs</File>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs</File>
           <FormatSpecificOptions>
             <PreSQLOnConfig>True</PreSQLOnConfig>
             <ReadCentroids>False</ReadCentroids>
@@ -98,17 +77,17 @@ Global_Spri...</DefaultAnnotationText>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>worklog</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
+          <DefaultAnnotationText>DSN=tr_sandbox
 Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="worklog_date_worked" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="DateTime" />
-            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
-            <Field name="worklog_hours" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
-            <Field name="worklog_jira_key" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
-            <Field name="worklog_id" size="255" source="File: odbc:DSN=PostgreSQL30|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_date_worked" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="DateTime" />
+            <Field name="worklog_team_member" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_hours" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_jira_key" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="worklog_id" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -137,11 +116,11 @@ Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_workl
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="534" y="54" />
+        <Position x="618" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="23">odbc:DSN=PostgreSQL30|||fst_analytics.worklogs</File>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||worklogs</File>
           <Passwords />
           <FormatSpecificOptions>
             <Projection />
@@ -159,26 +138,76 @@ Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_workl
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>worklogs</AnnotationText>
-          <DefaultAnnotationText>DSN=PostgreSQL30
-Table=fst_analytics.worklogs</DefaultAnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=worklogs</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="234" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [worklog_date_worked]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([worklog_date_worked])) + &quot;.&quot; + tostring(floor(DateTimeDiff([worklog_date_worked],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Assign Sprint Group</AnnotationText>
+          <DefaultAnnotationText>Sprint Group = if [worklog_date_worked]&gt;="2018-05-10" then
+tostring(DateTimeYear...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="522" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="Worklog ID" selected="True" />
+            <Field field="Issue Key" selected="True" />
+            <Field field="Value Stream" selected="True" />
+            <Field field="Team Member" selected="True" />
+            <Field field="Sprint Group" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Worklog ID" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="Issue Key" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field description="TextToColumns: Parsed from worklog_jira_key" name="Value Stream" size="255" source="TextToColumns: Parsed from worklog_jira_key" type="V_WString" />
+            <Field name="Team Member" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="V_WString" />
+            <Field name="Date Worked" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="Date" />
+            <Field name="Hours" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_worklogs.worklog_team_member, sandbox.sandbox_worklogs.worklog_hours, sandbox.sandbox_worklogs.worklog_jira_key, sandbox.sandbox_worklogs.worklog_id From sandbox.sandbox_worklogs" type="Double" />
+            <Field name="Sprint Group" size="1073741823" source="Formula: if [worklog_date_worked]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([worklog_date_worked])) + &quot;.&quot; + tostring(floor(DateTimeDiff([worklog_date_worked],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="1" Connection="Output" />
-      <Destination ToolID="7" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="2" Connection="Output" />
-      <Destination ToolID="1" Connection="Input" />
+      <Destination ToolID="11" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="3" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Destination ToolID="12" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="4" Connection="Output" />
@@ -187,6 +216,14 @@ Table=fst_analytics.worklogs</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="7" Connection="Output" />
       <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
