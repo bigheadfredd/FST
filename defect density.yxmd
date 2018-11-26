@@ -3,12 +3,12 @@
   <Nodes>
     <Node ToolID="1">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="66" y="66" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`</File>
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">Z:\New Data Model\preDefects.xlsx|||`Sheet1$`</File>
           <FormatSpecificOptions>
             <FirstRowData>False</FirstRowData>
             <ImportLine>1</ImportLine>
@@ -25,34 +25,30 @@ Table=`Sheet1$`</DefaultAnnotationText>
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Issue Key" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Type" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Value Stream" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Team" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Category" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Priority" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Issue Summary" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
-            <Field name="Issue Status" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Points" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Hours Logged" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Assignee" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Created Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
-            <Field name="Resolution Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
-            <Field name="Sprint Name" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint ID" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="Sprint Group" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Sprint Start Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
-            <Field name="Sprint End Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
-            <Field name="Sprint Complete Date" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Date" />
-            <Field name="Sprint Started?" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Bool" />
-            <Field name="Sprint Ended?" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Bool" />
-            <Field name="Fix Version1" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Fix Version2" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Fix Version3" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Fix Version4" size="255" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="V_String" />
-            <Field name="Fix Version5" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="CarryOut" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
-            <Field name="CarryIn" source="File: C:\Users\dvbgns\Desktop\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Issue Key" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Type" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Value Stream" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Team" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Category" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Priority" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Issue Summary" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_WString" />
+            <Field name="Issue Status" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Points" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Hours Logged" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Assignee" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Created Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Resolution Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="DateTime" />
+            <Field name="Sprint Name" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Sprint ID" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint Group" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sprint Start Date" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Fix Version1" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version2" size="255" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Fix Version3" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Fix Version4" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Fix Version5" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryOut" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="CarryIn" source="File: Z:\New Data Model\preDefects.xlsx|||`Sheet1$`" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -60,7 +56,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="174" y="66" />
+        <Position x="162" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -82,7 +78,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="270" y="66" />
+        <Position x="258" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -115,7 +111,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="162" y="186" />
+        <Position x="150" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -147,7 +143,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="318" y="210" />
+        <Position x="306" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -169,7 +165,7 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="450" y="126" />
+        <Position x="438" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -206,11 +202,11 @@ Table=`Sheet1$`</DefaultAnnotationText>
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="534" y="126" />
+        <Position x="522" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File FileFormat="25" MaxRecords="">C:\Users\dvbgns\Desktop\defect density.xlsx|||Sheet1</File>
+          <File FileFormat="25" MaxRecords="">Z:\New Data Model\defect density.xlsx|||Sheet1</File>
           <Passwords />
           <FormatSpecificOptions>
             <OutputOption>Overwrite</OutputOption>

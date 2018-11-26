@@ -414,13 +414,13 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int16" />
-            <Field name="sprint_name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_name" size="30" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
             <Field name="sprint_started" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_ended" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_start_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_end_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_complete_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -529,16 +529,13 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
             <SelectField field="Sprint ID" selected="True" />
             <SelectField field="Sprint Group" selected="True" />
             <SelectField field="Sprint Start Date" selected="True" />
-            <SelectField field="Sprint End Date" selected="True" />
-            <SelectField field="sprint_complete_date" selected="True" rename="Sprint Complete Date" />
-            <SelectField field="Sprint Started?" selected="True" />
-            <SelectField field="Sprint Ended?" selected="True" />
             <SelectField field="Value Stream2" selected="False" />
             <SelectField field="Fix Version1" selected="True" />
             <SelectField field="Fix Version2" selected="True" />
             <SelectField field="Fix Version3" selected="True" />
             <SelectField field="Fix Version4" selected="True" />
             <SelectField field="Fix Version5" selected="True" />
+            <SelectField field="sprint_id" selected="False" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -822,7 +819,7 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText />
+          <AnnotationText>Unplanned?</AnnotationText>
           <DefaultAnnotationText><![CDATA[Unplanned? = If [Open Date] > [Sprint Start Date] then 1 else 0 endif
 ]]></DefaultAnnotationText>
           <Left value="False" />
@@ -910,7 +907,7 @@ Table=Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.san
     </Node>
     <Node ToolID="61">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="942" y="246" />
+        <Position x="942" y="244" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -947,7 +944,6 @@ Table=Sheet1</DefaultAnnotationText>
             <Field field="Issue Status" selected="True" />
             <Field field="Assignee" selected="True" />
             <Field field="Sprint Name" selected="True" />
-            <Field field="Sprint Group" selected="True" />
             <Field field="Fix Version1" selected="True" />
             <Field field="Fix Version2" selected="True" />
             <Field field="Fix Version3" selected="True" />
@@ -974,9 +970,9 @@ Table=Sheet1</DefaultAnnotationText>
             <Field name="Points" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Points&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'" type="Double" />
             <Field name="Hours Logged" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="Double" />
             <Field name="Assignee" size="8190" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Sprint Name" size="30" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
             <Field name="Sprint ID" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Sprint ID&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Sprint'" type="Int16" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version1" size="1073741823" source="TextToColumns: Parsed from Fix Version" type="V_WString" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version2" size="1073741823" source="TextToColumns: Parsed from Fix Version" type="V_WString" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version3" size="1073741823" source="TextToColumns: Parsed from Fix Version" type="V_WString" />
@@ -1062,15 +1058,15 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="47" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="47" Connection="Output" />
       <Destination ToolID="54" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="55" Connection="Unique" />
       <Destination ToolID="54" Connection="Right" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="47" Connection="Output" />
-      <Destination ToolID="61" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="53" Connection="Output" />

@@ -156,7 +156,7 @@ Table=Sheet1</DefaultAnnotationText>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
+            <FormulaField expression="if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14) +1) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -189,13 +189,13 @@ tostring(DateTimeYear([...</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Int16" />
-            <Field name="sprint_name" size="30" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_String" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="V_WString" />
             <Field name="sprint_started" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
             <Field name="sprint_ended" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Bool" />
             <Field name="sprint_start_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
             <Field name="sprint_end_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
             <Field name="sprint_complete_date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_sprints.* From sandbox.sandbox_jira_sprints" type="Date" />
-            <Field name="Sprint Group" source="Formula: if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14)) else null() endif" type="Double" />
+            <Field name="Sprint Group" size="1073741823" source="Formula: if [sprint_start_date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([sprint_start_date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([sprint_start_date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14) +1) else null() endif" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>

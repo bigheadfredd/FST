@@ -22,9 +22,9 @@
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
           </RecordInfo>
           <SortInfo>
             <Field field="Sprint ID" order="Asc" />
@@ -69,33 +69,29 @@
         </Annotation>
         <MetaInfo connection="True">
           <RecordInfo>
-            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Key" size="9" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Type" size="18" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Value Stream" size="4" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Team" size="23" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Category" size="37" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="12" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Summary" size="181" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="15" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
             <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
             <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
-            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Assignee" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
             <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Fix Version1" size="16" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Fix Version2" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version3" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version4" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version5" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
-            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
@@ -103,33 +99,29 @@
         </MetaInfo>
         <MetaInfo connection="False">
           <RecordInfo>
-            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Key" size="9" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Type" size="18" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Value Stream" size="4" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Team" size="23" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Category" size="37" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="12" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Summary" size="181" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="15" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
             <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
             <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
-            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Assignee" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
             <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Fix Version1" size="16" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Fix Version2" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version3" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version4" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version5" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
-            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
@@ -165,33 +157,29 @@ Table=Select * From fst_analytics.issues</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Issue Key" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Type" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Value Stream" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Team" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Category" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Priority" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Summary" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Issue Status" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Key" size="9" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Type" size="18" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Value Stream" size="4" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Team" size="23" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Category" size="37" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Priority" size="12" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Issue Summary" size="181" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Issue Status" size="15" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
             <Field name="Points" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
             <Field name="Hours Logged" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
-            <Field name="Assignee" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Assignee" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Name" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
             <Field name="Sprint ID" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Int16" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version1" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version2" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version3" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version4" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
-            <Field name="Fix Version5" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Double" />
+            <Field name="Fix Version1" size="16" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="WString" />
+            <Field name="Fix Version2" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version3" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version4" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
+            <Field name="Fix Version5" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Created Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Resolution Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
             <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint End Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Complete Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="Date" />
-            <Field name="Sprint Started?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
-            <Field name="Sprint Ended?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry Out?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Carry In?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
             <Field name="Unplanned?" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.issues" type="V_String" />
@@ -228,13 +216,13 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int16" />
-            <Field name="sprint_name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_name" size="30" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
             <Field name="sprint_started" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_ended" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_start_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_end_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_complete_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -282,9 +270,9 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         <MetaInfo connection="Left">
           <RecordInfo>
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Sprint ID" />
@@ -292,11 +280,11 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="Join">
           <RecordInfo>
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
           </RecordInfo>
           <SortInfo>
             <Field field="Sprint ID" order="" />
@@ -305,7 +293,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         <MetaInfo connection="Right">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int16" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="sprint_id" />
@@ -427,11 +415,11 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Left">
           <RecordInfo>
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
           </RecordInfo>
           <SortInfo noProgress="True">
             <Field field="Team" />
@@ -440,11 +428,11 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
         </MetaInfo>
         <MetaInfo connection="Join">
           <RecordInfo>
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
             <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
             <Field name="Role Name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
             <Field name="Availability" source="Formula: [_CurrentField_]" type="Int32" />
@@ -596,7 +584,6 @@ Table=Sheet1</DefaultAnnotationText>
             <Field field="Team" selected="True" />
             <Field field="Sprint Name" selected="True" />
             <Field field="Assignee" selected="True" />
-            <Field field="Sprint Group" selected="True" />
             <Field field="Role Name" selected="True" />
             <Field field="*Unknown" selected="True" />
           </Fields>
@@ -608,11 +595,11 @@ Table=Sheet1</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Team" size="8190" source="Summarize: GroupBy - Team" type="V_WString" />
-            <Field name="Sprint Name" size="255" source="Summarize: GroupBy - Sprint Name" type="V_WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Assignee" size="8190" source="Summarize: GroupBy - Assignee" type="V_WString" />
-            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
             <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
             <Field name="Role Name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
             <Field name="Availability" source="Formula: [_CurrentField_]" type="Int32" />
