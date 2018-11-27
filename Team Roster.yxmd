@@ -304,7 +304,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="726" y="78" />
+        <Position x="582" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -335,7 +335,7 @@ Table=roster</DefaultAnnotationText>
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="306" y="126" />
+        <Position x="150" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -376,7 +376,7 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="534" y="78" />
+        <Position x="390" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -464,7 +464,7 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="378" y="126" />
+        <Position x="222" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -500,7 +500,7 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings>
-        <Position x="450" y="126" />
+        <Position x="294" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -541,7 +541,7 @@ Table=Select * From sandbox.sandbox_tempo_teams</DefaultAnnotationText>
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="726" y="162" />
+        <Position x="582" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -576,7 +576,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="630" y="78" />
+        <Position x="486" y="78" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -595,13 +595,13 @@ Table=Sheet1</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="WString" />
-            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="WString" />
+            <Field name="Team" size="23" source="Summarize: GroupBy - Team" type="String" />
+            <Field name="Sprint Name" size="27" source="Summarize: GroupBy - Sprint Name" type="V_String" />
             <Field name="Sprint ID" source="Summarize: GroupBy - Sprint ID" type="Int16" />
-            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_WString" />
+            <Field name="Assignee" size="27" source="Summarize: GroupBy - Assignee" type="V_String" />
             <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
             <Field name="team_id" scale="0" size="17" source="Formula: [_CurrentField_]" type="FixedDecimal" />
-            <Field name="Role Name" size="255" source="Formula: [_CurrentField_]" type="V_WString" />
+            <Field name="Role Name" size="19" source="Formula: [_CurrentField_]" type="String" />
             <Field name="Availability" source="Formula: [_CurrentField_]" type="Int32" />
             <Field name="Role from Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
             <Field name="Role to Date" source="File: odbc:DSN=fst_user|||Select * From sandbox.sandbox_tempo_teams" type="Date" />
