@@ -118,7 +118,7 @@ Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_workl
       </GuiSettings>
       <Properties>
         <Configuration>
-          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||worklogs</File>
+          <File MaxRecords="" FileFormat="23">odbc:DSN=fst_user|||fst_analytics.worklogs</File>
           <Passwords />
           <FormatSpecificOptions>
             <Projection />
@@ -137,7 +137,7 @@ Table=Select sandbox.sandbox_worklogs.worklog_date_worked, sandbox.sandbox_workl
           <Name />
           <AnnotationText>worklogs</AnnotationText>
           <DefaultAnnotationText>DSN=fst_user
-Table=worklogs</DefaultAnnotationText>
+Table=fst_analytics.worklogs</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>

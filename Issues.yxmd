@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="510" />
+        <Position x="18" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -39,7 +39,7 @@ Table=Select sandbox.sandbox_jira_relationships.* From sandbox.sandbox_jira_rela
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="6" />
+        <Position x="18" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -73,7 +73,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="258" />
+        <Position x="18" y="342" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -107,7 +107,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="174" />
+        <Position x="18" y="258" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -141,7 +141,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.JoinMultiple.JoinMultiple">
-        <Position x="222" y="42" />
+        <Position x="210" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -180,7 +180,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
                 <SelectField field="Input_#3_jira_key_summary" selected="True" rename="Issue Summary" />
                 <SelectField field="Input_#4_Points" selected="True" type="Double" size="8" />
                 <SelectField field="Input_#2_jira_key" selected="False" />
-                <SelectField field="Input_#3_jira_key_time_logged" selected="True" rename="Hours Logged" type="Double" size="8" />
+                <SelectField field="Input_#3_jira_key_time_logged" selected="False" rename="Hours Logged" type="Double" size="8" />
                 <SelectField field="Input_#3_jira_key_status" selected="True" rename="Issue Status" />
                 <SelectField field="Input_#5_Sprint ID" selected="True" type="Int16" size="2" />
                 <SelectField field="Input_#5_jira_key" selected="False" />
@@ -212,7 +212,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="90" />
+        <Position x="18" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -246,7 +246,7 @@ Table=Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_c
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="342" />
+        <Position x="18" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -287,7 +287,7 @@ Table=Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="114" y="342" />
+        <Position x="102" y="426" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -321,7 +321,7 @@ Table=Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="306" y="42" />
+        <Position x="294" y="126" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -355,7 +355,7 @@ Table=Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_
     </Node>
     <Node ToolID="23">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="102" y="510" />
+        <Position x="90" y="594" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -388,7 +388,7 @@ Table=Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_
     </Node>
     <Node ToolID="34">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="306" y="114" />
+        <Position x="294" y="198" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -414,13 +414,13 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="sprint_id" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Int32" />
-            <Field name="sprint_name" size="30" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
+            <Field name="sprint_name" size="255" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
             <Field name="sprint_started" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_ended" size="5" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="sprint_start_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_end_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
             <Field name="sprint_complete_date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
-            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
+            <Field name="Sprint Group" size="8190" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -428,7 +428,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="35">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="402" y="66" />
+        <Position x="390" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -448,11 +448,10 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
                 <SelectField field="Left_Team" selected="True" />
                 <SelectField field="Left_Issue Summary" selected="True" />
                 <SelectField field="Left_Points" selected="True" />
-                <SelectField field="Left_Hours Logged" selected="True" />
                 <SelectField field="Left_Issue Status" selected="True" />
                 <SelectField field="Right_sprint_name" selected="True" rename="Sprint Name" />
                 <SelectField field="Left_Category" selected="True" />
-                <SelectField field="Right_sprint_id" selected="True" />
+                <SelectField field="Right_sprint_id" selected="False" />
                 <SelectField field="Right_sprint_started" selected="False" rename="Sprint Started?" type="Bool" size="1" />
                 <SelectField field="Right_sprint_ended" selected="False" rename="Sprint Ended?" type="Bool" size="1" />
                 <SelectField field="Right_sprint_start_date" selected="True" rename="Sprint Start Date" />
@@ -484,7 +483,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="37">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="486" y="66" />
+        <Position x="678" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -505,7 +504,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="38">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="570" y="66" />
+        <Position x="774" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -521,7 +520,6 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
             <SelectField field="Issue Summary" selected="True" />
             <SelectField field="Issue Status" selected="True" />
             <SelectField field="Points" selected="True" />
-            <SelectField field="Hours Logged" selected="True" />
             <SelectField field="Assignee" selected="True" />
             <SelectField field="Created Date" selected="True" />
             <SelectField field="Resolution Date" selected="True" />
@@ -535,7 +533,9 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
             <SelectField field="Fix Version3" selected="True" />
             <SelectField field="Fix Version4" selected="True" />
             <SelectField field="Fix Version5" selected="True" />
-            <SelectField field="sprint_id" selected="False" />
+            <SelectField field="Hours Logged" selected="True" />
+            <SelectField field="Right_Issue Key" selected="False" />
+            <SelectField field="Right_Sprint Group" selected="False" />
             <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
@@ -549,7 +549,7 @@ Table=Select * From fst_analytics.sprints</DefaultAnnotationText>
     </Node>
     <Node ToolID="45">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
-        <Position x="306" y="234" />
+        <Position x="294" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -570,7 +570,7 @@ Sprint Start Date - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="46">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="390" y="234" />
+        <Position x="378" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -597,7 +597,7 @@ Sprint Start Date - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="47">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
-        <Position x="474" y="234" />
+        <Position x="462" y="318" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -624,7 +624,7 @@ Sprint Start Date - Ascending</DefaultAnnotationText>
     </Node>
     <Node ToolID="51">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="858" y="222" />
+        <Position x="1074" y="294" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -647,7 +647,7 @@ Table=Sheet1</DefaultAnnotationText>
     </Node>
     <Node ToolID="52">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="858" y="294" />
+        <Position x="1074" y="366" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -678,12 +678,12 @@ Table=fst_analytics.issues</DefaultAnnotationText>
     </Node>
     <Node ToolID="53">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="306" y="318" />
+        <Position x="294" y="402" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Passwords />
-          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehistory_status.change_timestamp From fst_analytics.changehistory_status Where fst_analytics.changehistory_status.oldstring = 'Open'</File>
+          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint</File>
           <FormatSpecificOptions>
             <PreSQLOnConfig>True</PreSQLOnConfig>
             <ReadCentroids>False</ReadCentroids>
@@ -698,13 +698,15 @@ Table=fst_analytics.issues</DefaultAnnotationText>
           <Name />
           <AnnotationText>changehistory_status</AnnotationText>
           <DefaultAnnotationText>DSN=fst_user
-Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehistory_status.change_timestamp From fst_analytics.changehistory_status Where fst_analytics.changehistory_status.oldstring = 'Open'</DefaultAnnotationText>
+Table=Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="jira_key" size="8190" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehistory_status.change_timestamp From fst_analytics.changehistory_status Where fst_analytics.changehistory_status.oldstring = 'Open'" type="V_WString" />
-            <Field name="change_timestamp" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehistory_status.change_timestamp From fst_analytics.changehistory_status Where fst_analytics.changehistory_status.oldstring = 'Open'" type="DateTime" />
+            <Field name="change_timestamp" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint" type="DateTime" />
+            <Field name="jira_key" size="8190" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint" type="V_WString" />
+            <Field name="oldstring" size="8190" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint" type="V_WString" />
+            <Field name="newstring" size="8190" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_sprint.change_timestamp, fst_analytics.changehistory_sprint.jira_key, fst_analytics.changehistory_sprint.oldstring, fst_analytics.changehistory_sprint.newstring From fst_analytics.changehistory_sprint" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -712,7 +714,7 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
     </Node>
     <Node ToolID="54">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
-        <Position x="570" y="258" />
+        <Position x="702" y="330" />
       </GuiSettings>
       <Properties>
         <Configuration joinByRecordPos="False">
@@ -746,13 +748,14 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
                 <SelectField field="Left_Fix Version3" selected="True" />
                 <SelectField field="Left_Fix Version4" selected="True" />
                 <SelectField field="Left_Fix Version5" selected="True" />
-                <SelectField field="Left_Created Date" selected="True" type="Date" size="10" />
-                <SelectField field="Right_Open Date" selected="True" />
-                <SelectField field="Left_Resolution Date" selected="True" type="Date" size="10" />
+                <SelectField field="Left_Created Date" selected="True" />
+                <SelectField field="Left_Resolution Date" selected="True" />
                 <SelectField field="Left_Sprint Start Date" selected="True" />
-                <SelectField field="Left_CarryOut" selected="True" rename="Carry Out?" type="Bool" size="1" />
-                <SelectField field="Left_CarryIn" selected="True" rename="Carry In?" type="Bool" size="1" />
+                <SelectField field="Right_Sprint Change Date" selected="True" />
                 <SelectField field="Right_jira_key" selected="False" />
+                <SelectField field="Right_Sprint Group" selected="False" />
+                <SelectField field="Left_Carry Out?" selected="True" />
+                <SelectField field="Left_Carry In?" selected="True" />
                 <SelectField field="*Unknown" selected="False" />
               </SelectFields>
             </Configuration>
@@ -766,37 +769,20 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
-    <Node ToolID="55">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
-        <Position x="474" y="318" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <UniqueFields>
-            <Field field="jira_key" />
-            <Field field="Open Date" />
-          </UniqueFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText />
-          <DefaultAnnotationText>Unique: jira_key, Open Date</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
-    </Node>
     <Node ToolID="56">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="390" y="318" />
+        <Position x="378" y="402" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <OrderChanged value="False" />
           <CommaDecimal value="False" />
           <SelectFields>
-            <SelectField field="change_timestamp" selected="True" rename="Open Date" type="Date" size="10" />
-            <SelectField field="*Unknown" selected="True" />
+            <SelectField field="change_timestamp" selected="True" rename="Sprint Change Date" type="Date" size="10" />
+            <SelectField field="jira_key" selected="True" />
+            <SelectField field="oldstring" selected="True" />
+            <SelectField field="newstring" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
           </SelectFields>
         </Configuration>
         <Annotation DisplayMode="0">
@@ -809,19 +795,18 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
     </Node>
     <Node ToolID="57">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="666" y="258" />
+        <Position x="894" y="330" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <FormulaFields>
-            <FormulaField expression="If [Open Date] &gt; [Sprint Start Date] then 1 else 0 endif" field="Unplanned?" size="1" type="Bool" />
+            <FormulaField expression="If [Sprint Change Date] &gt; [Sprint Start Date] then 1 elseif [Sprint Change Date] &lt;= [Sprint Start Date] then 0 else null() endif" field="Unplanned?" size="1" type="Bool" />
           </FormulaFields>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
           <AnnotationText>Unplanned?</AnnotationText>
-          <DefaultAnnotationText><![CDATA[Unplanned? = If [Open Date] > [Sprint Start Date] then 1 else 0 endif
-]]></DefaultAnnotationText>
+          <DefaultAnnotationText>Unplanned? = If [Sprint Change Date] &gt; [Sprint Start Date] then 1 elseif [Sprint...</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -829,7 +814,7 @@ Table=Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehi
     </Node>
     <Node ToolID="58">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="30" y="426" />
+        <Position x="18" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -863,12 +848,12 @@ Table=Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.san
     </Node>
     <Node ToolID="59">
       <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-        <Position x="114" y="426" />
+        <Position x="102" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <SummarizeFields>
-            <SummarizeField field="jira_key" action="GroupBy" rename="" />
+            <SummarizeField field="jira_key" action="GroupBy" rename="jira_key" />
             <SummarizeField field="jira_key_fix_version" action="Concat" rename="Fix Version">
               <Concat_Start />
               <Separator>,</Separator>
@@ -886,7 +871,7 @@ Table=Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.san
     </Node>
     <Node ToolID="60">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-        <Position x="198" y="426" />
+        <Position x="186" y="510" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -905,32 +890,9 @@ Table=Select sandbox.sandbox_jira_fix_versions.jira_key_fix_version, sandbox.san
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
     </Node>
-    <Node ToolID="61">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="570" y="174" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <File FileFormat="25" MaxRecords="">Z:\New Data Model\preDefects.xlsx|||Sheet1</File>
-          <Passwords />
-          <FormatSpecificOptions>
-            <OutputOption>Overwrite</OutputOption>
-          </FormatSpecificOptions>
-          <MultiFile value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>preDefects.xlsx</AnnotationText>
-          <DefaultAnnotationText>preDefects.xlsx
-Table=Sheet1</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
-    </Node>
     <Node ToolID="62">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
-        <Position x="762" y="258" />
+        <Position x="978" y="330" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -945,6 +907,7 @@ Table=Sheet1</DefaultAnnotationText>
             <Field field="Issue Status" selected="True" />
             <Field field="Assignee" selected="True" />
             <Field field="Sprint Name" selected="True" />
+            <Field field="Sprint Group" selected="False" />
             <Field field="Fix Version1" selected="True" />
             <Field field="Fix Version2" selected="True" />
             <Field field="Fix Version3" selected="True" />
@@ -960,36 +923,271 @@ Table=Sheet1</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field description="PrimaryKey" name="Issue Key" size="9" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="String" />
-            <Field name="Issue Type" size="18" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="String" />
-            <Field description="TextToColumns: Parsed from Issue Key" name="Value Stream" size="4" source="TextToColumns: Parsed from Issue Key" type="String" />
-            <Field name="Team" size="23" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Team&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'" type="String" />
+            <Field name="Issue Key" size="13" source="(Multiple Sources)" type="String" />
+            <Field name="Issue Type" size="18" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_String" />
+            <Field description="TextToColumns: Parsed from Issue Key" name="Value Stream" size="9" source="TextToColumns: Parsed from Issue Key" type="V_String" />
+            <Field name="Team" size="29" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Team&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Team'" type="V_WString" />
             <Field name="Category" size="37" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Category&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Category'" type="V_String" />
             <Field name="Priority" size="12" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="String" />
-            <Field name="Issue Summary" size="181" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_WString" />
-            <Field name="Issue Status" size="15" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_String" />
+            <Field name="Issue Summary" size="249" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_WString" />
+            <Field name="Issue Status" size="24" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_String" />
             <Field name="Points" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Points&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Story Points'" type="Double" />
-            <Field name="Hours Logged" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="Double" />
-            <Field name="Assignee" size="27" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_String" />
-            <Field name="Sprint Name" size="27" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="String" />
+            <Field name="Hours Logged" source="Summarize: Sum - Hours" type="Double" />
+            <Field name="Assignee" size="29" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="V_String" />
+            <Field name="Sprint Name" size="30" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="V_String" />
             <Field name="Sprint ID" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_custom_fields.jira_key, sandbox.sandbox_jira_custom_fields.custom_field_value As &quot;Sprint ID&quot; From sandbox.sandbox_jira_custom_fields Where sandbox.sandbox_jira_custom_fields.custom_field_name = 'Sprint'" type="Int16" />
-            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Double" />
-            <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version1" size="16" source="TextToColumns: Parsed from Fix Version" type="String" />
-            <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version2" source="TextToColumns: Parsed from Fix Version" type="Bool" />
+            <Field name="Sprint Group" size="8190" source="(Multiple Sources)" type="V_WString" />
+            <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version1" size="29" source="TextToColumns: Parsed from Fix Version" type="V_String" />
+            <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version2" size="19" source="TextToColumns: Parsed from Fix Version" type="V_String" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version3" source="TextToColumns: Parsed from Fix Version" type="Bool" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version4" source="TextToColumns: Parsed from Fix Version" type="Bool" />
             <Field description="TextToColumns: Parsed from Fix Version" name="Fix Version5" source="TextToColumns: Parsed from Fix Version" type="Bool" />
             <Field name="Created Date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="Date" />
-            <Field name="Open Date" source="File: odbc:DSN=fst_user|||Select fst_analytics.changehistory_status.jira_key, fst_analytics.changehistory_status.change_timestamp From fst_analytics.changehistory_status Where fst_analytics.changehistory_status.oldstring = 'Open'" type="Date" />
             <Field name="Resolution Date" source="File: odbc:DSN=tr_sandbox|||Select sandbox.sandbox_jira_mast.jira_key, sandbox.sandbox_jira_mast.jira_key_type, sandbox.sandbox_jira_mast.jira_key_summary, sandbox.sandbox_jira_mast.jira_key_time_logged, sandbox.sandbox_jira_mast.jira_key_status, sandbox.sandbox_jira_mast.jira_key_assignee, sandbox.sandbox_jira_mast.jira_key_create_timestamp, sandbox.sandbox_jira_mast.resolutiondate, sandbox.sandbox_jira_mast.jira_key_priority From sandbox.sandbox_jira_mast" type="Date" />
             <Field name="Sprint Start Date" source="File: odbc:DSN=fst_user|||Select * From fst_analytics.sprints" type="Date" />
+            <Field name="Sprint Change Date" source="Summarize: GroupBy - Sprint Change Date" type="Date" />
             <Field description="Formula: if [sprint start date] &lt; [Row+1:sprint start date] then 1 else 0 endif" name="Carry Out?" source="Formula: if [sprint start date] &lt; [Row+1:sprint start date] then 1 else 0 endif" type="Bool" />
             <Field description="Formula: if [Sprint Start Date] &gt; [Row-1:Sprint Start Date] then 1 else 0 endif" name="Carry In?" source="Formula: if [Sprint Start Date] &gt; [Row-1:Sprint Start Date] then 1 else 0 endif" type="Bool" />
-            <Field name="Unplanned?" source="Formula: If [Open Date] &gt; [Sprint Start Date] then 1 else 0 endif" type="Bool" />
+            <Field name="Unplanned?" source="Formula: If [Sprint Change Date] &gt; [Sprint Start Date] then 1 else 0 endif" type="Bool" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="546" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="jira_key" action="GroupBy" rename="jira_key" />
+            <SummarizeField field="Sprint Change Date" action="GroupBy" rename="Sprint Change Date" />
+            <SummarizeField field="Sprint Group" action="GroupBy" rename="Sprint Group" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="210" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" FileFormat="23">odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs</File>
+          <FormatSpecificOptions>
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <ReadCentroids>False</ReadCentroids>
+            <NoProgress>True</NoProgress>
+            <ReadUncommitted>False</ReadUncommitted>
+            <TableStyle>Quoted</TableStyle>
+            <PreSQL />
+            <PostSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>worklogs</AnnotationText>
+          <DefaultAnnotationText>DSN=fst_user
+Table=Select fst_analytics.worklogs.* From fst_analytics.worklogs</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Sprint Group" source="File: odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs" type="Double" />
+            <Field name="Value Stream" size="9" source="File: odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs" type="V_WString" />
+            <Field name="Issue Key" size="13" source="File: odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs" type="V_WString" />
+            <Field name="Team Member" size="33" source="File: odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs" type="V_WString" />
+            <Field name="Hours" source="File: odbc:DSN=fst_user|||Select fst_analytics.worklogs.* From fst_analytics.worklogs" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="390" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Issue Key" action="GroupBy" rename="Issue Key" />
+            <SummarizeField field="Sprint Group" action="GroupBy" rename="Sprint Group" />
+            <SummarizeField field="Hours" action="Sum" rename="Hours Logged" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="294" y="42" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Sprint Group" selected="True" type="V_String" size="19" />
+            <SelectField field="Value Stream" selected="True" />
+            <SelectField field="Issue Key" selected="True" />
+            <SelectField field="Team Member" selected="True" />
+            <SelectField field="Hours" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="462" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Sprint Change Date]&gt;=&quot;2018-05-10&quot; then&#xA;tostring(DateTimeYear([Sprint Change Date])) + &quot;.&quot; + tostring(floor(DateTimeDiff([Sprint Change Date],&quot;2018-05-10&quot;,&quot;Days&quot;)/14) +1) else null() endif" field="Sprint Group" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText />
+          <DefaultAnnotationText>Sprint Group = if [Sprint Change Date]&gt;="2018-05-10" then
+tostring(DateTimeYear(...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="630" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="jira_key" />
+            <Field field="Sprint Group" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Unique: jira_key, Sprint Group</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="486" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Issue Key" />
+            <Field field="Sprint Group" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Issue Key" />
+            <Field field="Sprint Group" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="570" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="810" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="546" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Created Date" selected="True" type="Date" size="10" />
+            <SelectField field="Resolution Date" selected="True" type="Date" size="10" />
+            <SelectField field="CarryOut" selected="True" rename="Carry Out?" type="Bool" size="1" />
+            <SelectField field="CarryIn" selected="True" rename="Carry In?" type="Bool" size="1" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
     </Node>
   </Nodes>
   <Connections>
@@ -1039,7 +1237,11 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="35" Connection="Join" />
-      <Destination ToolID="37" Connection="Input" />
+      <Destination ToolID="78" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="78" Connection="Left" />
     </Connection>
     <Connection>
       <Origin ToolID="37" Connection="Output" />
@@ -1059,27 +1261,23 @@ Table=Sheet1</DefaultAnnotationText>
     </Connection>
     <Connection>
       <Origin ToolID="47" Connection="Output" />
-      <Destination ToolID="61" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="47" Connection="Output" />
-      <Destination ToolID="54" Connection="Left" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="55" Connection="Unique" />
-      <Destination ToolID="54" Connection="Right" />
+      <Destination ToolID="82" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="53" Connection="Output" />
       <Destination ToolID="56" Connection="Input" />
     </Connection>
-    <Connection>
+    <Connection name="#1">
       <Origin ToolID="54" Connection="Join" />
-      <Destination ToolID="57" Connection="Input" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="54" Connection="Left" />
+      <Destination ToolID="81" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="56" Connection="Output" />
-      <Destination ToolID="55" Connection="Input" />
+      <Destination ToolID="70" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="57" Connection="Output" />
@@ -1100,6 +1298,46 @@ Table=Sheet1</DefaultAnnotationText>
     <Connection>
       <Origin ToolID="62" Connection="Output" />
       <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="70" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Unique" />
+      <Destination ToolID="54" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="54" Connection="Left" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="78" Connection="Join" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="78" Connection="Right" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="57" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
